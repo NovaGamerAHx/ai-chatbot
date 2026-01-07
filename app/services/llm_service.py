@@ -9,6 +9,7 @@ from app.utils.prompt_templates import STANDARD_SYSTEM_PROMPT, WEB_SEARCH_SYSTEM
 genai.configure(api_key=settings.GEMINI_API_KEY)
 model = genai.GenerativeModel(settings.MODEL_NAME)
 
+
 def generate_search_queries_with_llm(user_text, chat_history):
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history[-5:]])
     prompt = QUERY_GEN_PROMPT.format(history=history_text, question=user_text)
