@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Chatbot</title>
+    <link rel="stylesheet" href="css/globals.css">
+    <link rel="stylesheet" href="css/layout.css">
+    <link rel="stylesheet" href="css/chat.css">
+    <!-- Marked JS for Markdown Parsing -->
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+</head>
+<body>
+    <div class="app-container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <button id="new-chat-btn" class="new-chat-btn">+ New Chat</button>
+            <ul id="chat-list" class="chat-list">
+                <!-- Chat items will go here -->
+            </ul>
+            <div class="user-panel">
+                <span>User</span>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </aside>
+
+        <!-- Main Chat Area -->
+        <main class="main-chat">
+            <header class="chat-header">
+                <span id="current-chat-title">New Chat</span>
+            </header>
+            
+            <div id="messages-container" class="messages-container">
+                <!-- Messages will go here -->
+            </div>
+
+            <div class="input-area">
+                <div class="input-wrapper">
+                    <div class="input-actions">
+                        <button id="web-toggle" title="Toggle Web Search">
+                            🌐
+                        </button>
+                    </div>
+                    <textarea id="message-input" placeholder="Message AI..." rows="1"></textarea>
+                    <div class="input-actions">
+                        <button id="send-btn" title="Send">➤</button>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="js/config.js"></script>
+    <script src="js/utils.js"></script>
+    <script src="js/api.js"></script>
+    <script src="js/ui.js"></script>
+    <script src="js/app.js"></script>
+</body>
+</html>
