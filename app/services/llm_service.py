@@ -1,3 +1,4 @@
+import json
 import google.generativeai as genai
 from sqlalchemy.orm import Session
 from app.core.config import settings
@@ -14,9 +15,23 @@ def generate_search_queries_with_llm(user_text, chat_history):
     
     try:
         response = model.generate_content(prompt)
-        queries = [q.strip() for q in response.text.split('\n') if q.strip()]
-        return queries[:3] 
-    except:
+        text = response.text.strip()
+        
+        if text.startswith("```json"):
+            text = text.replace("```json", "").replace("```", "")
+        elif text.startswith("```"):
+            text = text.replace("```", "")
+            
+        queries = json.loads(text)
+        
+        if not isinstance(queries, list):
+            queries = [user_text]
+            
+        print(f"\n--- GENERATED WEB QUERIES ---\n{queries}\n-----------------------------")
+        return queries
+        
+    except Exception as e:
+        print(f"Query Gen Error: {e}")
         return [user_text]
 
 def process_standard_response(db: Session, chat_id: int, user_text: str, chat_history: list):
@@ -43,7 +58,7 @@ def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_
     
     formatted_sources = ""
     for res in search_results:
-        formatted_sources += f"Source [{res['ref_index']}]:\nTitle: {res['title']}\nURL: {res['url']}\nContent: {res['content'][:400]}\n\n"
+        formatted_sources += f"Source [{res['ref_index']}]:\nTitle: {res['title']}\nURL: {res['url']}\nContent: {res['content'][:500]}\n\n"
     
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history])
     prompt = WEB_SEARCH_SYSTEM_PROMPT.format(
@@ -75,6 +90,7 @@ def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_
         "mode": msg_obj.mode,
         "citations": final_citations
     }
+
 
 def process_standard_response2(db: Session,chat_id, user_text, chat_history):
 

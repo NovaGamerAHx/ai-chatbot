@@ -4,7 +4,6 @@ from app.services.llm_service import process_standard_response, process_web_sear
 import time
 
 def handle_chat_request(db: Session, chat_id: int, user_text: str, is_web_search: bool, user_id: int):
-    time.sleep(50)
     current_chat_id = chat_id
     is_new_chat = False
     chat_title = None
