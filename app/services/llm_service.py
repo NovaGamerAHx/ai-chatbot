@@ -2,13 +2,24 @@ import google.generativeai as genai
 from sqlalchemy.orm import Session
 from app.core.config import settings
 from app.db.repository import save_message, save_citation
-from app.services.search_service import gather_search_results
-from app.utils.prompt_templates import STANDARD_SYSTEM_PROMPT, WEB_SEARCH_SYSTEM_PROMPT
+from app.services.search_service import execute_multi_search
+from app.utils.prompt_templates import STANDARD_SYSTEM_PROMPT, WEB_SEARCH_SYSTEM_PROMPT, QUERY_GEN_PROMPT
 
 genai.configure(api_key=settings.GEMINI_API_KEY)
 model = genai.GenerativeModel(settings.MODEL_NAME)
 
-def process_standard_response2(db: Session, chat_id: int, user_text: str, chat_history: list):
+def generate_search_queries_with_llm(user_text, chat_history):
+    history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history[-5:]])
+    prompt = QUERY_GEN_PROMPT.format(history=history_text, question=user_text)
+    
+    try:
+        response = model.generate_content(prompt)
+        queries = [q.strip() for q in response.text.split('\n') if q.strip()]
+        return queries[:3] 
+    except:
+        return [user_text]
+
+def process_standard_response(db: Session, chat_id: int, user_text: str, chat_history: list):
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history])
     prompt = STANDARD_SYSTEM_PROMPT.format(history=history_text, question=user_text)
     
@@ -25,14 +36,14 @@ def process_standard_response2(db: Session, chat_id: int, user_text: str, chat_h
         "citations": []
     }
 
-
-
-def process_web_search_response2(db: Session, chat_id: int, user_text: str, chat_history: list):
-    search_results = gather_search_results(user_text, chat_history)
+def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_history: list):
+    queries = generate_search_queries_with_llm(user_text, chat_history)
+    
+    search_results = execute_multi_search(queries)
     
     formatted_sources = ""
     for res in search_results:
-        formatted_sources += f"Source [{res['ref_index']}]:\nTitle: {res['title']}\nURL: {res['url']}\nContent: {res['content'][:300]}\n\n"
+        formatted_sources += f"Source [{res['ref_index']}]:\nTitle: {res['title']}\nURL: {res['url']}\nContent: {res['content'][:400]}\n\n"
     
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history])
     prompt = WEB_SEARCH_SYSTEM_PROMPT.format(
@@ -54,7 +65,7 @@ def process_web_search_response2(db: Session, chat_id: int, user_text: str, chat
             "url": res['url'],
             "title": res['title'],
             "snippet": res['content'][:200],
-            "site_icon": res.get('icon', '')
+            "site_icon": res.get('site_icon', None) or res.get('icon', None)
         })
         
     return {
@@ -65,9 +76,7 @@ def process_web_search_response2(db: Session, chat_id: int, user_text: str, chat
         "citations": final_citations
     }
 
-
-
-def process_standard_response(db: Session,chat_id, user_text, chat_history):
+def process_standard_response2(db: Session,chat_id, user_text, chat_history):
 
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history])
     prompt = STANDARD_SYSTEM_PROMPT.format(history=history_text, question=user_text)
@@ -88,7 +97,7 @@ def process_standard_response(db: Session,chat_id, user_text, chat_history):
 
 
 
-def process_web_search_response(db: Session,chat_id, user_text, chat_history):
+def process_web_search_response2(db: Session,chat_id, user_text, chat_history):
     search_results = gather_search_results(user_text, chat_history)
 
     print(user_text)

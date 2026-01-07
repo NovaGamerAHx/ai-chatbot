@@ -1,4 +1,4 @@
 const CONFIG = {
-    API_BASE_URL: 'http://127.0.0.1:8000/api/v1',
+    API_BASE_URL: '/api/v1',
     TOKEN_KEY: 'chat_access_token'
 };

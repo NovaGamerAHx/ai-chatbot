@@ -44,12 +44,14 @@ const UI = {
             citationsHtml += `</div>`;
         }
 
-        // Replace [1], [2] with links
         let processedContent = parseMarkdown(content);
-        if (citations) {
+        
+        if (citations && citations.length > 0) {
             citations.forEach(c => {
+                // استفاده از Regex با فلگ 'g' برای جایگزینی تمام موارد
+                const regex = new RegExp(`\\[${c.ref_index}\\]`, 'g');
                 processedContent = processedContent.replace(
-                    `[${c.ref_index}]`, 
+                    regex, 
                     `<a href="${c.url}" target="_blank" class="ref-link">[${c.ref_index}]</a>`
                 );
             });
