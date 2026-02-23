@@ -1,18 +1,15 @@
+import os
 from sqlalchemy import create_engine
-from sqlalchemy.ext.declarative import declarative_base
-from sqlalchemy.orm import sessionmaker
-from app.core.config import settings
+from sqlalchemy.orm import declarative_base, sessionmaker
 
-db_url = settings.DATABASE_URL
-if db_url and db_url.startswith("postgres://"):
-    db_url = db_url.replace("postgres://", "postgresql://", 1)
+SQLALCHEMY_DATABASE_URL = os.getenv("DATABASE_URL", "sqlite:///./local_chat.db")
 
-connect_args = {"check_same_thread": False} if "sqlite" in db_url else {}
-
-engine = create_engine(
-    db_url,
-    connect_args=connect_args
-)
+if SQLALCHEMY_DATABASE_URL.startswith("sqlite"):
+    engine = create_engine(
+        SQLALCHEMY_DATABASE_URL, connect_args={"check_same_thread": False}
+    )
+else:
+    engine = create_engine(SQLALCHEMY_DATABASE_URL)
 
 SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 
