@@ -1,12 +1,16 @@
+/* Chat Header */
 .chat-header {
     padding: 15px 20px;
     border-bottom: 1px solid var(--border-color);
     text-align: center;
     font-weight: 600;
-    background: rgba(0,0,0,0.1);
+    background: rgba(0, 0, 0, 0.3);
     backdrop-filter: blur(10px);
+    color: var(--text-primary);
+    letter-spacing: 0.5px;
 }
 
+/* Messages Area */
 .messages-container {
     flex: 1;
     padding: 20px;
@@ -14,28 +18,30 @@
     display: flex;
     flex-direction: column;
     gap: 24px;
-    padding-bottom: 120px; /* فضا برای ورودی */
+    padding-bottom: 120px; /* Space for input area */
 }
 
 .welcome-screen {
     text-align: center;
-    margin-top: 20vh;
+    margin-top: 15vh;
     color: var(--text-secondary);
 }
 
 .welcome-screen h1 {
-    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    background: var(--accent-gradient);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    font-size: 2.5rem;
     margin-bottom: 10px;
 }
 
+/* Message Bubbles */
 .message {
     max-width: 850px;
     margin: 0 auto;
     width: 100%;
     line-height: 1.7;
-    animation: fadeIn 0.3s ease;
+    animation: fadeIn 0.3s ease-out;
 }
 
 @keyframes fadeIn {
@@ -45,16 +51,11 @@
 
 .message.user {
     background: var(--user-msg-bg);
+    border: 1px solid var(--user-msg-border);
     padding: 15px 20px;
-    border-radius: 20px 20px 5px 20px;
+    border-radius: 20px;
     align-self: center;
-    border: 1px solid rgba(16, 185, 129, 0.2);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
-}
-
-.message-content {
-    font-size: 1rem;
-    white-space: pre-wrap;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .message-content img {
@@ -63,41 +64,46 @@
     margin-top: 10px;
 }
 
-/* --- Citations Styling (نمایش کارتی مدرن) --- */
+/* RTL Support for Persian Content */
+.message-content.rtl {
+    direction: rtl;
+    text-align: right;
+    font-family: 'Tahoma', 'Segoe UI', sans-serif;
+}
+
+/* Citations Grid (Modern Look) */
 .citations-list {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
     gap: 12px;
     margin-bottom: 15px;
-    width: 100%;
+    padding-top: 5px;
 }
 
 .citation-card {
-    background: var(--card-bg);
-    padding: 12px;
+    background: #1a1a1a;
+    padding: 12px 15px;
     border-radius: 12px;
     text-decoration: none;
     color: var(--text-secondary);
     font-size: 0.85rem;
-    border: 1px solid var(--border-color);
-    transition: all 0.2s ease;
+    border: 1px solid #333;
+    transition: all 0.3s ease;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    min-height: 80px;
+    gap: 5px;
 }
 
-.citation-card:hover { 
-    border-color: var(--accent-secondary);
-    background: #303030;
+.citation-card:hover {
+    border-color: var(--accent-blue);
     transform: translateY(-2px);
-    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+    background: #222;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
 
 .citation-index {
     font-weight: bold;
-    color: var(--accent-secondary);
-    margin-bottom: 5px;
+    color: var(--accent-green);
     font-size: 0.9rem;
 }
 
@@ -106,113 +112,104 @@
     overflow: hidden;
     text-overflow: ellipsis;
     color: var(--text-primary);
-    font-weight: 500;
 }
 
 .ref-link {
-    color: var(--accent-secondary);
-    font-size: 0.75rem;
+    color: var(--accent-blue);
+    font-size: 0.8em;
     vertical-align: super;
     margin: 0 2px;
-    font-weight: bold;
     cursor: pointer;
 }
 
-/* --- Modern Input Area --- */
+/* Modern Input Area */
 .input-area {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: linear-gradient(to top, var(--bg-color) 80%, transparent);
     padding: 20px;
+    background: linear-gradient(to top, var(--bg-color) 80%, transparent);
     display: flex;
     justify-content: center;
 }
 
 .input-wrapper {
-    max-width: 800px;
+    max-width: 850px;
     width: 100%;
     position: relative;
     background: var(--input-bg);
-    border-radius: 28px; /* گردتر */
-    padding: 8px 15px;
-    border: 1px solid #444;
+    border-radius: 16px; /* More rounded */
+    padding: 10px 15px;
+    border: 1px solid #333;
     display: flex;
     align-items: flex-end;
     gap: 10px;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.4);
     transition: border-color 0.3s, box-shadow 0.3s;
 }
 
 .input-wrapper:focus-within {
-    border-color: var(--accent-color);
-    box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 0 1px var(--accent-color);
+    border-color: var(--accent-blue);
+    box-shadow: 0 0 15px rgba(41, 121, 255, 0.1);
 }
 
 textarea {
     flex: 1;
     background: transparent;
     border: none;
-    color: var(--text-primary);
+    color: white;
     resize: none;
-    max-height: 150px; /* حداکثر ارتفاع قبل از اسکرول */
+    max-height: 200px; /* Scroll appears after this height */
     min-height: 24px;
     outline: none;
-    padding: 8px 5px;
+    padding: 8px 5px; /* Better vertical alignment */
     font-size: 1rem;
     line-height: 1.5;
-    overflow-y: auto; /* اسکرول اگر متن خیلی طولانی شد */
+    overflow-y: auto; /* Enables scroll */
 }
 
 .input-actions {
     display: flex;
     align-items: center;
     gap: 5px;
+    height: 100%;
+    padding-bottom: 5px; /* Align with text */
 }
 
 .input-actions button {
     background: none;
     border: none;
-    color: #777;
+    color: #666;
     cursor: pointer;
     padding: 8px;
-    border-radius: 50%;
-    transition: 0.2s;
-    width: 36px;
-    height: 36px;
+    border-radius: 8px;
+    transition: all 0.2s;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
-.input-actions button.active {
-    color: var(--accent-secondary);
-    background: rgba(59, 130, 246, 0.15);
-}
-
-.input-actions button:hover { 
-    color: white; 
-    background: rgba(255,255,255,0.05);
+.input-actions button:hover {
+    color: white;
+    background: rgba(255, 255, 255, 0.05);
 }
 
 /* Loading Animation */
-.typing-indicator {
-    padding: 5px 10px;
-}
 .typing-indicator span {
     display: inline-block;
     width: 8px;
     height: 8px;
-    background: var(--accent-color);
+    background: var(--accent-green);
     border-radius: 50%;
     margin: 0 3px;
-    animation: typing 1.4s infinite;
+    animation: bounce 1.4s infinite ease-in-out both;
 }
-.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
-.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
 
-@keyframes typing {
-    0%, 100% { opacity: 0.4; transform: translateY(0); }
-    50% { opacity: 1; transform: translateY(-4px); }
+.typing-indicator span:nth-child(1) { animation-delay: -0.32s; }
+.typing-indicator span:nth-child(2) { animation-delay: -0.16s; }
+
+@keyframes bounce {
+    0%, 80%, 100% { transform: scale(0); }
+    40% { transform: scale(1.0); }
 }

@@ -1,6 +1,7 @@
+/* Custom Scrollbar */
 ::-webkit-scrollbar {
-    width: 6px;
-    height: 6px;
+    width: 8px;
+    height: 8px;
 }
 
 ::-webkit-scrollbar-track {
@@ -8,14 +9,15 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #444;
-    border-radius: 10px;
+    background: #333;
+    border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #666;
+    background: #444;
 }
 
+/* Buttons General */
 button {
     transition: all 0.2s ease;
 }
@@ -24,39 +26,39 @@ button:active {
     transform: scale(0.95);
 }
 
+/* Web Toggle Button */
 #web-toggle {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     filter: grayscale(100%);
-    opacity: 0.6;
+    opacity: 0.5;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 #web-toggle.active {
     filter: grayscale(0%);
     opacity: 1;
-    color: var(--accent-secondary);
-    text-shadow: 0 0 15px rgba(59, 166, 255, 0.6);
+    color: var(--accent-blue);
+    text-shadow: 0 0 10px rgba(41, 121, 255, 0.6);
     transform: scale(1.1);
 }
 
+/* Send Button */
 #send-btn {
     font-size: 1.3rem;
-    color: var(--accent-color);
-    background: rgba(16, 185, 129, 0.1);
-    border-radius: 50%;
+    color: var(--accent-green);
+    padding: 8px;
 }
 
 #send-btn:hover {
-    background: var(--accent-color);
     color: white;
-    box-shadow: 0 0 15px rgba(16, 185, 129, 0.4);
+    background: rgba(0, 230, 118, 0.1);
+    border-radius: 50%;
 }
 
 #send-btn:disabled {
-    color: #555;
-    background: transparent;
+    color: #444;
     cursor: not-allowed;
-    box-shadow: none;
+    background: none;
 }
 
 .loading-msg {

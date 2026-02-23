@@ -33,11 +33,9 @@ const app = {
             }
         });
 
-        // Auto-resize textarea logic
-        UI.elements.messageInput.addEventListener('input', (e) => {
-            const textarea = e.target;
-            textarea.style.height = 'auto'; // ریست ارتفاع
-            textarea.style.height = textarea.scrollHeight + 'px'; // تنظیم بر اساس محتوا
+        // Auto-resize input listener
+        UI.elements.messageInput.addEventListener('input', () => {
+            UI.autoResize();
         });
 
         UI.elements.webToggle.addEventListener('click', () => {
@@ -51,8 +49,6 @@ const app = {
             UI.elements.chatTitle.innerText = 'New Chat';
             window.history.pushState({}, '', window.location.pathname);
             document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
-            // ریست سایز تکست‌اریا
-            UI.elements.messageInput.style.height = 'auto';
         });
         
         document.getElementById('logout-btn').addEventListener('click', () => {
@@ -101,11 +97,8 @@ const app = {
         if (!text || this.isSending) return;
 
         this.isSending = true;
-        
-        // ریست کردن ارتفاع ورودی بعد از ارسال
         UI.elements.messageInput.value = '';
-        UI.elements.messageInput.style.height = 'auto';
-        
+        UI.autoResize(); // Reset height after sending
         UI.appendMessage('user', text);
         const loading = UI.showLoading();
 

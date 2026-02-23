@@ -9,6 +9,14 @@ const UI = {
         chatTitle: document.getElementById('current-chat-title')
     },
 
+    // Auto-resize textarea
+    autoResize() {
+        const textarea = this.elements.messageInput;
+        textarea.style.height = 'auto'; // Reset height
+        // Set new height based on scroll height, capped at max-height (handled by CSS)
+        textarea.style.height = textarea.scrollHeight + 'px';
+    },
+
     renderChatList(chats, activeChatId) {
         this.elements.chatList.innerHTML = '';
         chats.forEach(chat => {
@@ -28,56 +36,46 @@ const UI = {
         const div = document.createElement('div');
         div.className = `message ${role}`;
         
-        // Citations Container
+        // Check if content starts with Persian/Arabic characters for RTL
+        const firstChar = content.trim()[0];
+        const isRTL = /[\u0600-\u06FF]/.test(firstChar);
+        const rtlClass = isRTL ? 'rtl' : '';
+
+        let citationsHtml = '';
         if (citations && citations.length > 0) {
-            const citationsDiv = document.createElement('div');
-            citationsDiv.className = 'citations-list';
-            
+            citationsHtml = `<div class="citations-list">`;
             citations.forEach(c => {
-                const card = document.createElement('a');
-                card.href = c.url;
-                card.target = '_blank';
-                card.className = 'citation-card';
-                card.innerHTML = `
-                    <div class="citation-index">منبع ${c.ref_index}</div>
-                    <div class="citation-title">${escapeHtml(c.title)}</div>
+                citationsHtml += `
+                    <a href="${c.url}" target="_blank" class="citation-card">
+                        <div class="citation-index">Source ${c.ref_index}</div>
+                        <div class="citation-info">
+                            <div class="citation-title">${escapeHtml(c.title)}</div>
+                        </div>
+                    </a>
                 `;
-                citationsDiv.appendChild(card);
             });
-            div.appendChild(citationsDiv);
+            citationsHtml += `</div>`;
         }
 
-        // Message Content
+        // Process Markdown
         let processedContent = parseMarkdown(content);
         
-        // Replace citation links
+        // Replace citation markers [1] with links
         if (citations) {
             citations.forEach(c => {
+                // Replace simple [1] or styled links
+                const regex = new RegExp(`\\[${c.ref_index}\\]`, 'g');
                 processedContent = processedContent.replace(
-                    `[${c.ref_index}]`, 
+                    regex, 
                     `<a href="${c.url}" target="_blank" class="ref-link">[${c.ref_index}]</a>`
                 );
             });
         }
 
-        const contentDiv = document.createElement('div');
-        contentDiv.className = 'message-content';
-        
-        // تشخیص راست‌چین بودن (RTL Detection)
-        // اگر متن با کاراکتر فارسی یا عربی شروع شود یا کاراکترهای زیادی داشته باشد
-        const firstStrongChar = content.trim().charAt(0);
-        const persianRegex = /[\u0600-\u06FF]/;
-        
-        if (persianRegex.test(firstStrongChar)) {
-            contentDiv.style.direction = 'rtl';
-            contentDiv.style.textAlign = 'right';
-        } else {
-            contentDiv.style.direction = 'ltr';
-            contentDiv.style.textAlign = 'left';
-        }
-        
-        contentDiv.innerHTML = processedContent;
-        div.appendChild(contentDiv);
+        div.innerHTML = `
+            ${citationsHtml}
+            <div class="message-content ${rtlClass}">${processedContent}</div>
+        `;
         
         this.elements.messagesContainer.appendChild(div);
         this.scrollToBottom();
@@ -87,9 +85,11 @@ const UI = {
         this.elements.messagesContainer.innerHTML = `
             <div class="welcome-screen">
                 <h1>AI Chat Assistant</h1>
-                <p>چگونه می‌توانم کمکتان کنم؟</p>
+                <p>Start a new conversation...</p>
             </div>
         `;
+        // Reset input size
+        this.elements.messageInput.style.height = 'auto';
     },
 
     showLoading() {
