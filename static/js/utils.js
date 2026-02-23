@@ -19,3 +19,11 @@ function escapeHtml(text) {
         .replace(/"/g, "&quot;")
         .replace(/'/g, "&#039;");
 }
+
+// تابع جدید برای تشخیص شروع متن با حروف فارسی جهت راست‌چین کردن
+function isPersianText(text) {
+    if (!text) return false;
+    // بررسی می‌کند که آیا اولین حرف الفبایی در متن فارسی/عربی است یا خیر
+    const persianRegex = /^[^a-zA-Z]*[\u0600-\u06FF]/;
+    return persianRegex.test(text.trim());
+}

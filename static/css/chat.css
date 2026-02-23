@@ -1,8 +1,10 @@
 .chat-header {
-    padding: 10px 20px;
-    border-bottom: 1px solid #333;
+    padding: 15px 20px;
+    border-bottom: 1px solid var(--border-color);
     text-align: center;
-    font-weight: bold;
+    font-weight: 600;
+    background: rgba(0,0,0,0.1);
+    backdrop-filter: blur(10px);
 }
 
 .messages-container {
@@ -11,8 +13,8 @@
     overflow-y: auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    padding-bottom: 100px;
+    gap: 24px;
+    padding-bottom: 120px; /* فضا برای ورودی */
 }
 
 .welcome-screen {
@@ -21,74 +23,108 @@
     color: var(--text-secondary);
 }
 
+.welcome-screen h1 {
+    background: linear-gradient(135deg, var(--accent-color), var(--accent-secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 10px;
+}
+
 .message {
-    max-width: 800px;
+    max-width: 850px;
     margin: 0 auto;
     width: 100%;
-    line-height: 1.6;
+    line-height: 1.7;
+    animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
 }
 
 .message.user {
     background: var(--user-msg-bg);
-    padding: 15px;
-    border-radius: 10px;
+    padding: 15px 20px;
+    border-radius: 20px 20px 5px 20px;
     align-self: center;
+    border: 1px solid rgba(16, 185, 129, 0.2);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+}
+
+.message-content {
+    font-size: 1rem;
+    white-space: pre-wrap;
 }
 
 .message-content img {
     max-width: 100%;
+    border-radius: 8px;
+    margin-top: 10px;
 }
 
-/* Citations Styling */
+/* --- Citations Styling (نمایش کارتی مدرن) --- */
 .citations-list {
-    display: flex;
-    gap: 10px;
-    overflow-x: auto;
-    padding-bottom: 10px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 12px;
     margin-bottom: 15px;
+    width: 100%;
 }
 
 .citation-card {
-    background: #2f2f2f;
-    min-width: 150px;
-    max-width: 200px;
-    padding: 10px;
-    border-radius: 8px;
+    background: var(--card-bg);
+    padding: 12px;
+    border-radius: 12px;
     text-decoration: none;
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    border: 1px solid #444;
-    transition: 0.2s;
+    font-size: 0.85rem;
+    border: 1px solid var(--border-color);
+    transition: all 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 80px;
 }
 
-.citation-card:hover { border-color: #666; }
+.citation-card:hover { 
+    border-color: var(--accent-secondary);
+    background: #303030;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+}
 
 .citation-index {
     font-weight: bold;
-    color: var(--text-primary);
+    color: var(--accent-secondary);
     margin-bottom: 5px;
+    font-size: 0.9rem;
 }
 
 .citation-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--text-primary);
+    font-weight: 500;
 }
 
 .ref-link {
-    color: var(--accent-color);
-    font-size: 0.8em;
+    color: var(--accent-secondary);
+    font-size: 0.75rem;
     vertical-align: super;
     margin: 0 2px;
+    font-weight: bold;
+    cursor: pointer;
 }
 
-/* Input Area */
+/* --- Modern Input Area --- */
 .input-area {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    background: var(--bg-color);
+    background: linear-gradient(to top, var(--bg-color) 80%, transparent);
     padding: 20px;
     display: flex;
     justify-content: center;
@@ -99,53 +135,84 @@
     width: 100%;
     position: relative;
     background: var(--input-bg);
-    border-radius: 10px;
-    padding: 10px;
+    border-radius: 28px; /* گردتر */
+    padding: 8px 15px;
     border: 1px solid #444;
     display: flex;
     align-items: flex-end;
     gap: 10px;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+.input-wrapper:focus-within {
+    border-color: var(--accent-color);
+    box-shadow: 0 8px 30px rgba(0,0,0,0.5), 0 0 0 1px var(--accent-color);
 }
 
 textarea {
     flex: 1;
     background: transparent;
     border: none;
-    color: white;
+    color: var(--text-primary);
     resize: none;
-    max-height: 200px;
+    max-height: 150px; /* حداکثر ارتفاع قبل از اسکرول */
     min-height: 24px;
     outline: none;
-    padding: 5px;
+    padding: 8px 5px;
+    font-size: 1rem;
+    line-height: 1.5;
+    overflow-y: auto; /* اسکرول اگر متن خیلی طولانی شد */
+}
+
+.input-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
 }
 
 .input-actions button {
     background: none;
     border: none;
-    color: #888;
+    color: #777;
     cursor: pointer;
-    padding: 5px;
-    border-radius: 5px;
+    padding: 8px;
+    border-radius: 50%;
+    transition: 0.2s;
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .input-actions button.active {
-    color: var(--accent-color);
-    background: rgba(16, 163, 127, 0.1);
+    color: var(--accent-secondary);
+    background: rgba(59, 130, 246, 0.15);
 }
 
-.input-actions button:hover { color: white; }
+.input-actions button:hover { 
+    color: white; 
+    background: rgba(255,255,255,0.05);
+}
 
 /* Loading Animation */
+.typing-indicator {
+    padding: 5px 10px;
+}
 .typing-indicator span {
     display: inline-block;
-    width: 6px;
-    height: 6px;
-    background: #888;
+    width: 8px;
+    height: 8px;
+    background: var(--accent-color);
     border-radius: 50%;
-    margin: 0 2px;
-    animation: typing 1s infinite;
+    margin: 0 3px;
+    animation: typing 1.4s infinite;
 }
+.typing-indicator span:nth-child(2) { animation-delay: 0.2s; }
+.typing-indicator span:nth-child(3) { animation-delay: 0.4s; }
+
 @keyframes typing {
-    0%, 100% { opacity: 0.2; transform: translateY(0); }
-    50% { opacity: 1; transform: translateY(-3px); }
+    0%, 100% { opacity: 0.4; transform: translateY(0); }
+    50% { opacity: 1; transform: translateY(-4px); }
 }

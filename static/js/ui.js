@@ -28,39 +28,56 @@ const UI = {
         const div = document.createElement('div');
         div.className = `message ${role}`;
         
-        let citationsHtml = '';
+        // Citations Container
         if (citations && citations.length > 0) {
-            citationsHtml = `<div class="citations-list">`;
+            const citationsDiv = document.createElement('div');
+            citationsDiv.className = 'citations-list';
+            
             citations.forEach(c => {
-                citationsHtml += `
-                    <a href="${c.url}" target="_blank" class="citation-card">
-                        <div class="citation-index">${c.ref_index}</div>
-                        <div class="citation-info">
-                            <div class="citation-title">${escapeHtml(c.title)}</div>
-                        </div>
-                    </a>
+                const card = document.createElement('a');
+                card.href = c.url;
+                card.target = '_blank';
+                card.className = 'citation-card';
+                card.innerHTML = `
+                    <div class="citation-index">منبع ${c.ref_index}</div>
+                    <div class="citation-title">${escapeHtml(c.title)}</div>
                 `;
+                citationsDiv.appendChild(card);
             });
-            citationsHtml += `</div>`;
+            div.appendChild(citationsDiv);
         }
 
+        // Message Content
         let processedContent = parseMarkdown(content);
         
-        if (citations && citations.length > 0) {
+        // Replace citation links
+        if (citations) {
             citations.forEach(c => {
-                // استفاده از Regex با فلگ 'g' برای جایگزینی تمام موارد
-                const regex = new RegExp(`\\[${c.ref_index}\\]`, 'g');
                 processedContent = processedContent.replace(
-                    regex, 
+                    `[${c.ref_index}]`, 
                     `<a href="${c.url}" target="_blank" class="ref-link">[${c.ref_index}]</a>`
                 );
             });
         }
 
-        div.innerHTML = `
-            ${citationsHtml}
-            <div class="message-content">${processedContent}</div>
-        `;
+        const contentDiv = document.createElement('div');
+        contentDiv.className = 'message-content';
+        
+        // تشخیص راست‌چین بودن (RTL Detection)
+        // اگر متن با کاراکتر فارسی یا عربی شروع شود یا کاراکترهای زیادی داشته باشد
+        const firstStrongChar = content.trim().charAt(0);
+        const persianRegex = /[\u0600-\u06FF]/;
+        
+        if (persianRegex.test(firstStrongChar)) {
+            contentDiv.style.direction = 'rtl';
+            contentDiv.style.textAlign = 'right';
+        } else {
+            contentDiv.style.direction = 'ltr';
+            contentDiv.style.textAlign = 'left';
+        }
+        
+        contentDiv.innerHTML = processedContent;
+        div.appendChild(contentDiv);
         
         this.elements.messagesContainer.appendChild(div);
         this.scrollToBottom();
@@ -70,7 +87,7 @@ const UI = {
         this.elements.messagesContainer.innerHTML = `
             <div class="welcome-screen">
                 <h1>AI Chat Assistant</h1>
-                <p>Start a new conversation...</p>
+                <p>چگونه می‌توانم کمکتان کنم؟</p>
             </div>
         `;
     },
