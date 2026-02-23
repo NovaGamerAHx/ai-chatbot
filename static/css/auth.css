@@ -3,57 +3,182 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background-color: var(--bg-color);
 }
 
+/* Modern Background Shapes */
+.bg-shape {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
+    opacity: 0.4;
+    z-index: 0;
+}
+
+.shape-1 {
+    width: 400px;
+    height: 400px;
+    background: var(--accent-blue);
+    top: -100px;
+    left: -100px;
+    animation: float 8s infinite ease-in-out;
+}
+
+.shape-2 {
+    width: 500px;
+    height: 500px;
+    background: var(--accent-green);
+    bottom: -150px;
+    right: -100px;
+    animation: float 10s infinite ease-in-out reverse;
+}
+
+@keyframes float {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(30px, 30px); }
+}
+
+/* Glassmorphism Card */
 .auth-box {
-    background: var(--input-bg);
-    padding: 2rem;
-    border-radius: 10px;
-    width: 350px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    background: rgba(26, 26, 26, 0.8);
+    backdrop-filter: blur(20px);
+    padding: 2.5rem;
+    border-radius: 20px;
+    width: 100%;
+    max-width: 400px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    z-index: 1;
+    position: relative;
+}
+
+.auth-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.logo-circle {
+    width: 80px; /* کمی بزرگتر شد */
+    height: 80px;
+    border-radius: 50%;
+    background: var(--bg-color); /* پس‌زمینه برای لوگو */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    overflow: hidden; /* برای اینکه لوگو بیرون نزند */
+}
+
+/* استایل عکس لوگو */
+.logo-circle img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* لوگو کل دایره را پر کند */
+}
+
+.auth-header h2 {
+    color: var(--text-primary);
+    margin-bottom: 5px;
+    font-weight: 600;
+}
+
+.auth-header p {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
 }
 
 .auth-tabs {
     display: flex;
     margin-bottom: 1.5rem;
-    border-bottom: 1px solid var(--border-color);
+    background: rgba(0, 0, 0, 0.3);
+    padding: 5px;
+    border-radius: 12px;
 }
 
 .toggle-btn {
     flex: 1;
     padding: 10px;
-    background: none;
+    background: transparent;
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
-    font-size: 1rem;
+    font-size: 0.95rem;
+    border-radius: 8px;
+    transition: all 0.3s ease;
+    font-weight: 500;
 }
 
 .toggle-btn.active {
-    color: var(--text-primary);
-    border-bottom: 2px solid var(--accent-color);
+    color: white;
+    background: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .auth-form {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 1.2rem;
+}
+
+.input-group {
+    position: relative;
+}
+
+.input-icon {
+    position: absolute;
+    left: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: var(--text-secondary);
+    font-size: 1rem;
 }
 
 .auth-form input {
-    padding: 12px;
-    border-radius: 5px;
-    border: 1px solid var(--border-color);
-    background: #1e1e1e;
+    width: 100%;
+    padding: 15px 15px 15px 45px; /* Space for icon */
+    border-radius: 12px;
+    border: 1px solid #333;
+    background: rgba(0, 0, 0, 0.3);
     color: white;
+    transition: all 0.3s ease;
+    font-size: 1rem;
 }
 
-.auth-form button {
-    padding: 12px;
-    background: var(--accent-color);
+.auth-form input::placeholder {
+    color: #666;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: var(--accent-blue);
+    background: rgba(0, 0, 0, 0.5);
+    box-shadow: 0 0 0 3px rgba(41, 121, 255, 0.1);
+}
+
+.submit-btn {
+    padding: 15px;
+    background: var(--accent-gradient);
     border: none;
-    border-radius: 5px;
+    border-radius: 12px;
     color: white;
     cursor: pointer;
     font-weight: bold;
+    font-size: 1rem;
+    margin-top: 10px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 20px rgba(41, 121, 255, 0.3);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
 }

@@ -9,6 +9,9 @@ const app = {
             return;
         }
 
+        // نمایش نام کاربری در سایدبار
+        this.displayUsername();
+
         this.bindEvents();
         
         const urlParams = new URLSearchParams(window.location.search);
@@ -20,6 +23,15 @@ const app = {
             await this.loadChat(parseInt(urlChatId));
         } else {
             UI.clearMessages();
+        }
+    },
+
+    // تابع جدید برای نمایش نام
+    displayUsername() {
+        const username = localStorage.getItem('chat_username') || 'User';
+        const userElement = document.getElementById('current-username');
+        if (userElement) {
+            userElement.innerText = username;
         }
     },
 
@@ -53,6 +65,7 @@ const app = {
         
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem(CONFIG.TOKEN_KEY);
+            localStorage.removeItem('chat_username'); // حذف نام کاربری هنگام خروج
             window.location.href = 'login.html';
         });
     },

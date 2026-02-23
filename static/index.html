@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot</title>
-    <!-- اضافه کردن ?v=2 برای پاکسازی کش خودکار مرورگر -->
-    <link rel="stylesheet" href="css/globals.css?v=2">
-    <link rel="stylesheet" href="css/layout.css?v=2">
-    <link rel="stylesheet" href="css/chat.css?v=2">
-    <link rel="stylesheet" href="css/components.css?v=2">
+    <!-- اضافه کردن ?v=4 برای پاکسازی کش -->
+    <link rel="stylesheet" href="css/globals.css?v=4">
+    <link rel="stylesheet" href="css/layout.css?v=4">
+    <link rel="stylesheet" href="css/chat.css?v=4">
+    <link rel="stylesheet" href="css/components.css?v=4">
     
     <!-- Marked JS for Markdown Parsing -->
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
@@ -17,12 +17,17 @@
     <div class="app-container">
         <!-- Sidebar -->
         <aside class="sidebar">
+            <!-- لوگو در سایدبار -->
+            <div class="sidebar-header">
+                <img src="images/6.png" alt="Logo" class="sidebar-logo">
+            </div>
+
             <button id="new-chat-btn" class="new-chat-btn">+ New Chat</button>
             <ul id="chat-list" class="chat-list">
                 <!-- Chat items will go here -->
             </ul>
             <div class="user-panel">
-                <span>User</span>
+                <span id="current-username">User</span>
                 <button id="logout-btn">Logout</button>
             </div>
         </aside>
@@ -53,10 +58,10 @@
         </main>
     </div>
 
-    <script src="js/config.js?v=2"></script>
-    <script src="js/utils.js?v=2"></script>
-    <script src="js/api.js?v=2"></script>
-    <script src="js/ui.js?v=2"></script>
-    <script src="js/app.js?v=2"></script>
+    <script src="js/config.js?v=4"></script>
+    <script src="js/utils.js?v=4"></script>
+    <script src="js/api.js?v=4"></script>
+    <script src="js/ui.js?v=4"></script>
+    <script src="js/app.js?v=4"></script>
 </body>
 </html>

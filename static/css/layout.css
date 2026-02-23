@@ -9,7 +9,29 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border-right: 1px solid #333;
+    border-right: 1px solid #222;
+}
+
+/* استایل برای هدر سایدبار و لوگو */
+.sidebar-header {
+    padding: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 5px;
+}
+
+.sidebar-logo {
+    width: 90px;  /* اندازه لوگو در سایدبار */
+    height: 90px;
+    object-fit: contain;
+    border-radius: 12px; /* گردی گوشه‌ها */
+    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+}
+
+.sidebar-logo:hover {
+    transform: scale(1.05);
 }
 
 .main-chat {
@@ -32,10 +54,7 @@
     transition: 0.2s;
 }
 
-.new-chat-btn:hover {
-    background: rgba(59,130,246,0.1);
-    border-color: var(--accent-blue);
-}
+.new-chat-btn:hover { background: #2a2a2a; }
 
 .chat-list {
     list-style: none;
@@ -55,12 +74,8 @@
 }
 
 .chat-item:hover, .chat-item.active {
-    background: rgba(59,130,246,0.15);
+    background: #2a2a2a;
     color: var(--text-primary);
-}
-
-.chat-item.active {
-    border-left: 3px solid var(--accent-blue);
 }
 
 .chat-title {
@@ -92,8 +107,4 @@
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
-}
-
-#logout-btn:hover {
-    color: var(--accent-green);
 }
