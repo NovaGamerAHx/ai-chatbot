@@ -9,11 +9,9 @@ const UI = {
         chatTitle: document.getElementById('current-chat-title')
     },
 
-    // Auto-resize textarea
     autoResize() {
         const textarea = this.elements.messageInput;
-        textarea.style.height = 'auto'; // Reset height
-        // Set new height based on scroll height, capped at max-height (handled by CSS)
+        textarea.style.height = 'auto';
         textarea.style.height = textarea.scrollHeight + 'px';
     },
 
@@ -36,7 +34,6 @@ const UI = {
         const div = document.createElement('div');
         div.className = `message ${role}`;
         
-        // Check if content starts with Persian/Arabic characters for RTL
         const firstChar = content.trim()[0];
         const isRTL = /[\u0600-\u06FF]/.test(firstChar);
         const rtlClass = isRTL ? 'rtl' : '';
@@ -57,13 +54,10 @@ const UI = {
             citationsHtml += `</div>`;
         }
 
-        // Process Markdown
         let processedContent = parseMarkdown(content);
         
-        // Replace citation markers [1] with links
         if (citations) {
             citations.forEach(c => {
-                // Replace simple [1] or styled links
                 const regex = new RegExp(`\\[${c.ref_index}\\]`, 'g');
                 processedContent = processedContent.replace(
                     regex, 
@@ -88,7 +82,6 @@ const UI = {
                 <p>Start a new conversation...</p>
             </div>
         `;
-        // Reset input size
         this.elements.messageInput.style.height = 'auto';
     },
 

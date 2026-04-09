@@ -1,22 +1,41 @@
 :root {
-    /* Theme Colors: Blue & Green on Dark Mode */
-    --bg-color: #0f0f0f; /* Deep background */
+    --bg-color: #ffffff;
+    --sidebar-bg: #f8f9fa;
+    --input-bg: #ffffff;
+    --text-primary: #202124;
+    --text-secondary: #5f6368;
+    --accent-green: #00c853;
+    --accent-blue: #2979ff;
+    --accent-gradient: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
+    --user-msg-bg: linear-gradient(135deg, rgba(41, 121, 255, 0.08), rgba(0, 200, 83, 0.08));
+    --user-msg-border: rgba(41, 121, 255, 0.2);
+    --bot-msg-bg: transparent;
+    --border-color: #e0e0e0;
+    --citation-bg: #f1f3f4;
+    --citation-border: #dadce0;
+    --citation-hover-bg: #e8eaed;
+    --shadow-color: rgba(0, 0, 0, 0.1);
+    --hover-bg: #e8eaed;
+}
+
+[data-theme="dark"] {
+    --bg-color: #0f0f0f;
     --sidebar-bg: #0a0a0a;
     --input-bg: #1a1a1a;
     --text-primary: #ececec;
     --text-secondary: #a0a0a0;
-
-    /* Accent Colors */
-    --accent-green: #00e676; /* Vibrant Green */
-    --accent-blue: #2979ff; /* Vibrant Blue */
+    --accent-green: #00e676;
+    --accent-blue: #2979ff;
     --accent-gradient: linear-gradient(135deg, var(--accent-green), var(--accent-blue));
-
-    /* Message Bubbles */
     --user-msg-bg: linear-gradient(135deg, rgba(41, 121, 255, 0.15), rgba(0, 230, 118, 0.1));
     --user-msg-border: rgba(41, 121, 255, 0.3);
     --bot-msg-bg: transparent;
-
-    --border-color: #222;
+    --border-color: #333;
+    --citation-bg: #1a1a1a;
+    --citation-border: #333;
+    --citation-hover-bg: #222;
+    --shadow-color: rgba(0, 0, 0, 0.4);
+    --hover-bg: #2a2a2a;
 }
 
 * {
@@ -31,6 +50,7 @@ body {
     color: var(--text-primary);
     height: 100vh;
     overflow: hidden;
+    transition: background-color 0.3s, color 0.3s;
 }
 
 a { 

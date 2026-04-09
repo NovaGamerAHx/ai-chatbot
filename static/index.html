@@ -4,27 +4,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>AI Chatbot</title>
-    <!-- اضافه کردن ?v=4 برای پاکسازی کش -->
-    <link rel="stylesheet" href="css/globals.css?v=4">
-    <link rel="stylesheet" href="css/layout.css?v=4">
-    <link rel="stylesheet" href="css/chat.css?v=4">
-    <link rel="stylesheet" href="css/components.css?v=4">
-    
-    <!-- Marked JS for Markdown Parsing -->
+    <link rel="stylesheet" href="css/globals.css?v=5">
+    <link rel="stylesheet" href="css/layout.css?v=5">
+    <link rel="stylesheet" href="css/chat.css?v=5">
+    <link rel="stylesheet" href="css/components.css?v=5">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
 </head>
 <body>
     <div class="app-container">
-        <!-- Sidebar -->
         <aside class="sidebar">
-            <!-- لوگو در سایدبار -->
             <div class="sidebar-header">
                 <img src="images/6.png" alt="Logo" class="sidebar-logo">
             </div>
-
             <button id="new-chat-btn" class="new-chat-btn">+ New Chat</button>
             <ul id="chat-list" class="chat-list">
-                <!-- Chat items will go here -->
             </ul>
             <div class="user-panel">
                 <span id="current-username">User</span>
@@ -32,22 +25,19 @@
             </div>
         </aside>
 
-        <!-- Main Chat Area -->
         <main class="main-chat">
             <header class="chat-header">
+                <button id="theme-toggle" class="theme-toggle-btn" title="Toggle Theme">🌙</button>
                 <span id="current-chat-title">New Chat</span>
             </header>
             
             <div id="messages-container" class="messages-container">
-                <!-- Messages will go here -->
             </div>
 
             <div class="input-area">
                 <div class="input-wrapper">
                     <div class="input-actions">
-                        <button id="web-toggle" title="Toggle Web Search">
-                            🌐
-                        </button>
+                        <button id="web-toggle" title="Toggle Web Search">🌐</button>
                     </div>
                     <textarea id="message-input" placeholder="Message AI..." rows="1"></textarea>
                     <div class="input-actions">
@@ -58,10 +48,10 @@
         </main>
     </div>
 
-    <script src="js/config.js?v=4"></script>
-    <script src="js/utils.js?v=4"></script>
-    <script src="js/api.js?v=4"></script>
-    <script src="js/ui.js?v=4"></script>
-    <script src="js/app.js?v=4"></script>
+    <script src="js/config.js?v=5"></script>
+    <script src="js/utils.js?v=5"></script>
+    <script src="js/api.js?v=5"></script>
+    <script src="js/ui.js?v=5"></script>
+    <script src="js/app.js?v=5"></script>
 </body>
 </html>

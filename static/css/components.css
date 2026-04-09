@@ -1,4 +1,3 @@
-/* Custom Scrollbar */
 ::-webkit-scrollbar {
     width: 8px;
     height: 8px;
@@ -9,15 +8,14 @@
 }
 
 ::-webkit-scrollbar-thumb {
-    background: #333;
+    background: var(--border-color);
     border-radius: 4px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #444;
+    background: var(--text-secondary);
 }
 
-/* Buttons General */
 button {
     transition: all 0.2s ease;
 }
@@ -26,7 +24,6 @@ button:active {
     transform: scale(0.95);
 }
 
-/* Web Toggle Button */
 #web-toggle {
     font-size: 1.3rem;
     filter: grayscale(100%);
@@ -42,7 +39,6 @@ button:active {
     transform: scale(1.1);
 }
 
-/* Send Button */
 #send-btn {
     font-size: 1.3rem;
     color: var(--accent-green);
@@ -51,12 +47,12 @@ button:active {
 
 #send-btn:hover {
     color: white;
-    background: rgba(0, 230, 118, 0.1);
+    background: var(--accent-green);
     border-radius: 50%;
 }
 
 #send-btn:disabled {
-    color: #444;
+    color: var(--text-secondary);
     cursor: not-allowed;
     background: none;
 }

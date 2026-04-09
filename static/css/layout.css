@@ -1,6 +1,7 @@
 .app-container {
     display: flex;
     height: 100vh;
+    flex-direction: row-reverse;
 }
 
 .sidebar {
@@ -9,10 +10,10 @@
     display: flex;
     flex-direction: column;
     padding: 10px;
-    border-right: 1px solid #222;
+    border-left: 1px solid var(--border-color);
+    transition: background-color 0.3s, border-color 0.3s;
 }
 
-/* استایل برای هدر سایدبار و لوگو */
 .sidebar-header {
     padding: 15px;
     display: flex;
@@ -26,7 +27,7 @@
     height: 90px;
     object-fit: contain;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+    box-shadow: 0 2px 8px var(--shadow-color);
     transition: transform 0.3s ease;
 }
 
@@ -46,7 +47,7 @@
     padding: 10px;
     border: 1px solid var(--border-color);
     background: transparent;
-    color: white;
+    color: var(--text-primary);
     border-radius: 5px;
     cursor: pointer;
     text-align: left;
@@ -54,7 +55,7 @@
     transition: 0.2s;
 }
 
-.new-chat-btn:hover { background: #2a2a2a; }
+.new-chat-btn:hover { background: var(--hover-bg); }
 
 .chat-list {
     list-style: none;
@@ -71,10 +72,11 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 5px;
+    transition: background-color 0.2s, color 0.2s;
 }
 
 .chat-item:hover, .chat-item.active {
-    background: #2a2a2a;
+    background: var(--hover-bg);
     color: var(--text-primary);
 }
 
@@ -88,15 +90,16 @@
 .delete-chat-btn {
     background: none;
     border: none;
-    color: #666;
+    color: var(--text-secondary);
     cursor: pointer;
     font-size: 16px;
 }
+
 .delete-chat-btn:hover { color: #ff5555; }
 
 .user-panel {
     padding-top: 10px;
-    border-top: 1px solid #333;
+    border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,4 +110,22 @@
     border: none;
     color: var(--text-secondary);
     cursor: pointer;
+}
+
+.theme-toggle-btn {
+    position: absolute;
+    left: 20px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: var(--text-primary);
+    transition: transform 0.2s;
+    padding: 5px;
+}
+
+.theme-toggle-btn:hover {
+    transform: translateY(-50%) scale(1.1);
 }

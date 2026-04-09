@@ -9,9 +9,8 @@ const app = {
             return;
         }
 
-        // نمایش نام کاربری در سایدبار
+        this.initTheme();
         this.displayUsername();
-
         this.bindEvents();
         
         const urlParams = new URLSearchParams(window.location.search);
@@ -26,7 +25,22 @@ const app = {
         }
     },
 
-    // تابع جدید برای نمایش نام
+    initTheme() {
+        const savedTheme = localStorage.getItem('theme') || 'light';
+        document.documentElement.setAttribute('data-theme', savedTheme);
+        const themeBtn = document.getElementById('theme-toggle');
+        if(themeBtn) {
+            themeBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+            themeBtn.addEventListener('click', () => {
+                const currentTheme = document.documentElement.getAttribute('data-theme');
+                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+                document.documentElement.setAttribute('data-theme', newTheme);
+                localStorage.setItem('theme', newTheme);
+                themeBtn.innerText = newTheme === 'dark' ? '☀️' : '🌙';
+            });
+        }
+    },
+
     displayUsername() {
         const username = localStorage.getItem('chat_username') || 'User';
         const userElement = document.getElementById('current-username');
@@ -45,7 +59,6 @@ const app = {
             }
         });
 
-        // Auto-resize input listener
         UI.elements.messageInput.addEventListener('input', () => {
             UI.autoResize();
         });
@@ -65,7 +78,7 @@ const app = {
         
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem(CONFIG.TOKEN_KEY);
-            localStorage.removeItem('chat_username'); // حذف نام کاربری هنگام خروج
+            localStorage.removeItem('chat_username');
             window.location.href = 'login.html';
         });
     },
@@ -111,7 +124,7 @@ const app = {
 
         this.isSending = true;
         UI.elements.messageInput.value = '';
-        UI.autoResize(); // Reset height after sending
+        UI.autoResize();
         UI.appendMessage('user', text);
         const loading = UI.showLoading();
 
