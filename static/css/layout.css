@@ -73,6 +73,7 @@
     justify-content: space-between;
     margin-bottom: 5px;
     transition: background-color 0.2s, color 0.2s;
+    gap: 10px; /* اضافه شدن فاصله بین المان‌ها */
 }
 
 .chat-item:hover, .chat-item.active {
@@ -80,11 +81,20 @@
     color: var(--text-primary);
 }
 
+.chat-item-logo {
+    width: 22px;
+    height: 22px;
+    object-fit: contain;
+    border-radius: 4px;
+    flex-shrink: 0;
+}
+
 .chat-title {
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
-    width: 180px;
+    flex: 1; /* گرفتن فضای خالی باقی‌مانده برای عنوان */
+    padding: 0 5px;
 }
 
 .delete-chat-btn {
@@ -93,6 +103,11 @@
     color: var(--text-secondary);
     cursor: pointer;
     font-size: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2px;
+    flex-shrink: 0;
 }
 
 .delete-chat-btn:hover { color: #ff5555; }

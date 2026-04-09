@@ -21,15 +21,19 @@ const UI = {
             const li = document.createElement('li');
             li.className = `chat-item ${chat.id === activeChatId ? 'active' : ''}`;
             
-            // استفاده از آیکون SVG مدرن برای چت و دکمه حذف (سطل زباله مینیمال)
+            // تشخیص زبان برای تنظیم جهت متن عنوان
+            const firstChar = chat.title.trim()[0] || '';
+            const isRTL = isPersian(firstChar);
+            const dirAttr = isRTL ? 'rtl' : 'ltr';
+            const textAlign = isRTL ? 'right' : 'left';
+            
+            // ساختار جدید: دکمه حذف (چپ) -> عنوان چت (وسط) -> لوگو (راست)
             li.innerHTML = `
-                <span class="chat-icon">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path></svg>
-                </span>
-                <span class="chat-title">${escapeHtml(chat.title)}</span>
                 <button class="delete-chat-btn" onclick="app.deleteChat(${chat.id}, event)" title="Delete Chat">
                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 6 5 6 21 6"></polyline><path d="M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2"></path></svg>
                 </button>
+                <span class="chat-title" dir="${dirAttr}" style="text-align: ${textAlign};">${escapeHtml(chat.title)}</span>
+                <img src="images/6.png" alt="Chat Logo" class="chat-item-logo">
             `;
             li.onclick = () => app.loadChat(chat.id);
             this.elements.chatList.appendChild(li);
@@ -46,7 +50,7 @@ const UI = {
         const div = document.createElement('div');
         div.className = `message ${role}`;
         
-        const firstChar = content.trim()[0];
+        const firstChar = content.trim()[0] || '';
         const isRTL = isPersian(firstChar);
         const rtlClass = isRTL ? 'rtl' : '';
 
@@ -81,7 +85,6 @@ const UI = {
         let actionsHtml = '';
         if (role === 'assistant') {
             const safeContent = encodeURIComponent(content).replace(/'/g, "%27");
-            // استفاده از آیکون SVG مدرن برای دکمه کپی
             actionsHtml = `
                 <div class="message-actions">
                     <button class="copy-btn" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="Copy Response">
