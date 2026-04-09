@@ -59,8 +59,14 @@ const app = {
             }
         });
 
-        UI.elements.messageInput.addEventListener('input', () => {
+        UI.elements.messageInput.addEventListener('input', (e) => {
             UI.autoResize();
+            const val = e.target.value.trimLeft();
+            if (val.length > 0) {
+                e.target.dir = isPersian(val) ? 'rtl' : 'ltr';
+            } else {
+                e.target.dir = '';
+            }
         });
 
         UI.elements.webToggle.addEventListener('click', () => {
@@ -124,6 +130,7 @@ const app = {
 
         this.isSending = true;
         UI.elements.messageInput.value = '';
+        UI.elements.messageInput.dir = '';
         UI.autoResize();
         UI.appendMessage('user', text);
         const loading = UI.showLoading();

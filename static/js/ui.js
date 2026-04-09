@@ -35,7 +35,7 @@ const UI = {
         div.className = `message ${role}`;
         
         const firstChar = content.trim()[0];
-        const isRTL = /[\u0600-\u06FF]/.test(firstChar);
+        const isRTL = isPersian(firstChar);
         const rtlClass = isRTL ? 'rtl' : '';
 
         let citationsHtml = '';
@@ -66,9 +66,20 @@ const UI = {
             });
         }
 
+        let actionsHtml = '';
+        if (role === 'assistant') {
+            const safeContent = encodeURIComponent(content).replace(/'/g, "%27");
+            actionsHtml = `
+                <div class="message-actions">
+                    <button class="copy-btn" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="Copy Response">📋</button>
+                </div>
+            `;
+        }
+
         div.innerHTML = `
             ${citationsHtml}
             <div class="message-content ${rtlClass}">${processedContent}</div>
+            ${actionsHtml}
         `;
         
         this.elements.messagesContainer.appendChild(div);

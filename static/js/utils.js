@@ -20,10 +20,23 @@ function escapeHtml(text) {
         .replace(/'/g, "&#039;");
 }
 
-// تشخیص متن فارسی (بر اساس اولین کاراکتر)
 function isPersian(text) {
     if (!text) return false;
-    // محدوده یونیکد فارسی/عربی
     const persianRegex = /[\u0600-\u06FF\u0750-\u077F\u08A0-\u08FF\uFB50-\uFDFF\uFE70-\uFEFF]/;
     return persianRegex.test(text.charAt(0));
+}
+
+async function copyToClipboard(text, btn) {
+    try {
+        await navigator.clipboard.writeText(text);
+        const originalHtml = btn.innerHTML;
+        btn.innerHTML = '✅';
+        setTimeout(() => {
+            if (document.body.contains(btn)) {
+                btn.innerHTML = originalHtml;
+            }
+        }, 2000);
+    } catch (err) {
+        console.error('Failed to copy', err);
+    }
 }
