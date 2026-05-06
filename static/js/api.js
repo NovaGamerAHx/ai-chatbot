@@ -1,5 +1,3 @@
-
-
 async function request(endpoint, method = 'GET', body = null) {
     let token = localStorage.getItem(CONFIG.TOKEN_KEY);
     const headers = { 'Content-Type': 'application/json' };
