@@ -5,11 +5,6 @@ const app = {
     chats: [],
 
     async init() {
-        if (CONFIG.USE_MOCK) {
-            localStorage.setItem(CONFIG.TOKEN_KEY, 'mock_token');
-            if(!localStorage.getItem('chat_username')) localStorage.setItem('chat_username', 'توسعه دهنده');
-        }
-
         if (!localStorage.getItem(CONFIG.TOKEN_KEY)) {
             window.location.href = 'login.html';
             return;

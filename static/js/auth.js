@@ -3,7 +3,6 @@ document.addEventListener('DOMContentLoaded', () => {
     const registerForm = document.getElementById('register-form');
     const toggleBtns = document.querySelectorAll('.toggle-btn');
 
-    // اگر توکن دارد، مستقیم برود داخل
     if (localStorage.getItem(CONFIG.TOKEN_KEY)) {
         window.location.href = 'index.html';
         return;
@@ -35,10 +34,9 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const user = await API.auth.login(username, password);
             
-            // === تغییر مهم: ساخت فرمت دقیق توکن و ذخیره نام کاربری ===
-            const token = `dummy_token_${user.id}`;
+            const token = user.access_token || user.token;
             localStorage.setItem(CONFIG.TOKEN_KEY, token);
-            localStorage.setItem('chat_username', username); // ذخیره نام کاربری
+            localStorage.setItem('chat_username', username);
             
             window.location.href = 'index.html';
         } catch (err) {
@@ -60,7 +58,7 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             await API.auth.register(username, password);
             alert('Registered successfully! Please login.');
-            // سوییچ به تب لاگین
+            
             toggleBtns[0].click();
             submitBtn.innerText = 'Sign Up';
             submitBtn.disabled = false;
