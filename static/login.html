@@ -1,60 +1,64 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fa" dir="rtl">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - AI Chat</title>
-    <link rel="stylesheet" href="css/globals.css">
-    <link rel="stylesheet" href="css/auth.css?v=4">
+    <title>ورود - چت هوش مصنوعی</title>
+    <link rel="stylesheet" href="css/tailwind.css">
+    <style>
+        @font-face {
+            font-family: 'Vazirmatn';
+        }
+        body { font-family: 'Vazirmatn', sans-serif; }
+    </style>
 </head>
-<body>
-    <div class="auth-container">
-        <!-- Background Shapes -->
-        <div class="bg-shape shape-1"></div>
-        <div class="bg-shape shape-2"></div>
+<body class="bg-gray-50 dark:bg-gray-950 min-h-screen flex items-center justify-center p-4 transition-colors duration-300 relative overflow-hidden">
+    
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-500/20 dark:bg-emerald-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
 
-        <div class="auth-box">
-            <div class="auth-header">
-                <div class="logo-circle">
-                    <!-- لوگو جایگزین متن شد -->
-                    <img src="images/6.png" alt="Logo">
-                </div>
-                <h2>Welcome Back</h2>
-                <p>Please login to continue</p>
+    <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl w-full max-w-md rounded-[2rem] shadow-2xl dark:shadow-emerald-900/10 border border-white/50 dark:border-gray-800 p-8 space-y-8 transition-colors duration-300 relative z-10">
+        <div class="flex flex-col items-center">
+            <div class="bg-gray-950 p-3 rounded-2xl shadow-lg shadow-emerald-500/20 mb-6 border border-gray-800">
+                <img src="images/6.png" alt="لوگو" class="h-16 w-16 object-contain">
             </div>
-
-            <div class="auth-tabs">
-                <button class="toggle-btn active" data-target="login">Login</button>
-                <button class="toggle-btn" data-target="register">Register</button>
-            </div>
-            
-            <form id="login-form" class="auth-form">
-                <div class="input-group">
-                    <span class="input-icon">👤</span>
-                    <input type="text" name="username" placeholder="Username" required autocomplete="username">
-                </div>
-                <div class="input-group">
-                    <span class="input-icon">🔒</span>
-                    <input type="password" name="password" placeholder="Password" required autocomplete="current-password">
-                </div>
-                <button type="submit" class="submit-btn">Log In</button>
-            </form>
-
-            <form id="register-form" class="auth-form" style="display: none;">
-                <div class="input-group">
-                    <span class="input-icon">👤</span>
-                    <input type="text" name="username" placeholder="Choose Username" required autocomplete="username">
-                </div>
-                <div class="input-group">
-                    <span class="input-icon">🔒</span>
-                    <input type="password" name="password" placeholder="Choose Password" required autocomplete="new-password">
-                </div>
-                <button type="submit" class="submit-btn">Create Account</button>
-            </form>
+            <h2 class="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">خوش آمدید</h2>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">به پلتفرم هوشمند ما بپیوندید</p>
         </div>
+
+        <div class="flex rounded-xl bg-gray-100/80 dark:bg-gray-800/80 p-1.5 backdrop-blur-sm">
+            <button class="toggle-btn flex-1 py-2.5 text-sm font-bold rounded-lg bg-white dark:bg-gray-700 shadow-sm text-emerald-600 dark:text-emerald-400 transition-all" data-target="login">ورود</button>
+            <button class="toggle-btn flex-1 py-2.5 text-sm font-medium rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all" data-target="register">ثبت نام</button>
+        </div>
+        
+        <form id="login-form" class="space-y-5">
+            <div class="relative group">
+                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
+                <input type="text" name="username" placeholder="نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+            </div>
+            <div class="relative group">
+                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
+                <input type="password" name="password" placeholder="رمز عبور" required autocomplete="current-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+            </div>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">ورود به حساب</button>
+        </form>
+
+        <form id="register-form" class="space-y-5 hidden">
+            <div class="relative group">
+                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
+                <input type="text" name="username" placeholder="انتخاب نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+            </div>
+            <div class="relative group">
+                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
+                <input type="password" name="password" placeholder="انتخاب رمز عبور" required autocomplete="new-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+            </div>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">ایجاد حساب کاربری</button>
+        </form>
     </div>
+    <script src="assets/libs/lucide.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/api.js"></script>
     <script src="js/auth.js"></script>
+    <script>lucide.createIcons();</script>
 </body>
 </html>

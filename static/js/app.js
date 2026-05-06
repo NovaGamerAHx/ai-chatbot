@@ -2,8 +2,14 @@ const app = {
     currentChatId: null,
     isWebSearch: false,
     isSending: false,
+    chats: [],
 
     async init() {
+        if (CONFIG.USE_MOCK && 0) {
+            localStorage.setItem(CONFIG.TOKEN_KEY, 'mock_token');
+            if(!localStorage.getItem('chat_username')) localStorage.setItem('chat_username', 'توسعه دهنده');
+        }
+
         if (!localStorage.getItem(CONFIG.TOKEN_KEY)) {
             window.location.href = 'login.html';
             return;
@@ -27,22 +33,28 @@ const app = {
 
     initTheme() {
         const savedTheme = localStorage.getItem('theme') || 'light';
-        document.documentElement.setAttribute('data-theme', savedTheme);
+        if (savedTheme === 'dark') {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+        
         const themeBtn = document.getElementById('theme-toggle');
         if(themeBtn) {
-            themeBtn.innerText = savedTheme === 'dark' ? '☀️' : '🌙';
+            themeBtn.innerHTML = savedTheme === 'dark' ? '<i data-lucide="sun" class="w-5 h-5"></i>' : '<i data-lucide="moon" class="w-5 h-5"></i>';
+            lucide.createIcons();
             themeBtn.addEventListener('click', () => {
-                const currentTheme = document.documentElement.getAttribute('data-theme');
-                const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-                document.documentElement.setAttribute('data-theme', newTheme);
-                localStorage.setItem('theme', newTheme);
-                themeBtn.innerText = newTheme === 'dark' ? '☀️' : '🌙';
+                document.documentElement.classList.toggle('dark');
+                const isDark = document.documentElement.classList.contains('dark');
+                localStorage.setItem('theme', isDark ? 'dark' : 'light');
+                themeBtn.innerHTML = isDark ? '<i data-lucide="sun" class="w-5 h-5"></i>' : '<i data-lucide="moon" class="w-5 h-5"></i>';
+                lucide.createIcons();
             });
         }
     },
 
     displayUsername() {
-        const username = localStorage.getItem('chat_username') || 'User';
+        const username = localStorage.getItem('chat_username') || 'کاربر';
         const userElement = document.getElementById('current-username');
         if (userElement) {
             userElement.innerText = username;
@@ -59,14 +71,8 @@ const app = {
             }
         });
 
-        UI.elements.messageInput.addEventListener('input', (e) => {
+        UI.elements.messageInput.addEventListener('input', () => {
             UI.autoResize();
-            const val = e.target.value.trimLeft();
-            if (val.length > 0) {
-                e.target.dir = isPersian(val) ? 'rtl' : 'ltr';
-            } else {
-                e.target.dir = '';
-            }
         });
 
         UI.elements.webToggle.addEventListener('click', () => {
@@ -74,12 +80,19 @@ const app = {
             UI.toggleWebSearch(this.isWebSearch);
         });
 
+        const micBtn = document.getElementById('mic-btn');
+        if(micBtn) {
+            micBtn.addEventListener('click', () => {
+                alert('قابلیت دریافت صدا به زودی اضافه می‌شود.');
+            });
+        }
+
         UI.elements.newChatBtn.addEventListener('click', () => {
             this.currentChatId = null;
             UI.clearMessages();
-            UI.elements.chatTitle.innerText = 'New Chat';
+            UI.elements.chatTitle.innerText = 'چت جدید';
             window.history.pushState({}, '', window.location.pathname);
-            document.querySelectorAll('.chat-item').forEach(el => el.classList.remove('active'));
+            UI.renderChatList(this.chats, this.currentChatId);
         });
         
         document.getElementById('logout-btn').addEventListener('click', () => {
@@ -87,12 +100,35 @@ const app = {
             localStorage.removeItem('chat_username');
             window.location.href = 'login.html';
         });
+
+        const sidebarToggle = document.getElementById('sidebar-toggle');
+        const sidebar = document.getElementById('sidebar');
+        if (sidebarToggle && sidebar) {
+            sidebarToggle.addEventListener('click', () => {
+                sidebar.classList.toggle('closed');
+            });
+        }
+
+        const searchInput = document.getElementById('search-chat-input');
+        if (searchInput) {
+            searchInput.addEventListener('input', (e) => {
+                const term = e.target.value.toLowerCase();
+                const filtered = this.chats.filter(c => c.title.toLowerCase().includes(term));
+                UI.renderChatList(filtered, this.currentChatId);
+            });
+        }
     },
 
     async loadChatList() {
         try {
-            const chats = await API.chat.list();
-            UI.renderChatList(chats, this.currentChatId);
+            this.chats = await API.chat.list();
+            const searchInput = document.getElementById('search-chat-input');
+            let chatsToRender = this.chats;
+            if (searchInput && searchInput.value) {
+                const term = searchInput.value.toLowerCase();
+                chatsToRender = this.chats.filter(c => c.title.toLowerCase().includes(term));
+            }
+            UI.renderChatList(chatsToRender, this.currentChatId);
         } catch (err) {
             console.error(err);
         }
@@ -130,7 +166,6 @@ const app = {
 
         this.isSending = true;
         UI.elements.messageInput.value = '';
-        UI.elements.messageInput.dir = '';
         UI.autoResize();
         UI.appendMessage('user', text);
         const loading = UI.showLoading();
@@ -157,11 +192,11 @@ const app = {
                 const msg = response.data;
                 UI.appendMessage(msg.role, msg.content, msg.citations);
             } else {
-                UI.appendMessage('assistant', 'Error: ' + (response.error || 'Unknown error'));
+                UI.appendMessage('assistant', 'خطا: ' + (response.error || 'خطای ناشناخته'));
             }
         } catch (err) {
             UI.removeLoading(loading);
-            UI.appendMessage('assistant', 'Error: Could not connect to server.');
+            UI.appendMessage('assistant', 'خطا: ارتباط با سرور برقرار نشد.');
         } finally {
             this.isSending = false;
         }
@@ -169,7 +204,7 @@ const app = {
 
     async deleteChat(chatId, event) {
         event.stopPropagation();
-        if (!confirm('Are you sure?')) return;
+        if (!confirm('آیا از حذف این گفتگو اطمینان دارید؟')) return;
         try {
             await API.chat.delete(chatId);
             if (this.currentChatId === chatId) {
@@ -179,7 +214,7 @@ const app = {
             }
             this.loadChatList();
         } catch (err) {
-            alert('Delete failed');
+            alert('حذف با شکست مواجه شد');
         }
     }
 };
