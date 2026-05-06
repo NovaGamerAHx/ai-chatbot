@@ -5,7 +5,7 @@ const app = {
     chats: [],
 
     async init() {
-        if (CONFIG.USE_MOCK && 0) {
+        if (CONFIG.USE_MOCK) {
             localStorage.setItem(CONFIG.TOKEN_KEY, 'mock_token');
             if(!localStorage.getItem('chat_username')) localStorage.setItem('chat_username', 'توسعه دهنده');
         }

@@ -16,7 +16,7 @@ function initMockDB() {
 }
 
 async function request(endpoint, method = 'GET', body = null) {
-    if (CONFIG.USE_MOCK && 0) {
+    if (CONFIG.USE_MOCK) {
         return handleMockRequest(endpoint, method, body);
     }
 
