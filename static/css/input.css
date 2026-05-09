@@ -1,8 +1,10 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
 
-
-
-
-
+@layer base {
+  @font-face {
+    font-family: 'Vazirmatn';
+  }
+  body {
+    font-family: 'Vazirmatn', sans-serif;
+  }
+}

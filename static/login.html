@@ -17,16 +17,16 @@
     <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
     <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-500/20 dark:bg-emerald-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
 
-    <div class="bg-white/80 dark:bg-gray-900/80 backdrop-blur-xl w-full max-w-md rounded-[2rem] shadow-2xl dark:shadow-emerald-900/10 border border-white/50 dark:border-gray-800 p-8 space-y-8 transition-colors duration-300 relative z-10">
+    <div class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl w-full max-w-md rounded-[2rem] shadow-2xl dark:shadow-emerald-900/10 border border-white/50 dark:border-gray-800 p-8 space-y-8 transition-colors duration-300 relative z-10">
         <div class="flex flex-col items-center">
-            <div class="bg-gray-950 p-3 rounded-2xl shadow-lg shadow-emerald-500/20 mb-6 border border-gray-800">
-                <img src="images/6.png" alt="لوگو" class="h-16 w-16 object-contain">
+            <div class="bg-gray-950 dark:bg-gray-800 p-4 rounded-2xl shadow-lg shadow-emerald-500/20 mb-6 border border-gray-800">
+                <i data-lucide="bot" class="w-12 h-12 text-emerald-500"></i>
             </div>
-            <h2 class="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">خوش آمدید</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">به پلتفرم هوشمند ما بپیوندید</p>
+            <h2 class="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">چت هوشمند</h2>
+            <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">به پلتفرم هوش مصنوعی ما خوش آمدید</p>
         </div>
 
-        <div class="flex rounded-xl bg-gray-100/80 dark:bg-gray-800/80 p-1.5 backdrop-blur-sm">
+        <div class="flex rounded-xl bg-gray-100 dark:bg-gray-800/80 p-1.5 backdrop-blur-sm">
             <button class="toggle-btn flex-1 py-2.5 text-sm font-bold rounded-lg bg-white dark:bg-gray-700 shadow-sm text-emerald-600 dark:text-emerald-400 transition-all" data-target="login">ورود</button>
             <button class="toggle-btn flex-1 py-2.5 text-sm font-medium rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all" data-target="register">ثبت نام</button>
         </div>
@@ -34,31 +34,36 @@
         <form id="login-form" class="space-y-5">
             <div class="relative group">
                 <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="text" name="username" placeholder="نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+                <input type="text" name="username" placeholder="نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
             </div>
             <div class="relative group">
                 <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="password" name="password" placeholder="رمز عبور" required autocomplete="current-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+                <input type="password" name="password" placeholder="رمز عبور" required autocomplete="current-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">ورود به حساب</button>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ورود به حساب</button>
         </form>
 
         <form id="register-form" class="space-y-5 hidden">
             <div class="relative group">
                 <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="text" name="username" placeholder="انتخاب نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+                <input type="text" name="username" placeholder="انتخاب نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
             </div>
             <div class="relative group">
                 <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="password" name="password" placeholder="انتخاب رمز عبور" required autocomplete="new-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 dark:text-white outline-none transition-all placeholder-gray-400">
+                <input type="password" name="password" placeholder="انتخاب رمز عبور" required autocomplete="new-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95">ایجاد حساب کاربری</button>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ایجاد حساب کاربری</button>
         </form>
     </div>
+    
     <script src="assets/libs/lucide.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/api.js"></script>
     <script src="js/auth.js"></script>
-    <script>lucide.createIcons();</script>
+    <script>
+        if (typeof lucide !== 'undefined') {
+            lucide.createIcons();
+        }
+    </script>
 </body>
 </html>

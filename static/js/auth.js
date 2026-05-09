@@ -4,67 +4,73 @@ document.addEventListener('DOMContentLoaded', () => {
     const toggleBtns = document.querySelectorAll('.toggle-btn');
 
     if (localStorage.getItem(CONFIG.TOKEN_KEY)) {
-        window.location.href = 'index.html';
+        window.location.replace('index.html');
         return;
     }
 
     toggleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
-            toggleBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
+            toggleBtns.forEach(b => {
+                b.classList.remove('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-emerald-600', 'dark:text-emerald-400', 'font-bold');
+                b.classList.add('text-gray-500', 'dark:text-gray-400', 'font-medium');
+            });
+            
+            btn.classList.add('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-emerald-600', 'dark:text-emerald-400', 'font-bold');
+            btn.classList.remove('text-gray-500', 'dark:text-gray-400', 'font-medium');
+            
             if (btn.dataset.target === 'login') {
-                loginForm.style.display = 'flex';
-                registerForm.style.display = 'none';
+                loginForm.classList.remove('hidden');
+                registerForm.classList.add('hidden');
             } else {
-                loginForm.style.display = 'none';
-                registerForm.style.display = 'flex';
+                loginForm.classList.add('hidden');
+                registerForm.classList.remove('hidden');
             }
         });
     });
 
     loginForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const username = e.target.username.value;
+        const username = e.target.username.value.trim();
         const password = e.target.password.value;
         
         const submitBtn = e.target.querySelector('button');
-        submitBtn.innerText = 'Logging in...';
+        const originalText = submitBtn.innerText;
+        submitBtn.innerText = 'در حال ورود...';
         submitBtn.disabled = true;
 
         try {
             const user = await API.auth.login(username, password);
-            
-            const token = user.access_token || user.token;
+            const token = "dummy_token_" + user.id;
             localStorage.setItem(CONFIG.TOKEN_KEY, token);
             localStorage.setItem('chat_username', username);
-            
-            window.location.href = 'index.html';
+            window.location.replace('index.html');
         } catch (err) {
-            alert('Login failed: ' + (err.detail || err.message));
-            submitBtn.innerText = 'Log In';
+            alert('خطا در ورود: ' + (err.message || 'مشکلی پیش آمد'));
+            submitBtn.innerText = originalText;
             submitBtn.disabled = false;
         }
     });
 
     registerForm.addEventListener('submit', async (e) => {
         e.preventDefault();
-        const username = e.target.username.value;
+        const username = e.target.username.value.trim();
         const password = e.target.password.value;
 
         const submitBtn = e.target.querySelector('button');
-        submitBtn.innerText = 'Creating...';
+        const originalText = submitBtn.innerText;
+        submitBtn.innerText = 'در حال ثبت نام...';
         submitBtn.disabled = true;
 
         try {
             await API.auth.register(username, password);
-            alert('Registered successfully! Please login.');
+            alert('ثبت نام با موفقیت انجام شد! لطفا وارد شوید.');
             
-            toggleBtns[0].click();
-            submitBtn.innerText = 'Sign Up';
-            submitBtn.disabled = false;
+            document.querySelector('[data-target="login"]').click();
+            e.target.reset();
         } catch (err) {
-            alert('Registration failed: ' + (err.detail || err.message));
-            submitBtn.innerText = 'Create Account';
+            alert('خطا در ثبت نام: ' + (err.message || 'مشکلی پیش آمد'));
+        } finally {
+            submitBtn.innerText = originalText;
             submitBtn.disabled = false;
         }
     });

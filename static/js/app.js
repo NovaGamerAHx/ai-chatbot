@@ -166,6 +166,7 @@ const app = {
         const loading = UI.showLoading();
 
         try {
+            console.log("Preparing to send:", { chatId: this.currentChatId, text: text, isWebSearch: this.isWebSearch });
             const response = await API.chat.send(this.currentChatId, text, this.isWebSearch);
             UI.removeLoading(loading);
             

@@ -8,6 +8,7 @@ def get_current_user(authorization: str = Header(None), db: Session = Depends(ge
         raise HTTPException(status_code=401, detail="Missing authentication token")
     
     token = authorization.replace("Bearer ", "").strip()
+    
     if token.startswith('"') and token.endswith('"'):
         token = token[1:-1]
     
@@ -23,5 +24,7 @@ def get_current_user(authorization: str = Header(None), db: Session = Depends(ge
             
         return user
         
+    except ValueError:
+        raise HTTPException(status_code=401, detail="Invalid user ID in token")
     except Exception:
         raise HTTPException(status_code=401, detail="Authentication failed")

@@ -5,7 +5,7 @@ from app.db.base import get_db
 from app.schemas.chat import ChatRequest, ChatResponse, ChatSummary, ChatHistoryResponse, MessageResponse, CitationSchema
 from app.services import chat_service
 from app.db import repository
-from app.api.deps import get_current_user  # ایمپورت تابع اصلاح شده
+from app.api.deps import get_current_user 
 from app.db.models import User
 
 router = APIRouter()

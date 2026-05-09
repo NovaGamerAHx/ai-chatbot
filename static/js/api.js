@@ -1,9 +1,10 @@
 async function request(endpoint, method = 'GET', body = null) {
     let token = localStorage.getItem(CONFIG.TOKEN_KEY);
     const headers = { 'Content-Type': 'application/json' };
+    
     if (token) {
-        token = token.replace(/"/g, ''); 
-        headers['Authorization'] = token;
+        token = token.replace(/"/g, '').trim(); 
+        headers['Authorization'] = `Bearer ${token}`;
     }
 
     const options = { method, headers };
@@ -11,11 +12,16 @@ async function request(endpoint, method = 'GET', body = null) {
 
     try {
         const response = await fetch(`${CONFIG.API_BASE_URL}${endpoint}`, options);
+        
         if (response.status === 401) {
             localStorage.removeItem(CONFIG.TOKEN_KEY);
-            window.location.href = 'login.html';
+            localStorage.removeItem('chat_username');
+            if (!window.location.pathname.endsWith('login.html')) {
+                window.location.href = 'login.html';
+            }
             return;
         }
+        
         const data = await response.json();
         if (!response.ok) throw new Error(data.detail || 'خطای API');
         return data;
@@ -24,7 +30,6 @@ async function request(endpoint, method = 'GET', body = null) {
         throw error;
     }
 }
-
 
 const API = {
     auth: {
