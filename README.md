@@ -1,171 +1,160 @@
-# 🤖 AI Chatbot with RAG & Web Search
+<div align="center">
+  <img src="static/images/6.png" alt="AI Chatbot Logo" width="120" height="120">
+  
+  # 🤖 Smart AI Chatbot with Web RAG
 
-A modern, full-stack AI Chatbot application capable of answering questions using internal knowledge (Google Gemini) or real-time web search (Tavily Search API). The system supports user authentication, chat history persistence, and a citation system similar to Perplexity.
+  **A Modern, Full-Stack AI Assistant powered by Google Gemini 2.5 Flash & Tavily Search**
+
+  [![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi)](https://fastapi.tiangolo.com/)
+  [![Python](https://img.shields.io/badge/Python-3.10+-3776AB?style=for-the-badge&logo=python&logoColor=white)](https://www.python.org/)
+  [![Tailwind CSS](https://img.shields.io/badge/Tailwind_CSS-38B2AC?style=for-the-badge&logo=tailwind-css&logoColor=white)](https://tailwindcss.com/)
+  [![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)](https://www.sqlite.org/)
+
+  [Features](#-key-features) • [Tech Stack](#-tech-stack) • [Installation](#%EF%B8%8F-installation--setup) • [API Docs](#-api-endpoints) • [Database](#-database-schema)
+</div>
 
 ---
 
-## 🚀 Features
+## 🚀 Key Features
 
-- **Dual Mode AI:** Standard Chat (LLM only) & Web Search Mode (RAG).
-- **Smart Query Generation:** Automatically breaks down complex questions into optimized search queries.
-- **Citations:** Displays sources used in the answer with clickable links `[1]`.
-- **Chat Management:** Create, Rename, Delete, and Archive conversations.
-- **Authentication:** Simple Login/Register system.
-- **Responsive UI:** Clean, dark-themed interface using Vanilla JS/CSS.
-- **Database:** Supports SQLite (Local) and PostgreSQL (Production).
+*   **⚡ Dual-Mode AI:** Choose between **Standard LLM** (Gemini 2.5 Flash) for creative tasks, or **Web Search Mode** (RAG via Tavily) for real-time, accurate information.
+*   **🔗 Smart Citations:** Like Perplexity, the bot provides clickable source links (`[1]`, `[2]`) with website titles and icons for verified answers.
+*   **🔐 User Authentication:** Secure registration and login system. Data is isolated per user.
+*   **💬 Chat Management:** Full CRUD operations for chats (Create, Rename, Delete, History).
+*   **🎨 Beautiful UI/UX:** A responsive, dark-mode compatible interface built with pure JavaScript and TailwindCSS. Custom scrollbars and modern gradients.
+*   **🛠️ Developer Friendly:** Includes custom `.bat` scripts for 1-click running, pushing, pulling, and building CSS on Windows.
 
 ---
 
 ## 🛠️ Tech Stack
 
-- **Backend:** Python (FastAPI), SQLAlchemy, Pydantic.
-- **Frontend:** Vanilla JavaScript, HTML5, CSS3.
-- **AI Models:** Google Gemini 1.5 Flash.
-- **Search Engine:** Tavily AI.
-- **Database:** SQLite (Dev) / PostgreSQL (Prod).
+**Backend:**
+*   **Framework:** FastAPI
+*   **ORM:** SQLAlchemy (with PostgreSQL support via `psycopg2-binary`)
+*   **Validation:** Pydantic & Pydantic-Settings
+*   **AI Services:** `google-generativeai` (Gemini), `tavily-python` (Web Search)
+
+**Frontend:**
+*   **Core:** HTML5, Vanilla JavaScript (`app.js`, `api.js`, `ui.js`)
+*   **Styling:** Tailwind CSS (v4)
+*   **Icons & Markdown:** Lucide Icons, Marked.js
 
 ---
 
-## 🔑 Environment Variables (.env)
+## ⚙️ Environment Variables (`.env`)
 
-Create a `.env` file in the root directory.
+Create a `.env` file in the root of the project (next to `main.py`). The application will not start without these variables.
 
-| Variable | Description | Example |
+| Variable | Description | Default / Example |
 | :--- | :--- | :--- |
-| `GEMINI_API_KEY` | Your Google Gemini API Key | `AIzaSy...` |
+| `GEMINI_API_KEY` | Your Google AI Studio API Key | `AIzaSy...` |
 | `TAVILY_API_KEY` | Your Tavily Search API Key | `tvly-...` |
-| `DATABASE_URL` | DB Connection String | `sqlite:///./local_chat.db` |
-| `MODEL_NAME` | Gemini Model Version | `gemini-1.5-flash` |
-
-**Optional (For Local Dev with VPN/Proxy):**
-```properties
-HTTP_PROXY=http://127.0.0.1:10809
-HTTPS_PROXY=http://127.0.0.1:10809
-```
+| `DATABASE_URL` | SQLAlchemy Connection String | `sqlite:///./local_chat.db` |
+| `MODEL_NAME` | (Optional) Gemini Model Version | `gemini-2.5-flash` |
 
 ---
 
-## 💻 Local Installation (Laptop)
+## 🖥️ Installation & Setup
 
-1.  **Clone the repository:**
-    ```bash
-    git clone https://github.com/YOUR_USERNAME/REPO_NAME.git
-    cd REPO_NAME
-    ```
+### Option 1: Local Development (Windows)
 
-2.  **Create a Virtual Environment:**
-    ```bash
-    python -m venv venv
-    # Windows:
-    .\venv\Scripts\activate
-    # Mac/Linux:
-    source venv/bin/activate
-    ```
+We have created developer-friendly Batch scripts to automate the workflow.
 
-3.  **Install Dependencies:**
-    ```bash
-    pip install -r requirements.txt
-    ```
+1. **Clone the repository:**
+   ```bash
+   git clone https://github.com/YOUR_USERNAME/ai-chatbot.git
+   cd ai-chatbot
+   ```
 
-4.  **Run the Server:**
-    ```bash
-    uvicorn main:app --reload
-    ```
+2. **Setup Python Environment:**
+   ```bash
+   python -m venv venv
+   .\venv\Scripts\activate
+   pip install -r requirements.txt
+   ```
 
-5.  **Access:** Open `http://127.0.0.1:8000` in your browser.
+3. **Configure Environment:** Create the `.env` file as described above.
 
----
+4. **Run the Application:**
+   Simply double-click or run:
+   ```cmd
+   .\run.bat
+   ```
+   *The server will start at `http://127.0.0.1:8000`.*
 
-## ☁️ GitHub Codespaces Setup
+> **💡 Dev Tools included:** 
+> * `build-css.bat`: Watch and compile TailwindCSS.
+> * `push.bat`: Auto-commit and push to GitHub.
+> * `pull.bat`: Fetch latest changes from GitHub.
 
-Codespaces is the recommended way to develop without proxy issues.
+### Option 2: GitHub Codespaces
 
-1.  Open your repository on GitHub.
-2.  Click **Code** -> **Codespaces** -> **Create codespace on main**.
-3.  Once the VS Code interface loads, create a `.env` file manually (Codespaces does not copy it).
-4.  Open the terminal (`Ctrl + ~`) and run:
-    ```bash
-    pip install -r requirements.txt
-    ```
-5.  **Run the Application:**
-    Use this specific command to ensure the path is found:
-    ```bash
-    python -m uvicorn main:app --reload
-    ```
-6.  Click **"Open in Browser"** when the notification appears.
+1. Click **Code** -> **Codespaces** -> **Create codespace on main**.
+2. Wait for the environment to build.
+3. Open the terminal and install dependencies: `pip install -r requirements.txt`
+4. Manually create the `.env` file in the file explorer.
+5. Run the server: `python -m uvicorn main:app --reload`
 
 ---
 
-## 🚀 Deployment on Render (Step-by-Step)
+## 📡 API Endpoints
 
-Do not use SQLite on Render (data will be lost). Use PostgreSQL.
+Base URL: `http://127.0.0.1:8000/api/v1`
 
-### Phase 1: Create Database
-1.  Go to [Render Dashboard](https://dashboard.render.com).
-2.  Click **New +** -> **PostgreSQL**.
-3.  Name: `chat-db`, Plan: **Free**.
-4.  Click **Create Database**.
-5.  Copy the **"Internal Database URL"** (starts with `postgres://...`).
+### Authentication (`/auth`)
 
-### Phase 2: Deploy Web Service
-1.  Click **New +** -> **Web Service**.
-2.  Connect your GitHub repository.
-3.  **Settings:**
-    *   **Runtime:** Python 3
-    *   **Build Command:** `pip install -r requirements.txt`
-    *   **Start Command:** `uvicorn main:app --host 0.0.0.0 --port 10000`
-4.  **Environment Variables:**
-    Add the following keys manually:
-    *   `GEMINI_API_KEY`: `...`
-    *   `TAVILY_API_KEY`: `...`
-    *   `MODEL_NAME`: `gemini-1.5-flash`
-    *   `DATABASE_URL`: Paste the **Internal Database URL** you copied earlier.
-5.  Click **Deploy**.
-
----
-
-## 📡 API Endpoints Documentation
-
-All endpoints are prefixed with `/api/v1`.
-
-### 🔐 Authentication
-
-| Method | Endpoint | Description | Payload |
+| Method | Endpoint | Description | Payload (JSON) |
 | :--- | :--- | :--- | :--- |
-| `POST` | `/auth/register` | Register a new user | `{"username": "...", "password": "..."}` |
-| `POST` | `/auth/login` | Login and get User ID | `{"username": "...", "password": "..."}` |
+| `POST` | `/register` | Create a new user account | `{"username": "...", "password": "..."}` |
+| `POST` | `/login` | Authenticate and get User Data | `{"username": "...", "password": "..."}` |
 
-### 💬 Chat Operations
-**Header Required:** `Authorization: dummy_token_{user_id}`
+### Chat Operations (`/chat`)
+*(All chat operations require proper User Identification logic implemented in `Depends(get_current_user)`)*
 
-| Method | Endpoint | Description | Payload / Params |
+| Method | Endpoint | Description | Request Body / Params |
 | :--- | :--- | :--- | :--- |
-| `POST` | `/chat/send` | Send message (Standard/Web) | `{"chat_id": 12, "text": "Hi", "is_web_search": true}` <br> *Set `chat_id: null` for new chat.* |
-| `GET` | `/chat/list` | Get all user chats | - |
-| `GET` | `/chat/{id}/history` | Get messages of a chat | Path Param: `chat_id` |
-| `DELETE`| `/chat/{id}` | Delete a chat | Path Param: `chat_id` |
-| `PUT` | `/chat/{id}/rename` | Rename a chat | Query Param: `?title=NewName` |
+| `POST` | `/send` | Send a prompt to AI | `{"chat_id": 1, "text": "...", "is_web_search": true}` |
+| `GET` | `/list` | Get all chats for current user | - |
+| `GET` | `/{chat_id}/history`| Get full conversation history | Path: `chat_id` |
+| `PUT` | `/{chat_id}/rename` | Rename a specific chat | Query: `?title=New Name` |
+| `DELETE`| `/{chat_id}` | Delete a chat & its messages | Path: `chat_id` |
+
+---
+
+## 🗄️ Database Schema
+
+The application uses a relational database architecture:
+
+1.  **Users:** Stores credentials and account info.
+2.  **Chats:** A user can have multiple chats. Stores `title` and timestamps.
+3.  **Messages:** Belongs to a Chat. Stores `role` (user/assistant), `mode` (standard/web), and `content`.
+4.  **Citations:** Belongs to an Assistant Message. Stores exact `url`, `title`, `snippet`, and `ref_index` for RAG transparency.
 
 ---
 
 ## 📂 Project Structure
 
-```plaintext
+```text
+ai-chatbot/
 ├── app/
-│   ├── api/            # API Routes (Auth, Chat)
-│   ├── core/           # Configs & Settings
-│   ├── db/             # Database Models & CRUD
-│   ├── schemas/        # Pydantic Models (Validation)
-│   ├── services/       # Business Logic (LLM, Search)
-│   └── utils/          # Prompts & Helper functions
-├── static/             # Frontend (HTML, CSS, JS)
-├── main.py             # Application Entry Point
-├── requirements.txt    # Dependencies
-└── .env                # Secrets (Not committed)
+│   ├── api/v1/         # Route definitions (auth.py, chat.py)
+│   ├── core/           # Configuration (config.py)
+│   ├── db/             # SQLAlchemy Models & Base (models.py)
+│   ├── schemas/        # Pydantic validation (chat.py, user.py)
+│   ├── services/       # AI & Logic (llm_service.py, chat_service.py)
+│   └── utils/          # Prompt templates
+├── static/             # Frontend Assets
+│   ├── css/            # Tailwind Input/Output
+│   ├── js/             # Vanilla JS Modules
+│   └── index.html      # Main UI
+├── *.bat               # Windows Developer Scripts
+├── main.py             # FastAPI App Entry Point
+└── requirements.txt    # Python Dependencies
 ```
 
-## ⚠️ Important Notes
+---
+<div align="center">
+  <i>Developed with ❤️ using FastAPI & TailwindCSS</i>
+</div>
 
-1.  **Database Persistence:** When running locally, `local_chat.db` stores data. On Render, ensure `DATABASE_URL` points to PostgreSQL, otherwise, data is lost on restart.
-2.  **Proxy:** If developing locally in restricted regions, ensure `HTTP_PROXY` is set in `.env` for Tavily/Gemini to work.
-3.  **Citations:** The backend automatically parses search results and formats them. Frontend renders `[1]` as clickable links.
+
