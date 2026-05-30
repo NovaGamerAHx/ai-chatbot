@@ -7,3 +7,4 @@ google-generativeai
 tavily-python
 python-dotenv
 psycopg2-binary
+requests
