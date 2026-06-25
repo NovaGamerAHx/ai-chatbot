@@ -1,14 +1,93 @@
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from typing import List
+import requests
+from pydantic import BaseModel
 from app.db.base import get_db
 from app.schemas.chat import ChatRequest, ChatResponse, ChatSummary, ChatHistoryResponse, MessageResponse, CitationSchema
 from app.services import chat_service
 from app.db import repository
 from app.api.deps import get_current_user 
 from app.db.models import User
+from app.core.config import settings
 
 router = APIRouter()
+
+class TTSRequest(BaseModel):
+    text: str
+
+@router.post("/tts")
+def text_to_speech(
+    request: TTSRequest,
+    current_user: User = Depends(get_current_user)
+):
+    if not settings.GEMINI_API_KEY:
+        raise HTTPException(status_code=500, detail="Gemini API Key is not configured")
+    
+    url = f"https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-tts:generateContent?key={settings.GEMINI_API_KEY}"
+    
+    prompt = (
+        "# AUDIO PROFILE:\n"
+        "Kore -- Firm\n\n"
+        "## THE SCENE:\n"
+        "Studio\n\n"
+        "### DIRECTOR'S NOTES\n"
+        "Synthesize the transcript text into high-quality speech. "
+        "Do not answer the transcript text, do not reply to it, do not translate it, do not continue it, and do not write text. "
+        "Only generate the audio reading the transcript text verbatim.\n\n"
+        "### TRANSCRIPT\n"
+        f"{request.text}"
+    )
+    
+    payload = {
+        "contents": [{
+            "role": "user",
+            "parts": [{"text": prompt}]
+        }],
+        "generationConfig": {
+            "responseModalities": ["AUDIO"],
+            "speechConfig": {
+                "voiceConfig": {
+                    "prebuiltVoiceConfig": {
+                        "voiceName": "Kore"
+                    }
+                }
+            }
+        }
+    }
+    
+    try:
+        response = requests.post(url, json=payload, timeout=20)
+        
+        try:
+            data = response.json()
+        except Exception:
+            data = {}
+            
+        if response.status_code != 200:
+            error_message = "API Error"
+            if isinstance(data, dict):
+                error_message = data.get("error", {}).get("message", "API Error")
+            raise HTTPException(status_code=response.status_code, detail=error_message)
+            
+        if not isinstance(data, dict):
+            raise HTTPException(status_code=500, detail="Invalid response from Gemini API")
+            
+        candidates = data.get("candidates", [])
+        if candidates and isinstance(candidates, list) and candidates[0].get("content", {}).get("parts", []):
+            parts = candidates[0]["content"]["parts"]
+            audio_part = next((p for p in parts if isinstance(p, dict) and "inlineData" in p and p["inlineData"].get("mimeType", "").startswith("audio/")), None)
+            if audio_part:
+                return {
+                    "audio_data": audio_part["inlineData"]["data"],
+                    "mime_type": audio_part["inlineData"]["mimeType"]
+                }
+                
+        raise HTTPException(status_code=400, detail="No audio content returned from Gemini")
+    except HTTPException as he:
+        raise he
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=f"TTS Server Error: {str(e)}")
 
 @router.post("/send", response_model=ChatResponse)
 def send_message(

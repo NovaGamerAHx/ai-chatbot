@@ -99,7 +99,12 @@ const UI = {
         
         const safeContent = encodeURIComponent(displayContent).replace(/'/g, "%27");
         const actionsHtml = `
-            <div class="absolute -bottom-6 ${isUser ? 'left-2' : '-left-2'} opacity-0 group-hover/msg:opacity-100 transition-opacity duration-200 z-10">
+            <div class="absolute -bottom-6 ${isUser ? 'left-2' : '-left-2'} opacity-0 group-hover/msg:opacity-100 transition-opacity duration-200 z-10 flex gap-1">
+                ${!isUser ? `
+                <button class="tts-btn p-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-lg text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all transform hover:scale-105" onclick="playTTS(decodeURIComponent('${safeContent}'), this)" title="خوانش متن">
+                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                </button>
+                ` : ''}
                 <button class="p-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-lg text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all transform hover:scale-105" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="کپی پیام">
                     <i data-lucide="copy" class="w-4 h-4"></i>
                 </button>
@@ -182,3 +187,121 @@ const UI = {
         }
     }
 };
+
+window.currentAudio = null;
+window.currentAudioBtn = null;
+
+function pcmToWav(pcmBytes, sampleRate = 24000, numChannels = 1) {
+    const dataLength = pcmBytes.length;
+    const buffer = new ArrayBuffer(44 + dataLength);
+    const view = new DataView(buffer);
+    const writeString = (offset, string) => {
+        for (let i = 0; i < string.length; i++) {
+            view.setUint8(offset + i, string.charCodeAt(i));
+        }
+    };
+    writeString(0, 'RIFF');
+    view.setUint32(4, 36 + dataLength, true);
+    writeString(8, 'WAVE');
+    writeString(12, 'fmt ');
+    view.setUint32(16, 16, true);
+    view.setUint16(20, 1, true);
+    view.setUint16(22, numChannels, true);
+    view.setUint32(24, sampleRate, true);
+    view.setUint32(28, sampleRate * numChannels * 2, true);
+    view.setUint16(32, numChannels * 2, true);
+    view.setUint16(34, 16, true);
+    writeString(36, 'data');
+    view.setUint32(40, dataLength, true);
+    const wavBytes = new Uint8Array(buffer);
+    wavBytes.set(pcmBytes, 44);
+    return wavBytes;
+}
+
+async function playTTS(text, btn) {
+    if (window.currentAudio) {
+        window.currentAudio.pause();
+        window.currentAudio = null;
+        if (window.currentAudioBtn) {
+            window.currentAudioBtn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+            lucide.createIcons();
+        }
+        if (window.currentAudioBtn === btn) {
+            window.currentAudioBtn = null;
+            return;
+        }
+    }
+
+    const originalHtml = btn.innerHTML;
+    btn.innerHTML = '<span class="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin inline-block"></span>';
+    window.currentAudioBtn = btn;
+
+    const cleanText = text.replace(/[#*`~_\[\]()\-+]/g, '').replace(/\\/g, '').trim();
+
+    try {
+        const token = localStorage.getItem(CONFIG.TOKEN_KEY);
+        const response = await fetch(`${CONFIG.API_BASE_URL}/chat/tts`, {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
+            },
+            body: JSON.stringify({ text: cleanText })
+        });
+
+        if (!response.ok) {
+            const errData = await response.json();
+            throw new Error(errData.detail || 'Error from TTS API');
+        }
+
+        const data = await response.json();
+        const binary = atob(data.audio_data);
+        const pcmBytes = new Uint8Array(binary.length);
+        for (let i = 0; i < binary.length; i++) {
+            pcmBytes[i] = binary.charCodeAt(i);
+        }
+
+        let sampleRate = 24000;
+        const rateMatch = data.mime_type.match(/rate=(\d+)/);
+        if (rateMatch) {
+            sampleRate = parseInt(rateMatch[1], 10);
+        }
+
+        const wavBytes = pcmToWav(pcmBytes, sampleRate, 1);
+        const blob = new Blob([wavBytes], { type: 'audio/wav' });
+        const url = URL.createObjectURL(blob);
+
+        const audio = new Audio(url);
+        window.currentAudio = audio;
+        btn.innerHTML = '<i data-lucide="square" class="w-4 h-4 text-red-500 animate-pulse"></i>';
+        lucide.createIcons();
+
+        audio.play();
+
+        audio.onended = () => {
+            URL.revokeObjectURL(url);
+            btn.innerHTML = originalHtml;
+            lucide.createIcons();
+            window.currentAudio = null;
+            window.currentAudioBtn = null;
+        };
+
+        audio.onerror = () => {
+            URL.revokeObjectURL(url);
+            btn.innerHTML = originalHtml;
+            lucide.createIcons();
+            window.currentAudio = null;
+            window.currentAudioBtn = null;
+            alert('خطا در پخش صدا');
+        };
+
+    } catch (err) {
+        btn.innerHTML = originalHtml;
+        lucide.createIcons();
+        window.currentAudio = null;
+        window.currentAudioBtn = null;
+        alert('خطا در تولید صدا: ' + err.message);
+    }
+}
+
+window.playTTS = playTTS;
