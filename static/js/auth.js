@@ -11,12 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
     toggleBtns.forEach(btn => {
         btn.addEventListener('click', () => {
             toggleBtns.forEach(b => {
-                b.classList.remove('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-emerald-600', 'dark:text-emerald-400', 'font-bold');
-                b.classList.add('text-gray-500', 'dark:text-gray-400', 'font-medium');
+                b.classList.remove('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-blue-600', 'dark:text-blue-400', 'font-bold');
+                b.classList.add('text-slate-500', 'dark:text-slate-400', 'font-medium');
             });
             
-            btn.classList.add('bg-white', 'dark:bg-gray-700', 'shadow-sm', 'text-emerald-600', 'dark:text-emerald-400', 'font-bold');
-            btn.classList.remove('text-gray-500', 'dark:text-gray-400', 'font-medium');
+            btn.classList.add('bg-white', 'dark:bg-slate-700', 'shadow-sm', 'text-blue-600', 'dark:text-blue-400', 'font-bold');
+            btn.classList.remove('text-slate-500', 'dark:text-slate-400', 'font-medium');
             
             if (btn.dataset.target === 'login') {
                 loginForm.classList.remove('hidden');
@@ -64,7 +64,6 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             await API.auth.register(username, password);
             alert('ثبت نام با موفقیت انجام شد! لطفا وارد شوید.');
-            
             document.querySelector('[data-target="login"]').click();
             e.target.reset();
         } catch (err) {

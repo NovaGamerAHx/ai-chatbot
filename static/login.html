@@ -4,61 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ورود - چت هوش مصنوعی</title>
-    
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet" type="text/css" />
     <script src="https://unpkg.com/@tailwindcss/browser@4"></script>
-    <!-- <link rel="stylesheet" href="css/tailwind.css"> -->
-
-    <style>
-        @font-face {
-            font-family: 'Vazirmatn';
+    <style type="text/tailwindcss">
+        @import "tailwindcss";
+        @variant dark (&:where(.dark, .dark *));
+        body {
+            font-family: 'Vazirmatn', sans-serif;
         }
-        body { font-family: 'Vazirmatn', sans-serif; }
     </style>
+    <script>
+        if (localStorage.getItem('theme') === 'dark' || (!('theme' in localStorage) && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+        } else {
+            document.documentElement.classList.remove('dark');
+        }
+    </script>
 </head>
-<body class="bg-gray-50 dark:bg-gray-950 min-h-screen flex items-center justify-center p-4 transition-colors duration-300 relative overflow-hidden">
-    
-    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500/20 dark:bg-blue-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
-    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-emerald-500/20 dark:bg-emerald-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
-
-    <div class="bg-white/90 dark:bg-gray-900/90 backdrop-blur-xl w-full max-w-md rounded-[2rem] shadow-2xl dark:shadow-emerald-900/10 border border-white/50 dark:border-gray-800 p-8 space-y-8 transition-colors duration-300 relative z-10">
+<body class="bg-slate-50 dark:bg-slate-950 min-h-screen flex items-center justify-center p-4 transition-colors duration-300 relative overflow-hidden">
+    <div class="absolute top-[-10%] left-[-10%] w-96 h-96 bg-blue-500/15 dark:bg-blue-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
+    <div class="absolute bottom-[-10%] right-[-10%] w-96 h-96 bg-green-500/15 dark:bg-green-600/10 rounded-full blur-3xl mix-blend-multiply dark:mix-blend-lighten pointer-events-none"></div>
+    <div class="bg-white/95 dark:bg-slate-900/95 backdrop-blur-xl w-full max-w-md rounded-[2rem] shadow-2xl dark:shadow-blue-900/10 border border-white/50 dark:border-slate-800 p-8 space-y-8 transition-colors duration-300 relative z-10">
         <div class="flex flex-col items-center">
-            <div class="bg-gray-950 dark:bg-gray-800 p-4 rounded-2xl shadow-lg shadow-emerald-500/20 mb-6 border border-gray-800">
-                <i data-lucide="bot" class="w-12 h-12 text-emerald-500"></i>
+            <div class="bg-slate-950 dark:bg-slate-800 p-4 rounded-2xl shadow-lg shadow-blue-500/20 mb-6 border border-slate-800">
+                <i data-lucide="bot" class="w-12 h-12 text-blue-500"></i>
             </div>
-            <h2 class="text-3xl font-extrabold bg-gradient-to-r from-blue-600 to-emerald-500 bg-clip-text text-transparent">چت هوشمند</h2>
-            <p class="text-gray-500 dark:text-gray-400 mt-2 text-sm">به پلتفرم هوش مصنوعی ما خوش آمدید</p>
+            <h2 class="text-3xl font-black bg-gradient-to-r from-blue-600 to-green-700 bg-clip-text text-transparent">چت هوشمند</h2>
+            <p class="text-slate-500 dark:text-slate-400 mt-2 text-sm font-medium">به پلتفرم هوش مصنوعی ما خوش آمدید</p>
         </div>
-
-        <div class="flex rounded-xl bg-gray-100 dark:bg-gray-800/80 p-1.5 backdrop-blur-sm">
-            <button class="toggle-btn flex-1 py-2.5 text-sm font-bold rounded-lg bg-white dark:bg-gray-700 shadow-sm text-emerald-600 dark:text-emerald-400 transition-all" data-target="login">ورود</button>
-            <button class="toggle-btn flex-1 py-2.5 text-sm font-medium rounded-lg text-gray-500 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-200 transition-all" data-target="register">ثبت نام</button>
+        <div class="flex rounded-xl bg-slate-100 dark:bg-slate-800/80 p-1.5 backdrop-blur-sm">
+            <button class="toggle-btn flex-1 py-2.5 text-sm font-bold rounded-lg bg-white dark:bg-slate-700 shadow-sm text-blue-600 dark:text-blue-400 transition-all" data-target="login">ورود</button>
+            <button class="toggle-btn flex-1 py-2.5 text-sm font-medium rounded-lg text-slate-500 dark:text-slate-400 hover:text-slate-700 dark:hover:text-slate-200 transition-all" data-target="register">ثبت نام</button>
         </div>
-        
         <form id="login-form" class="space-y-5">
             <div class="relative group">
-                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="text" name="username" placeholder="نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
+                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors"></i>
+                <input type="text" name="username" placeholder="نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400">
             </div>
             <div class="relative group">
-                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="password" name="password" placeholder="رمز عبور" required autocomplete="current-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
+                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors"></i>
+                <input type="password" name="password" placeholder="رمز عبور" required autocomplete="current-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400">
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ورود به حساب</button>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-green-700 hover:from-blue-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ورود به حساب</button>
         </form>
-
         <form id="register-form" class="space-y-5 hidden">
             <div class="relative group">
-                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="text" name="username" placeholder="انتخاب نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
+                <i data-lucide="user" class="absolute right-4 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors"></i>
+                <input type="text" name="username" placeholder="انتخاب نام کاربری" required autocomplete="username" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400">
             </div>
             <div class="relative group">
-                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-gray-400 group-focus-within:text-emerald-500 transition-colors"></i>
-                <input type="password" name="password" placeholder="انتخاب رمز عبور" required autocomplete="new-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-gray-950/50 border border-gray-200 dark:border-gray-700 rounded-xl focus:ring-2 focus:ring-emerald-500 focus:border-emerald-500 text-gray-900 dark:text-white outline-none transition-all placeholder-gray-400">
+                <i data-lucide="lock" class="absolute right-4 top-3.5 w-5 h-5 text-slate-400 group-focus-within:text-blue-600 transition-colors"></i>
+                <input type="password" name="password" placeholder="انتخاب رمز عبور" required autocomplete="new-password" class="w-full pl-4 pr-12 py-3 bg-white/50 dark:bg-slate-950/50 border border-slate-200 dark:border-slate-800 rounded-xl focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-slate-900 dark:text-white outline-none transition-all placeholder-slate-400">
             </div>
-            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-emerald-500 hover:from-blue-700 hover:to-emerald-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-emerald-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ایجاد حساب کاربری</button>
+            <button type="submit" class="w-full bg-gradient-to-r from-blue-600 to-green-700 hover:from-blue-500 hover:to-green-600 text-white font-bold py-3.5 rounded-xl shadow-lg shadow-blue-500/30 transition-all transform hover:-translate-y-0.5 active:scale-95 disabled:opacity-70 disabled:cursor-not-allowed">ایجاد حساب کاربری</button>
         </form>
     </div>
-    
     <script src="assets/libs/lucide.min.js"></script>
     <script src="js/config.js"></script>
     <script src="js/api.js"></script>
@@ -68,5 +68,5 @@
             lucide.createIcons();
         }
     </script>
-</body>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a11264adbda297c1',t:'MTc4MjM3Mzk1MQ=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
