@@ -56,15 +56,24 @@ const UI = {
         innerContainer.className = `flex w-full max-w-4xl mx-auto px-6 md:px-12 ${isUser ? 'justify-start' : 'justify-end'}`;
 
         let displayContent = content;
-        let sourcesHtml = '';
 
         const firstChar = displayContent.trim()[0] || '';
         const isRTL = typeof isPersian === 'function' ? isPersian(firstChar) : true;
         const dirAttr = isRTL ? 'rtl' : 'ltr';
         const textAlignClass = isRTL ? 'text-right' : 'text-left';
 
+        let sourcesHtml = '';
         if (citations && citations.length > 0) {
-            sourcesHtml += '<div class="mt-6 pt-4 border-t border-slate-100 dark:border-slate-800/60"><h4 class="text-xs font-bold text-slate-400 dark:text-slate-500 mb-3 flex items-center gap-1.5"><i data-lucide="book-open" class="w-3 h-3"></i> منابع یافت شده</h4><div class="flex flex-wrap gap-2">';
+            const sourcesId = 'sources-' + Date.now() + '-' + Math.random().toString(36).substr(2, 9);
+            sourcesHtml += `
+            <div class="mt-5 pt-4 border-t border-slate-100 dark:border-slate-800/60">
+                <button onclick="toggleSources('${sourcesId}')" class="flex items-center gap-2 text-xs font-bold text-slate-400 dark:text-slate-500 hover:text-blue-500 dark:hover:text-blue-400 transition-colors group/src mb-3">
+                    <i data-lucide="book-open" class="w-3 h-3"></i>
+                    <span>منابع یافت شده</span>
+                    <svg id="chevron-${sourcesId}" class="w-3 h-3 transition-transform duration-300 rotate-180" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7"/></svg>
+                </button>
+                <div id="${sourcesId}" class="flex flex-wrap gap-2 transition-all duration-300 overflow-hidden">
+            `;
             citations.forEach(c => {
                 sourcesHtml += `
                     <a href="${c.url}" target="_blank" rel="noopener noreferrer" class="group/ref flex items-center gap-2 max-w-[14rem] p-1.5 pr-2 bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-750 hover:border-blue-400 dark:hover:border-blue-500/50 rounded-xl transition-all shadow-sm hover:shadow-md">
@@ -83,7 +92,7 @@ const UI = {
         
         if (citations && citations.length > 0) {
             citations.forEach(c => {
-                const regex = new RegExp(`\\\[${c.ref_index}\\\]`, 'g');
+                const regex = new RegExp(`\\[${c.ref_index}\\]`, 'g');
                 processedContent = processedContent.replace(
                     regex, 
                     `<a href="${c.url}" target="_blank" class="inline-flex items-center justify-center min-w-[1.25rem] h-5 px-1 mx-0.5 text-[10px] font-bold rounded-md bg-blue-50 text-blue-600 border border-blue-200 dark:border-blue-800 dark:bg-blue-900/30 dark:text-blue-400 hover:bg-blue-600 hover:text-white transition-all no-underline shadow-sm align-super" title="${escapeHtml(c.title)}">${c.ref_index}</a>`
@@ -98,15 +107,18 @@ const UI = {
         bubble.className = `relative ${isUser ? userClasses : aiClasses}`;
         
         const safeContent = encodeURIComponent(displayContent).replace(/'/g, "%27");
+
         const actionsHtml = `
-            <div class="absolute -bottom-6 ${isUser ? 'left-2' : '-left-2'} opacity-0 group-hover/msg:opacity-100 transition-opacity duration-200 z-10 flex gap-1">
+            <div class="flex items-center gap-1.5 mt-4 ${isUser ? 'justify-end' : 'justify-end'}">
                 ${!isUser ? `
-                <button class="tts-btn p-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-lg text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all transform hover:scale-105" onclick="playTTS(decodeURIComponent('${safeContent}'), this)" title="خوانش متن">
-                    <i data-lucide="volume-2" class="w-4 h-4"></i>
+                <button class="tts-btn flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-lg text-[11px] font-medium text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-200 dark:hover:border-blue-800/40 transition-all shadow-sm" onclick="playTTS(decodeURIComponent('${safeContent}'), this)" title="خوانش متن">
+                    <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
+                    <span>خوانش</span>
                 </button>
                 ` : ''}
-                <button class="p-1.5 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 shadow-sm rounded-lg text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-slate-50 dark:hover:bg-slate-700 transition-all transform hover:scale-105" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="کپی پیام">
-                    <i data-lucide="copy" class="w-4 h-4"></i>
+                <button class="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-lg text-[11px] font-medium text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-200 dark:hover:border-blue-800/40 transition-all shadow-sm" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="کپی پیام">
+                    <i data-lucide="copy" class="w-3.5 h-3.5"></i>
+                    <span>کپی</span>
                 </button>
             </div>
         `;
@@ -115,8 +127,8 @@ const UI = {
             <div class="prose prose-sm md:prose-base max-w-none text-slate-800 dark:text-slate-200 ${!isUser ? 'dark:prose-invert' : ''} ${textAlignClass} leading-relaxed" dir="${dirAttr}">
                 ${processedContent}
             </div>
-            ${sourcesHtml}
             ${actionsHtml}
+            ${sourcesHtml}
         `;
         
         if(!isUser) outerWrapper.classList.add('mb-4');
@@ -188,6 +200,24 @@ const UI = {
     }
 };
 
+function toggleSources(sourcesId) {
+    const container = document.getElementById(sourcesId);
+    const chevron = document.getElementById('chevron-' + sourcesId);
+    if (!container) return;
+    if (container.style.maxHeight && container.style.maxHeight !== '0px') {
+        container.style.maxHeight = '0px';
+        container.style.opacity = '0';
+        container.style.marginBottom = '0';
+        if (chevron) chevron.classList.remove('rotate-180');
+    } else {
+        container.style.maxHeight = container.scrollHeight + 'px';
+        container.style.opacity = '1';
+        container.style.marginBottom = '';
+        if (chevron) chevron.classList.add('rotate-180');
+    }
+}
+window.toggleSources = toggleSources;
+
 window.currentAudio = null;
 window.currentAudioBtn = null;
 
@@ -223,7 +253,9 @@ async function playTTS(text, btn) {
         window.currentAudio.pause();
         window.currentAudio = null;
         if (window.currentAudioBtn) {
-            window.currentAudioBtn.innerHTML = '<i data-lucide="volume-2" class="w-4 h-4"></i>';
+            const spanEl = window.currentAudioBtn.querySelector('span');
+            if (spanEl) spanEl.textContent = 'خوانش';
+            window.currentAudioBtn.innerHTML = '<i data-lucide="volume-2" class="w-3.5 h-3.5"></i><span>خوانش</span>';
             lucide.createIcons();
         }
         if (window.currentAudioBtn === btn) {
@@ -233,7 +265,7 @@ async function playTTS(text, btn) {
     }
 
     const originalHtml = btn.innerHTML;
-    btn.innerHTML = '<span class="w-4 h-4 border-2 border-blue-600 border-t-transparent rounded-full animate-spin inline-block"></span>';
+    btn.innerHTML = '<span class="w-3.5 h-3.5 border-2 border-blue-600 border-t-transparent rounded-full animate-spin inline-block"></span><span>در حال بارگذاری...</span>';
     window.currentAudioBtn = btn;
 
     const cleanText = text.replace(/[#*`~_\[\]()\-+]/g, '').replace(/\\/g, '').trim();
@@ -273,7 +305,7 @@ async function playTTS(text, btn) {
 
         const audio = new Audio(url);
         window.currentAudio = audio;
-        btn.innerHTML = '<i data-lucide="square" class="w-4 h-4 text-red-500 animate-pulse"></i>';
+        btn.innerHTML = '<i data-lucide="square" class="w-3.5 h-3.5 text-red-500 animate-pulse"></i><span class="text-red-500">توقف</span>';
         lucide.createIcons();
 
         audio.play();

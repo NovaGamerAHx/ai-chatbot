@@ -1,9 +1,8 @@
 from sqlalchemy.orm import Session
 from app.db.repository import save_message, update_chat_timestamp, get_chat_history, create_new_chat, delete_chat
 from app.services.llm_service import process_standard_response, process_web_search_response
-import time
 
-def handle_chat_request(db: Session, chat_id: int, user_text: str, is_web_search: bool, user_id: int):
+def handle_chat_request(db: Session, chat_id: int, user_text: str, is_web_search: bool, user_id: int, ranker_method: str = "none"):
     current_chat_id = chat_id
     is_new_chat = False
     chat_title = None
@@ -23,7 +22,7 @@ def handle_chat_request(db: Session, chat_id: int, user_text: str, is_web_search
         chat_history = get_chat_history(db, current_chat_id)
         
         if is_web_search:
-            response_data = process_web_search_response(db, current_chat_id, user_text, chat_history)
+            response_data = process_web_search_response(db, current_chat_id, user_text, chat_history, ranker_method=ranker_method)
         else:
             response_data = process_standard_response(db, current_chat_id, user_text, chat_history)
             

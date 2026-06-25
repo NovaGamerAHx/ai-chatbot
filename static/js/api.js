@@ -39,7 +39,7 @@ const API = {
     chat: {
         list: () => request('/chat/list'),
         history: (chatId) => request(`/chat/${chatId}/history`),
-        send: (chatId, text, isWeb) => request('/chat/send', 'POST', { chat_id: chatId, text: text, is_web_search: isWeb }),
+        send: (chatId, text, isWeb, rankerMethod) => request('/chat/send', 'POST', { chat_id: chatId, text: text, is_web_search: isWeb, ranker_method: rankerMethod }),
         delete: (chatId) => request(`/chat/${chatId}`, 'DELETE'),
         rename: (chatId, title) => request(`/chat/${chatId}/rename?title=${title}`, 'PUT')
     }

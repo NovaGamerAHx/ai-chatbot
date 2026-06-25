@@ -17,7 +17,7 @@ def perform_web_search(query: str, k: int = 10):
         return []
 
 
-def execute_multi_search(queries):
+def execute_multi_search(queries, ranker_method: str = "none"):
     aggregated_results = []
     seen_urls = set()
     current_index = 1
@@ -34,7 +34,7 @@ def execute_multi_search(queries):
         for i, res in enumerate(raw_results):
             print(f"{i+1}. {res.get('title', '')} | {res.get('url', '')}")
             
-        ranked_results = rerank_results(query=q, results=raw_results, method="mix")
+        ranked_results = rerank_results(query=q, results=raw_results, method=ranker_method)
         
         top_results = ranked_results[:3]
         

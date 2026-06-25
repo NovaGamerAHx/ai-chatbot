@@ -30,10 +30,12 @@ async function copyToClipboard(text, btn) {
     try {
         await navigator.clipboard.writeText(text);
         const originalHtml = btn.innerHTML;
-        btn.innerHTML = '✅';
+        btn.innerHTML = '<i data-lucide="check" class="w-3.5 h-3.5 text-green-500"></i><span class="text-green-500">کپی شد</span>';
+        lucide.createIcons();
         setTimeout(() => {
             if (document.body.contains(btn)) {
                 btn.innerHTML = originalHtml;
+                lucide.createIcons();
             }
         }, 2000);
     } catch (err) {

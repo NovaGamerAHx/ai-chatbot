@@ -3,6 +3,7 @@ const app = {
     isWebSearch: false,
     isSending: false,
     chats: [],
+    rankerMethod: localStorage.getItem('ranker_method') || 'none',
 
     async init() {
         if (!localStorage.getItem(CONFIG.TOKEN_KEY)) {
@@ -73,6 +74,27 @@ const app = {
         UI.elements.webToggle.addEventListener('click', () => {
             this.isWebSearch = !this.isWebSearch;
             UI.toggleWebSearch(this.isWebSearch);
+            const rankerBtn = document.getElementById('ranker-toggle');
+            if (rankerBtn) {
+                if (this.isWebSearch) {
+                    rankerBtn.classList.remove('hidden');
+                } else {
+                    rankerBtn.classList.add('hidden');
+                    this.closeRankerDropdown();
+                }
+            }
+        });
+
+        const rankerBtn = document.getElementById('ranker-toggle');
+        if (rankerBtn) {
+            rankerBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.toggleRankerDropdown();
+            });
+        }
+
+        document.addEventListener('click', (e) => {
+            this.closeRankerDropdown();
         });
 
         const micBtn = document.getElementById('mic-btn');
@@ -112,6 +134,61 @@ const app = {
                 UI.renderChatList(filtered, this.currentChatId);
             });
         }
+    },
+
+    toggleRankerDropdown() {
+        let dropdown = document.getElementById('ranker-dropdown');
+        if (dropdown) {
+            dropdown.remove();
+            return;
+        }
+
+        const rankerBtn = document.getElementById('ranker-toggle');
+        if (!rankerBtn) return;
+
+        const rect = rankerBtn.getBoundingClientRect();
+
+        dropdown = document.createElement('div');
+        dropdown.id = 'ranker-dropdown';
+        dropdown.className = 'fixed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none z-50 py-1.5 min-w-[160px] animate-in fade-in duration-150';
+        dropdown.style.top = (rect.bottom + 8) + 'px';
+        dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+
+        const options = [
+            { value: 'none', label: 'بدون رنکر' },
+            { value: 'cohere', label: 'Cohere' },
+            { value: 'jina', label: 'Jina' },
+            { value: 'mix', label: 'میکس' }
+        ];
+
+        options.forEach(opt => {
+            const item = document.createElement('button');
+            item.className = `w-full flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${this.rankerMethod === opt.value ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 font-bold' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`;
+            item.innerHTML = `${this.rankerMethod === opt.value ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : '<span class="w-3.5"></span>'}<span>${opt.label}</span>`;
+            item.addEventListener('click', (e) => {
+                e.stopPropagation();
+                this.rankerMethod = opt.value;
+                localStorage.setItem('ranker_method', opt.value);
+                this.updateRankerButtonLabel();
+                this.closeRankerDropdown();
+            });
+            dropdown.appendChild(item);
+        });
+
+        document.body.appendChild(dropdown);
+        lucide.createIcons();
+    },
+
+    closeRankerDropdown() {
+        const dropdown = document.getElementById('ranker-dropdown');
+        if (dropdown) dropdown.remove();
+    },
+
+    updateRankerButtonLabel() {
+        const label = document.getElementById('ranker-label');
+        if (!label) return;
+        const labels = { none: 'بدون رنکر', cohere: 'Cohere', jina: 'Jina', mix: 'میکس' };
+        label.textContent = labels[this.rankerMethod] || 'بدون رنکر';
     },
 
     async loadChatList() {
@@ -166,7 +243,7 @@ const app = {
         const loading = UI.showLoading();
 
         try {
-            const response = await API.chat.send(this.currentChatId, text, this.isWebSearch);
+            const response = await API.chat.send(this.currentChatId, text, this.isWebSearch, this.rankerMethod);
             UI.removeLoading(loading);
             
             if (response.success) {

@@ -42,8 +42,10 @@ def get_jina_indices(query: str, documents: list):
     except:
         return list(range(len(documents)))
 
-def rerank_results(query: str, results: list, method: str = "cohere"):
+def rerank_results(query: str, results: list, method: str = "none"):
     if not results or len(results) <= 1:
+        return results
+    if method == "none":
         return results
     documents = [doc.get("content", "") for doc in results]
     if method == "cohere":

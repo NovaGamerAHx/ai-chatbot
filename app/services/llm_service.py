@@ -53,10 +53,10 @@ def process_standard_response(db: Session, chat_id: int, user_text: str, chat_hi
     }
 
 
-def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_history: list):
+def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_history: list, ranker_method: str = "none"):
     queries = generate_search_queries_with_llm(user_text, chat_history)
     
-    search_results = execute_multi_search(queries)
+    search_results = execute_multi_search(queries, ranker_method=ranker_method)
     
     formatted_sources = ""
     for res in search_results:
@@ -92,9 +92,3 @@ def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_
         "mode": msg_obj.mode,
         "citations": final_citations
     }
-
-
-
-
-
-

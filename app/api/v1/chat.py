@@ -105,7 +105,8 @@ def send_message(
         chat_id=request.chat_id,
         user_text=request.text,
         is_web_search=request.is_web_search,
-        user_id=current_user.id
+        user_id=current_user.id,
+        ranker_method=request.ranker_method or "none"
     )
     return result
 
