@@ -1,9 +1,11 @@
+const DEFAULT_RANKER_METHOD = 'mix';
+
 const app = {
     currentChatId: null,
     isWebSearch: false,
     isSending: false,
     chats: [],
-    rankerMethod: localStorage.getItem('ranker_method') || 'none',
+    rankerMethod: localStorage.getItem('ranker_method') || DEFAULT_RANKER_METHOD,
 
     async init() {
         if (!localStorage.getItem(CONFIG.TOKEN_KEY)) {
@@ -11,18 +13,22 @@ const app = {
             return;
         }
 
+        if (!localStorage.getItem('ranker_method')) {
+            localStorage.setItem('ranker_method', DEFAULT_RANKER_METHOD);
+        }
+
         this.initTheme();
         this.displayUsername();
         this.bindEvents();
         this.updateRankerButtonLabel();
-        
+
         const urlParams = new URLSearchParams(window.location.search);
         const urlChatId = urlParams.get('chat_id');
-        
+
         await this.loadChatList();
 
         if (urlChatId) {
-            await this.loadChat(parseInt(urlChatId));
+            await this.loadChat(parseInt(urlChatId, 10));
         } else {
             UI.clearMessages();
         }
@@ -35,9 +41,9 @@ const app = {
         } else {
             document.documentElement.classList.remove('dark');
         }
-        
+
         const themeBtn = document.getElementById('theme-toggle');
-        if(themeBtn) {
+        if (themeBtn) {
             themeBtn.innerHTML = savedTheme === 'dark' ? '<i data-lucide="sun" class="w-5 h-5"></i>' : '<i data-lucide="moon" class="w-5 h-5"></i>';
             lucide.createIcons();
             themeBtn.addEventListener('click', () => {
@@ -60,7 +66,7 @@ const app = {
 
     bindEvents() {
         UI.elements.sendBtn.addEventListener('click', () => this.sendMessage());
-        
+
         UI.elements.messageInput.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' && !e.shiftKey) {
                 e.preventDefault();
@@ -95,12 +101,12 @@ const app = {
             });
         }
 
-        document.addEventListener('click', (e) => {
+        document.addEventListener('click', () => {
             this.closeRankerDropdown();
         });
 
         const micBtn = document.getElementById('mic-btn');
-        if(micBtn) {
+        if (micBtn) {
             micBtn.addEventListener('click', () => {
                 alert('قابلیت دریافت صدا به زودی اضافه می‌شود.');
             });
@@ -113,7 +119,7 @@ const app = {
             window.history.pushState({}, '', window.location.pathname);
             UI.renderChatList(this.chats, this.currentChatId);
         });
-        
+
         document.getElementById('logout-btn').addEventListener('click', () => {
             localStorage.removeItem(CONFIG.TOKEN_KEY);
             localStorage.removeItem('chat_username');
@@ -132,7 +138,7 @@ const app = {
         if (searchInput) {
             searchInput.addEventListener('input', (e) => {
                 const term = e.target.value.toLowerCase();
-                const filtered = this.chats.filter(c => c.title.toLowerCase().includes(term));
+                const filtered = this.chats.filter((c) => c.title.toLowerCase().includes(term));
                 UI.renderChatList(filtered, this.currentChatId);
             });
         }
@@ -153,8 +159,8 @@ const app = {
         dropdown = document.createElement('div');
         dropdown.id = 'ranker-dropdown';
         dropdown.className = 'fixed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none z-50 py-1.5 min-w-[160px] animate-in fade-in duration-150';
-        dropdown.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
-        dropdown.style.right = (window.innerWidth - rect.right) + 'px';
+        dropdown.style.bottom = `${window.innerHeight - rect.top + 8}px`;
+        dropdown.style.right = `${window.innerWidth - rect.right}px`;
 
         const options = [
             { value: 'none', label: 'بدون رنکر' },
@@ -163,7 +169,7 @@ const app = {
             { value: 'mix', label: 'میکس' }
         ];
 
-        options.forEach(opt => {
+        options.forEach((opt) => {
             const item = document.createElement('button');
             item.className = `w-full flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${this.rankerMethod === opt.value ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 font-bold' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`;
             item.innerHTML = `${this.rankerMethod === opt.value ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : '<span class="w-3.5"></span>'}<span>${opt.label}</span>`;
@@ -183,14 +189,16 @@ const app = {
 
     closeRankerDropdown() {
         const dropdown = document.getElementById('ranker-dropdown');
-        if (dropdown) dropdown.remove();
+        if (dropdown) {
+            dropdown.remove();
+        }
     },
 
     updateRankerButtonLabel() {
         const btn = document.getElementById('ranker-toggle');
         if (!btn) return;
         const labels = { none: 'بدون رنکر', cohere: 'Cohere', jina: 'Jina', mix: 'میکس' };
-        const labelText = labels[this.rankerMethod] || 'بدون رنکر';
+        const labelText = labels[this.rankerMethod] || labels[DEFAULT_RANKER_METHOD];
         btn.title = `حالت رنکر (${labelText})`;
         if (this.rankerMethod !== 'none') {
             btn.classList.add('text-blue-600', 'bg-blue-50', 'dark:bg-blue-500/10', 'dark:text-blue-400', 'border-blue-300', 'dark:border-blue-700');
@@ -208,7 +216,7 @@ const app = {
             let chatsToRender = this.chats;
             if (searchInput && searchInput.value) {
                 const term = searchInput.value.toLowerCase();
-                chatsToRender = this.chats.filter(c => c.title.toLowerCase().includes(term));
+                chatsToRender = this.chats.filter((c) => c.title.toLowerCase().includes(term));
             }
             UI.renderChatList(chatsToRender, this.currentChatId);
         } catch (err) {
@@ -219,23 +227,23 @@ const app = {
     async loadChat(chatId) {
         if (this.currentChatId === chatId) return;
         this.currentChatId = chatId;
-        
+
         const url = new URL(window.location);
         url.searchParams.set('chat_id', chatId);
         window.history.pushState({}, '', url);
 
-        UI.elements.messagesContainer.innerHTML = ''; 
+        UI.elements.messagesContainer.innerHTML = '';
         const loading = UI.showLoading();
-        
+
         try {
             const data = await API.chat.history(chatId);
             UI.removeLoading(loading);
-            
+
             UI.elements.chatTitle.innerText = data.title;
-            data.messages.forEach(msg => {
+            data.messages.forEach((msg) => {
                 UI.appendMessage(msg.role, msg.content, msg.citations);
             });
-            this.loadChatList(); 
+            this.loadChatList();
         } catch (err) {
             UI.removeLoading(loading);
             console.error(err);
@@ -255,22 +263,22 @@ const app = {
         try {
             const response = await API.chat.send(this.currentChatId, text, this.isWebSearch, this.rankerMethod);
             UI.removeLoading(loading);
-            
+
             if (response.success) {
                 if (response.chat_id) {
                     this.currentChatId = response.chat_id;
-                    
+
                     const url = new URL(window.location);
                     url.searchParams.set('chat_id', this.currentChatId);
                     window.history.pushState({}, '', url);
-                    
+
                     if (response.chat_title) {
                         UI.elements.chatTitle.innerText = response.chat_title;
                     }
-                    
+
                     this.loadChatList();
                 }
-                
+
                 const msg = response.data;
                 UI.appendMessage(msg.role, msg.content, msg.citations);
             } else {

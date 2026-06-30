@@ -1,48 +1,55 @@
 import requests
 from app.core.config import settings
 
+
+def get_default_indices(documents: list):
+    return list(range(len(documents)))
+
+
 def get_cohere_indices(query: str, documents: list):
     if not settings.COHERE_API_KEY:
-        return list(range(len(documents)))
+        return get_default_indices(documents)
     url = "https://api.cohere.ai/v1/rerank"
     headers = {
-        "Authorization": f"Bearer {settings.COHERE_API_KEY}", 
+        "Authorization": f"Bearer {settings.COHERE_API_KEY}",
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "rerank-multilingual-v3.0", 
-        "query": query, 
-        "documents": documents, 
+        "model": "rerank-multilingual-v3.0",
+        "query": query,
+        "documents": documents,
         "return_documents": False
     }
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=10)
         response.raise_for_status()
         return [res["index"] for res in response.json().get("results", [])]
-    except:
-        return list(range(len(documents)))
+    except Exception:
+        return get_default_indices(documents)
+
 
 def get_jina_indices(query: str, documents: list):
     if not settings.JINA_API_KEY:
-        return list(range(len(documents)))
+        return get_default_indices(documents)
     url = "https://api.jina.ai/v1/rerank"
     headers = {
-        "Authorization": f"Bearer {settings.JINA_API_KEY}", 
+        "Authorization": f"Bearer {settings.JINA_API_KEY}",
         "Content-Type": "application/json"
     }
     payload = {
-        "model": "jina-reranker-v2-base-multilingual", 
-        "query": query, 
+        "model": "jina-reranker-v2-base-multilingual",
+        "query": query,
         "documents": documents
     }
     try:
         response = requests.post(url, headers=headers, json=payload, timeout=10)
         response.raise_for_status()
         return [res["index"] for res in response.json().get("results", [])]
-    except:
-        return list(range(len(documents)))
+    except Exception:
+        return get_default_indices(documents)
 
-def rerank_results(query: str, results: list, method: str = "none"):
+
+def rerank_results(query: str, results: list, method: str = "mix"):
     if not results or len(results) <= 1:
         return results
     if method == "none":
@@ -64,5 +71,4 @@ def rerank_results(query: str, results: list, method: str = "none"):
         indices = sorted(ranks.keys(), key=lambda i: (ranks[i]["cohere"] + ranks[i]["jina"]) / 2.0)
     else:
         return results
-    reranked_results = [results[i] for i in indices]
-    return reranked_results
+    return [results[i] for i in indices if 0 <= i < len(results)]

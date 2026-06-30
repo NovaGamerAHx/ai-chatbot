@@ -1,0 +1,17 @@
+================================================================================
+USER PROMPT:
+زننده دومین گل در جام جهانی 2012 چه کسی بود و در چه دقیقه ای؟
+
+SEARCH QUERIES:
+1. جام جهانی 2012 آیا برگزار شد؟
+2. زننده دومین گل جام جهانی 2010 و دقیقه
+3. زننده دومین گل یورو 2012 و دقیقه
+
+FINAL RESPONSE:
+There was no FIFA World Cup held in 2012, as the FIFA World Cup is typically held every four years [3]. The major international football tournament in 2012 was the UEFA European Championship (Euro 2012). There was also the 2012 VIVA World Cup, an international tournament for teams not affiliated with FIFA [1].
+
+Based on the provided search results:
+*   **For the UEFA Euro 2012 tournament:** Robert Lewandowski scored the *first* goal of Euro 2012 in the 16th minute of a match against Greece [7]. The provided sources do not explicitly state who scored the *second* goal of the entire Euro 2012 tournament.
+*   **For the 2012 VIVA World Cup:** The sources indicate that this tournament took place [1], but they do not provide details about specific goal scorers or the minutes in which goals were scored.
+================================================================================
+

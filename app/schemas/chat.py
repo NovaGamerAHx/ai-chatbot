@@ -6,7 +6,7 @@ class ChatRequest(BaseModel):
     chat_id: Optional[int] = None
     text: str
     is_web_search: bool
-    ranker_method: Optional[str] = "none"
+    ranker_method: Optional[str] = "mix"
 
 class CitationSchema(BaseModel):
     ref_index: int
