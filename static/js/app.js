@@ -1,4 +1,10 @@
 const DEFAULT_RANKER_METHOD = 'mix';
+const RANKER_OPTIONS = [
+    { value: 'none', label: 'بدون رنکر' },
+    { value: 'cohere', label: 'Cohere' },
+    { value: 'jina', label: 'Jina' },
+    { value: 'mix', label: 'میکس' }
+];
 
 const app = {
     currentChatId: null,
@@ -17,6 +23,7 @@ const app = {
             localStorage.setItem('ranker_method', DEFAULT_RANKER_METHOD);
         }
 
+        this.rankerMethod = localStorage.getItem('ranker_method') || DEFAULT_RANKER_METHOD;
         this.initTheme();
         this.displayUsername();
         this.bindEvents();
@@ -162,14 +169,7 @@ const app = {
         dropdown.style.bottom = `${window.innerHeight - rect.top + 8}px`;
         dropdown.style.right = `${window.innerWidth - rect.right}px`;
 
-        const options = [
-            { value: 'none', label: 'بدون رنکر' },
-            { value: 'cohere', label: 'Cohere' },
-            { value: 'jina', label: 'Jina' },
-            { value: 'mix', label: 'میکس' }
-        ];
-
-        options.forEach((opt) => {
+        RANKER_OPTIONS.forEach((opt) => {
             const item = document.createElement('button');
             item.className = `w-full flex items-center gap-2.5 px-3.5 py-2 text-sm transition-colors ${this.rankerMethod === opt.value ? 'text-blue-600 dark:text-blue-400 bg-blue-50 dark:bg-blue-500/10 font-bold' : 'text-slate-600 dark:text-slate-300 hover:bg-slate-50 dark:hover:bg-slate-700/50'}`;
             item.innerHTML = `${this.rankerMethod === opt.value ? '<i data-lucide="check" class="w-3.5 h-3.5"></i>' : '<span class="w-3.5"></span>'}<span>${opt.label}</span>`;
@@ -197,8 +197,9 @@ const app = {
     updateRankerButtonLabel() {
         const btn = document.getElementById('ranker-toggle');
         if (!btn) return;
-        const labels = { none: 'بدون رنکر', cohere: 'Cohere', jina: 'Jina', mix: 'میکس' };
-        const labelText = labels[this.rankerMethod] || labels[DEFAULT_RANKER_METHOD];
+        const selectedOption = RANKER_OPTIONS.find((option) => option.value === this.rankerMethod);
+        const fallbackOption = RANKER_OPTIONS.find((option) => option.value === DEFAULT_RANKER_METHOD);
+        const labelText = (selectedOption || fallbackOption).label;
         btn.title = `حالت رنکر (${labelText})`;
         if (this.rankerMethod !== 'none') {
             btn.classList.add('text-blue-600', 'bg-blue-50', 'dark:bg-blue-500/10', 'dark:text-blue-400', 'border-blue-300', 'dark:border-blue-700');

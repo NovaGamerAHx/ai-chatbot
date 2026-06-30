@@ -4,6 +4,7 @@ from sqlalchemy.orm import Session
 from app.core.config import settings
 from app.core.logging_config import logger
 from app.db.repository import save_message, save_citation
+from app.services.ranker_service import DEFAULT_RANKER_METHOD, normalize_ranker_method
 from app.services.search_service import execute_multi_search
 from app.utils.prompt_templates import STANDARD_SYSTEM_PROMPT, WEB_SEARCH_SYSTEM_PROMPT, QUERY_GEN_PROMPT
 
@@ -32,6 +33,54 @@ def generate_search_queries_with_llm(user_text, chat_history):
         return [user_text]
 
 
+def build_search_log_block(user_text: str, queries: list, answer_text: str, ranker_method: str, search_trace: list):
+    log_block = [
+        "=" * 80,
+        f"USER PROMPT:\n{user_text}",
+        "",
+        f"RANKER METHOD: {ranker_method}",
+        "",
+        "SEARCH QUERIES:"
+    ]
+
+    for index, query in enumerate(queries, start=1):
+        log_block.append(f"{index}. {query}")
+
+    if search_trace:
+        log_block.extend(["", "SEARCH ORDERS:"])
+        for index, trace in enumerate(search_trace, start=1):
+            log_block.append(f"{index}. QUERY: {trace['query']}")
+            initial_order = trace.get("initial_order", [])
+            reranked_order = trace.get("reranked_order", [])
+            selected_order = trace.get("selected_order", [])
+            log_block.append("   INITIAL ORDER:")
+            if initial_order:
+                for site_index, url in enumerate(initial_order, start=1):
+                    log_block.append(f"   {site_index}. {url}")
+            else:
+                log_block.append("   - No results")
+            log_block.append("   RERANKED ORDER:")
+            if reranked_order:
+                for site_index, url in enumerate(reranked_order, start=1):
+                    log_block.append(f"   {site_index}. {url}")
+            else:
+                log_block.append("   - No results")
+            log_block.append("   SELECTED TOP RESULTS:")
+            if selected_order:
+                for site_index, url in enumerate(selected_order, start=1):
+                    log_block.append(f"   {site_index}. {url}")
+            else:
+                log_block.append("   - No results")
+
+    log_block.extend([
+        "",
+        f"FINAL RESPONSE:\n{answer_text}",
+        "=" * 80,
+        ""
+    ])
+    return log_block
+
+
 def process_standard_response(db: Session, chat_id: int, user_text: str, chat_history: list):
     history_text = "\n".join([f"{msg['role']}: {msg['content']}" for msg in chat_history])
     prompt = STANDARD_SYSTEM_PROMPT.format(history=history_text, question=user_text)
@@ -49,10 +98,11 @@ def process_standard_response(db: Session, chat_id: int, user_text: str, chat_hi
     }
 
 
-
-def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_history: list, ranker_method: str = "mix"):
+def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_history: list, ranker_method: str = DEFAULT_RANKER_METHOD):
     queries = generate_search_queries_with_llm(user_text, chat_history)
-    search_results = execute_multi_search(queries, ranker_method=ranker_method)
+    normalized_ranker_method = normalize_ranker_method(ranker_method)
+    search_data = execute_multi_search(queries, ranker_method=normalized_ranker_method)
+    search_results = search_data["results"]
 
     formatted_sources = ""
     for res in search_results:
@@ -80,23 +130,13 @@ def process_web_search_response(db: Session, chat_id: int, user_text: str, chat_
             "site_icon": res.get("site_icon") or res.get("icon")
         })
 
-    log_block = [
-        "=" * 80,
-        f"USER PROMPT:\n{user_text}",
-        "",
-        "SEARCH QUERIES:"
-    ]
-
-    for index, query in enumerate(queries, start=1):
-        log_block.append(f"{index}. {query}")
-
-    log_block.extend([
-        "",
-        f"FINAL RESPONSE:\n{answer_text}",
-        "=" * 80,
-        ""
-    ])
-    logger.info("\n".join(log_block))
+    logger.info("\n".join(build_search_log_block(
+        user_text=user_text,
+        queries=queries,
+        answer_text=answer_text,
+        ranker_method=search_data["ranker_method"],
+        search_trace=search_data["trace"]
+    )))
 
     return {
         "id": msg_obj.id,

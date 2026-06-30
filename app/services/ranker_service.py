@@ -2,8 +2,19 @@ import requests
 from app.core.config import settings
 
 
+DEFAULT_RANKER_METHOD = "mix"
+VALID_RANKER_METHODS = {"none", "cohere", "jina", "mix"}
+
+
 def get_default_indices(documents: list):
     return list(range(len(documents)))
+
+
+def normalize_ranker_method(method: str | None):
+    normalized_method = (method or DEFAULT_RANKER_METHOD).strip().lower()
+    if normalized_method in VALID_RANKER_METHODS:
+        return normalized_method
+    return DEFAULT_RANKER_METHOD
 
 
 def get_cohere_indices(query: str, documents: list):
@@ -49,17 +60,16 @@ def get_jina_indices(query: str, documents: list):
         return get_default_indices(documents)
 
 
-def rerank_results(query: str, results: list, method: str = "mix"):
-    if not results or len(results) <= 1:
-        return results
-    if method == "none":
+def rerank_results(query: str, results: list, method: str = DEFAULT_RANKER_METHOD):
+    normalized_method = normalize_ranker_method(method)
+    if not results or len(results) <= 1 or normalized_method == "none":
         return results
     documents = [doc.get("content", "") for doc in results]
-    if method == "cohere":
+    if normalized_method == "cohere":
         indices = get_cohere_indices(query, documents)
-    elif method == "jina":
+    elif normalized_method == "jina":
         indices = get_jina_indices(query, documents)
-    elif method == "mix":
+    else:
         cohere_indices = get_cohere_indices(query, documents)
         jina_indices = get_jina_indices(query, documents)
         doc_count = len(documents)
@@ -69,6 +79,4 @@ def rerank_results(query: str, results: list, method: str = "mix"):
         for rank, orig_idx in enumerate(jina_indices):
             ranks[orig_idx]["jina"] = rank
         indices = sorted(ranks.keys(), key=lambda i: (ranks[i]["cohere"] + ranks[i]["jina"]) / 2.0)
-    else:
-        return results
     return [results[i] for i in indices if 0 <= i < len(results)]

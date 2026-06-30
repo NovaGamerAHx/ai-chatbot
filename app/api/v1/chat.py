@@ -1,20 +1,23 @@
-from fastapi import APIRouter, Depends, HTTPException
-from sqlalchemy.orm import Session
 from typing import List
 import requests
+from fastapi import APIRouter, Depends, HTTPException
 from pydantic import BaseModel
-from app.db.base import get_db
-from app.schemas.chat import ChatRequest, ChatResponse, ChatSummary, ChatHistoryResponse, MessageResponse, CitationSchema
-from app.services import chat_service
-from app.db import repository
+from sqlalchemy.orm import Session
 from app.api.deps import get_current_user
-from app.db.models import User
 from app.core.config import settings
+from app.db import repository
+from app.db.base import get_db
+from app.db.models import User
+from app.schemas.chat import ChatHistoryResponse, ChatRequest, ChatResponse, ChatSummary, CitationSchema, MessageResponse
+from app.services import chat_service
+from app.services.ranker_service import DEFAULT_RANKER_METHOD, normalize_ranker_method
 
 router = APIRouter()
 
+
 class TTSRequest(BaseModel):
     text: str
+
 
 @router.post("/tts")
 def text_to_speech(
@@ -89,6 +92,7 @@ def text_to_speech(
     except Exception as exc:
         raise HTTPException(status_code=500, detail=f"TTS Server Error: {str(exc)}")
 
+
 @router.post("/send", response_model=ChatResponse)
 def send_message(
     request: ChatRequest,
@@ -100,7 +104,7 @@ def send_message(
         if not chat or chat.user_id != current_user.id:
             raise HTTPException(status_code=403, detail="Access denied")
 
-    ranker_method = request.ranker_method or "mix"
+    ranker_method = normalize_ranker_method(request.ranker_method or DEFAULT_RANKER_METHOD)
 
     return chat_service.handle_chat_request(
         db=db,
@@ -111,12 +115,14 @@ def send_message(
         ranker_method=ranker_method
     )
 
+
 @router.get("/list", response_model=List[ChatSummary])
 def get_chats(
     db: Session = Depends(get_db),
     current_user: User = Depends(get_current_user)
 ):
     return repository.get_user_chats(db, user_id=current_user.id)
+
 
 @router.get("/{chat_id}/history", response_model=ChatHistoryResponse)
 def get_chat_history(
@@ -155,6 +161,7 @@ def get_chat_history(
 
     return ChatHistoryResponse(chat_id=chat.id, title=chat.title, messages=formatted_messages)
 
+
 @router.delete("/{chat_id}")
 def delete_chat(
     chat_id: int,
@@ -167,6 +174,7 @@ def delete_chat(
 
     repository.delete_chat(db, chat_id)
     return {"status": "deleted"}
+
 
 @router.put("/{chat_id}/rename")
 def rename_chat(
