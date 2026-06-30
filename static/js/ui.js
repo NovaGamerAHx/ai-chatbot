@@ -108,15 +108,16 @@ const UI = {
         
         const safeContent = encodeURIComponent(displayContent).replace(/'/g, "%27");
 
+        const actionBtnClass = "flex items-center gap-1.5 px-2.5 py-1 bg-transparent hover:bg-slate-200/60 dark:hover:bg-slate-700/50 border border-transparent rounded-lg text-[11px] font-medium text-slate-400 dark:text-slate-500 hover:text-slate-700 dark:hover:text-slate-200 transition-all cursor-pointer";
         const actionsHtml = `
-            <div class="flex items-center gap-1.5 mt-4 ${isUser ? 'justify-end' : 'justify-end'}">
+            <div class="flex items-center gap-1 mt-3 justify-end opacity-85 hover:opacity-100 transition-opacity">
                 ${!isUser ? `
-                <button class="tts-btn flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-lg text-[11px] font-medium text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-200 dark:hover:border-blue-800/40 transition-all shadow-sm" onclick="playTTS(decodeURIComponent('${safeContent}'), this)" title="خوانش متن">
+                <button class="tts-btn ${actionBtnClass}" onclick="playTTS(decodeURIComponent('${safeContent}'), this)" title="خوانش متن">
                     <i data-lucide="volume-2" class="w-3.5 h-3.5"></i>
                     <span>خوانش</span>
                 </button>
                 ` : ''}
-                <button class="flex items-center gap-1.5 px-2.5 py-1.5 bg-slate-50 dark:bg-slate-800/80 border border-slate-200 dark:border-slate-700/60 rounded-lg text-[11px] font-medium text-slate-400 hover:text-blue-600 dark:hover:text-blue-400 hover:bg-blue-50 dark:hover:bg-blue-500/10 hover:border-blue-200 dark:hover:border-blue-800/40 transition-all shadow-sm" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="کپی پیام">
+                <button class="${actionBtnClass}" onclick="copyToClipboard(decodeURIComponent('${safeContent}'), this)" title="کپی پیام">
                     <i data-lucide="copy" class="w-3.5 h-3.5"></i>
                     <span>کپی</span>
                 </button>

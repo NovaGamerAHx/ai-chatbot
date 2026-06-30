@@ -14,6 +14,7 @@ const app = {
         this.initTheme();
         this.displayUsername();
         this.bindEvents();
+        this.updateRankerButtonLabel();
         
         const urlParams = new URLSearchParams(window.location.search);
         const urlChatId = urlParams.get('chat_id');
@@ -78,6 +79,7 @@ const app = {
             if (rankerBtn) {
                 if (this.isWebSearch) {
                     rankerBtn.classList.remove('hidden');
+                    this.updateRankerButtonLabel();
                 } else {
                     rankerBtn.classList.add('hidden');
                     this.closeRankerDropdown();
@@ -151,7 +153,7 @@ const app = {
         dropdown = document.createElement('div');
         dropdown.id = 'ranker-dropdown';
         dropdown.className = 'fixed bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-xl shadow-slate-200/50 dark:shadow-none z-50 py-1.5 min-w-[160px] animate-in fade-in duration-150';
-        dropdown.style.top = (rect.bottom + 8) + 'px';
+        dropdown.style.bottom = (window.innerHeight - rect.top + 8) + 'px';
         dropdown.style.right = (window.innerWidth - rect.right) + 'px';
 
         const options = [
@@ -185,10 +187,18 @@ const app = {
     },
 
     updateRankerButtonLabel() {
-        const label = document.getElementById('ranker-label');
-        if (!label) return;
+        const btn = document.getElementById('ranker-toggle');
+        if (!btn) return;
         const labels = { none: 'بدون رنکر', cohere: 'Cohere', jina: 'Jina', mix: 'میکس' };
-        label.textContent = labels[this.rankerMethod] || 'بدون رنکر';
+        const labelText = labels[this.rankerMethod] || 'بدون رنکر';
+        btn.title = `حالت رنکر (${labelText})`;
+        if (this.rankerMethod !== 'none') {
+            btn.classList.add('text-blue-600', 'bg-blue-50', 'dark:bg-blue-500/10', 'dark:text-blue-400', 'border-blue-300', 'dark:border-blue-700');
+            btn.classList.remove('text-slate-400', 'dark:text-slate-500', 'border-slate-200', 'dark:border-slate-700');
+        } else {
+            btn.classList.remove('text-blue-600', 'bg-blue-50', 'dark:bg-blue-500/10', 'dark:text-blue-400', 'border-blue-300', 'dark:border-blue-700');
+            btn.classList.add('text-slate-400', 'dark:text-slate-500', 'border-slate-200', 'dark:border-slate-700');
+        }
     },
 
     async loadChatList() {
