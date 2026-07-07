@@ -1,17 +1,468 @@
 ================================================================================
 USER PROMPT:
-زننده دومین گل در جام جهانی 2012 چه کسی بود و در چه دقیقه ای؟
+کدام کشورها در سال ۲۰۲۵ به گروه بریکس (BRICS) اضافه شدند؟
+
+RANKER METHOD: mix
 
 SEARCH QUERIES:
-1. جام جهانی 2012 آیا برگزار شد؟
-2. زننده دومین گل جام جهانی 2010 و دقیقه
-3. زننده دومین گل یورو 2012 و دقیقه
+1. کشورهای جدید بریکس 2025
+2. اعضای جدید بریکس
+3. BRICS new members list
+
+SEARCH ORDERS:
+1. QUERY: کشورهای جدید بریکس 2025
+   INITIAL ORDER:
+   1. http://sti-brics.ir/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-2
+   2. https://www.irna.ir/news/85698636/%DA%A9%D8%AF%D8%A7%D9%85-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D8%A8%D9%87-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B4%D8%B1%DB%8C%DA%A9-%D8%A8%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA%D9%86%D8%AF
+   3. https://persian.cgtn.com/2025/04/29/ARTI1745916765319949
+   4. https://defapress.ir/fa/news/715238/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DB%B9-%D8%B9%D8%B6%D9%88-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D9%86%D8%A7%D8%AE%D8%AA
+   5. https://fa.alalam.ir/news/7446743/%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AF%D8%B1-%D9%86%D8%B8%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C%D8%9B-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87-%D8%B1%D8%A7-%D8%AC%D8%B0%D8%A8-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF
+   6. https://ecoiran.com/%D8%A8%D8%AE%D8%B4-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D8%AC%D9%87%D8%A7%D9%86-110/96391-%D8%BA%D8%A7%DB%8C%D8%A8-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%A9%DB%8C%D8%B3%D8%AA-%DA%86%D9%87-%DA%A9%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%A7%DB%8C%D9%86-%D9%81%D8%B1%D8%B5%D8%AA-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-%D8%B3%D9%88%D8%AF-%D8%B1%D8%A7-%D9%85%DB%8C-%D8%A8%D8%B1%D8%AF
+   7. https://masireqtesad.ir/201898/%DA%86%D8%A7%D9%84%D8%B4%D9%87%D8%A7-%D9%88-%D8%A7%D9%88%D9%84%D9%88%DB%8C%D8%AA%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%842025-%D8%A8%D8%A7
+   8. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%DA%AF%D8%B1%D9%88%D9%87-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-192/4193582-%D8%A2%D8%BA%D8%A7%D8%B2-%D9%86%D8%B4%D8%B3%D8%AA-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84
+   9. https://iccima.ir/wp-content/uploads/2025/08/%D8%A7%D8%AC%D9%84%D8%A7%D8%B3-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B32025-%D9%88-%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A2%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.pdf
+   RERANKED ORDER:
+   1. http://sti-brics.ir/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-2
+   2. https://fa.alalam.ir/news/7446743/%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AF%D8%B1-%D9%86%D8%B8%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C%D8%9B-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87-%D8%B1%D8%A7-%D8%AC%D8%B0%D8%A8-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF
+   3. https://www.irna.ir/news/85698636/%DA%A9%D8%AF%D8%A7%D9%85-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D8%A8%D9%87-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B4%D8%B1%DB%8C%DA%A9-%D8%A8%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA%D9%86%D8%AF
+   4. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%DA%AF%D8%B1%D9%88%D9%87-%D8%A2%D9%86%D9%84%D8%A7%DB%8C%D9%86-%D8%B1%D9%88%D8%B2%D9%86%D8%A7%D9%85%D9%87-%D8%AF%D9%86%DB%8C%D8%A7%DB%8C-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF-192/4193582-%D8%A2%D8%BA%D8%A7%D8%B2-%D9%86%D8%B4%D8%B3%D8%AA-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%A8%D8%A7-%D8%AD%D8%B6%D9%88%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%A8%D8%B1%D8%B2%DB%8C%D9%84
+   5. https://iccima.ir/wp-content/uploads/2025/08/%D8%A7%D8%AC%D9%84%D8%A7%D8%B3-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B32025-%D9%88-%D9%86%D8%AA%D8%A7%DB%8C%D8%AC-%D8%A2%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.pdf
+   6. https://persian.cgtn.com/2025/04/29/ARTI1745916765319949
+   7. https://ecoiran.com/%D8%A8%D8%AE%D8%B4-%D8%B3%DB%8C%D8%A7%D8%B3%D8%AA-%D8%AC%D9%87%D8%A7%D9%86-110/96391-%D8%BA%D8%A7%DB%8C%D8%A8-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%A9%DB%8C%D8%B3%D8%AA-%DA%86%D9%87-%DA%A9%D8%B3%DB%8C-%D8%A7%D8%B2-%D8%A7%DB%8C%D9%86-%D9%81%D8%B1%D8%B5%D8%AA-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-%D8%B3%D9%88%D8%AF-%D8%B1%D8%A7-%D9%85%DB%8C-%D8%A8%D8%B1%D8%AF
+   8. https://masireqtesad.ir/201898/%DA%86%D8%A7%D9%84%D8%B4%D9%87%D8%A7-%D9%88-%D8%A7%D9%88%D9%84%D9%88%DB%8C%D8%AA%D9%87%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%AF%D8%B1-%D8%B3%D8%A7%D9%842025-%D8%A8%D8%A7
+   9. https://defapress.ir/fa/news/715238/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DB%B9-%D8%B9%D8%B6%D9%88-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D9%86%D8%A7%D8%AE%D8%AA
+   SELECTED TOP RESULTS:
+   1. http://sti-brics.ir/%D8%B3%D8%A7%DB%8C%D8%AA-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-2
+   2. https://fa.alalam.ir/news/7446743/%D8%AA%D8%BA%DB%8C%DB%8C%D8%B1-%D8%A8%D8%B2%D8%B1%DA%AF-%D8%AF%D8%B1-%D9%86%D8%B8%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C%D8%9B-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C-%D8%AE%D8%A7%D9%88%D8%B1%D9%85%DB%8C%D8%A7%D9%86%D9%87-%D8%B1%D8%A7-%D8%AC%D8%B0%D8%A8-%D9%85%DB%8C-%DA%A9%D9%86%D8%AF
+   3. https://www.irna.ir/news/85698636/%DA%A9%D8%AF%D8%A7%D9%85-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7-%D8%A8%D9%87-%D8%B9%D9%86%D9%88%D8%A7%D9%86-%D8%B4%D8%B1%DB%8C%DA%A9-%D8%A8%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D9%BE%DB%8C%D9%88%D8%B3%D8%AA%D9%86%D8%AF
+2. QUERY: اعضای جدید بریکس
+   INITIAL ORDER:
+   1. https://fa.wikipedia.org/wiki/%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   2. https://www.tahlilbazaar.com/news/350939/%D8%A7%D9%84%D8%AD%D8%A7%D9%82-%DB%B1%DB%B0-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   3. https://defapress.ir/fa/news/715238/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DB%B9-%D8%B9%D8%B6%D9%88-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D9%86%D8%A7%D8%AE%D8%AA
+   4. https://iranbroker.net/what-is-brics
+   5. https://www.sharghdaily.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-12/1031790-%D8%A7%D8%B9%D8%B6%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%86%D9%87-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C%DB%8C-%D9%87%D8%B3%D8%AA%D9%86%D8%AF-%D8%AA%D9%87%D8%AF%DB%8C%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE
+   6. https://www.tabnak.ir/fa/tags/164844/1/%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   7. https://www.youtube.com/watch?v=2MCs_Qil0NU
+   8. https://www.dw.com/fa-ir/%D8%A7%D8%B9%D8%B6%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D9%86%D9%82%D8%B6-%D8%AD%D9%82%D9%88%D9%82-%D8%A8%DB%8C%D9%86%D8%A7%D9%84%D9%85%D9%84%D9%84-%D8%AF%D8%A7%D9%86%D8%B3%D8%AA%D9%86%D8%AF/a-73182198
+   RERANKED ORDER:
+   1. https://fa.wikipedia.org/wiki/%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   2. https://www.tahlilbazaar.com/news/350939/%D8%A7%D9%84%D8%AD%D8%A7%D9%82-%DB%B1%DB%B0-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   3. https://www.tabnak.ir/fa/tags/164844/1/%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   4. https://www.youtube.com/watch?v=2MCs_Qil0NU
+   5. https://iranbroker.net/what-is-brics
+   6. https://defapress.ir/fa/news/715238/%D8%B3%D8%A7%D8%B2%D9%85%D8%A7%D9%86-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DB%B9-%D8%B9%D8%B6%D9%88-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%AE%D9%88%D8%AF-%D8%B1%D8%A7-%D8%AE%D9%88%D8%A7%D9%87%D8%AF-%D8%B4%D9%86%D8%A7%D8%AE%D8%AA
+   7. https://www.sharghdaily.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D9%82%D8%AA%D8%B5%D8%A7%D8%AF%DB%8C-12/1031790-%D8%A7%D8%B9%D8%B6%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%DA%86%D9%87-%DA%A9%D8%B4%D9%88%D8%B1%D9%87%D8%A7%DB%8C%DB%8C-%D9%87%D8%B3%D8%AA%D9%86%D8%AF-%D8%AA%D9%87%D8%AF%DB%8C%D8%AF-%D8%AA%D8%B1%D8%A7%D9%85%D9%BE
+   8. https://www.dw.com/fa-ir/%D8%A7%D8%B9%D8%B6%D8%A7%DB%8C-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3-%D8%AD%D9%85%D9%84%D9%87-%D8%A8%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D9%86%D9%82%D8%B6-%D8%AD%D9%82%D9%88%D9%82-%D8%A8%DB%8C%D9%86%D8%A7%D9%84%D9%85%D9%84%D9%84-%D8%AF%D8%A7%D9%86%D8%B3%D8%AA%D9%86%D8%AF/a-73182198
+   SELECTED TOP RESULTS:
+   1. https://fa.wikipedia.org/wiki/%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   2. https://www.tahlilbazaar.com/news/350939/%D8%A7%D9%84%D8%AD%D8%A7%D9%82-%DB%B1%DB%B0-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF-%D8%A8%D9%87-%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+   3. https://www.tabnak.ir/fa/tags/164844/1/%DA%AF%D8%B1%D9%88%D9%87-%D8%A8%D8%B1%DB%8C%DA%A9%D8%B3
+3. QUERY: BRICS new members list
+   INITIAL ORDER:
+   1. https://en.wikipedia.org/wiki/Member_states_of_BRICS
+   2. https://www.quora.com/Which-country-recently-joined-BRICS-as-a-new-member-in-2024
+   3. https://en.wikipedia.org/wiki/BRICS
+   4. https://www.ebc.com/forex/which-countries-want-to-join-brics-updated-list-2026
+   5. https://www.britannica.com/topic/BRICS
+   6. https://www.youtube.com/watch?v=MXOdxLoChJA&vl=en
+   7. https://tvbrics.com/en/states
+   8. https://www.cfr.org/backgrounders/what-brics-group-and-why-it-expanding
+   RERANKED ORDER:
+   1. https://en.wikipedia.org/wiki/Member_states_of_BRICS
+   2. https://www.quora.com/Which-country-recently-joined-BRICS-as-a-new-member-in-2024
+   3. https://en.wikipedia.org/wiki/BRICS
+   4. https://www.britannica.com/topic/BRICS
+   5. https://www.ebc.com/forex/which-countries-want-to-join-brics-updated-list-2026
+   6. https://www.youtube.com/watch?v=MXOdxLoChJA&vl=en
+   7. https://www.cfr.org/backgrounders/what-brics-group-and-why-it-expanding
+   8. https://tvbrics.com/en/states
+   SELECTED TOP RESULTS:
+   1. https://en.wikipedia.org/wiki/Member_states_of_BRICS
+   2. https://www.quora.com/Which-country-recently-joined-BRICS-as-a-new-member-in-2024
+   3. https://en.wikipedia.org/wiki/BRICS
 
 FINAL RESPONSE:
-There was no FIFA World Cup held in 2012, as the FIFA World Cup is typically held every four years [3]. The major international football tournament in 2012 was the UEFA European Championship (Euro 2012). There was also the 2012 VIVA World Cup, an international tournament for teams not affiliated with FIFA [1].
+در سال ۲۰۲۵، اندونزی به عنوان عضو جدید به گروه بریکس (BRICS) پیوست [1] [7] [9].
 
-Based on the provided search results:
-*   **For the UEFA Euro 2012 tournament:** Robert Lewandowski scored the *first* goal of Euro 2012 in the 16th minute of a match against Greece [7]. The provided sources do not explicitly state who scored the *second* goal of the entire Euro 2012 tournament.
-*   **For the 2012 VIVA World Cup:** The sources indicate that this tournament took place [1], but they do not provide details about specific goal scorers or the minutes in which goals were scored.
+علاوه بر اندونزی که به عنوان عضو کامل اضافه شد، چندین کشور دیگر نیز از ژانویه ۲۰۲۵ به عنوان «کشورهای شریک» به بریکس پیوسته‌اند [1] [3]. این کشورها شامل:
+*   بلاروس [1] [5]
+*   بولیوی [1] [5]
+*   قزاقستان [1] [5]
+*   مالزی [1] [3]
+*   ویتنام [1]
+*   تایلند [3]
+*   کوبا [3]
+*   اوگاندا [3]
+*   ازبکستان [3]
+================================================================================
+
+================================================================================
+USER PROMPT:
+چهارمین گل در جام جهانی 2018 توسط چه کسی به ثمر رسید؟
+
+RANKER METHOD: mix
+
+SEARCH QUERIES:
+1. زننده گل چهارم جام جهانی 2018
+2. who scored fourth goal 2018 World Cup
+
+SEARCH ORDERS:
+1. QUERY: زننده گل چهارم جام جهانی 2018
+   INITIAL ORDER:
+   1. https://www.footballbazz.com/question/4836/%D8%B2%D9%86%D9%86%D8%AF%D9%87-%DA%AF%D9%84-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D8%AF%D8%B1-%D9%81%DB%8C%D9%86%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-2018-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%A9%D8%AF4836
+   2. https://www.instagram.com/reel/DZqOZwCTJb2?hl=en
+   3. https://www.fotmob.com/fa/leagues/77/stats/world-cup/players?season=2018
+   4. https://www.bbc.com/persian/sport-44736402
+   5. https://www.digikala.com/mag/%D8%AA%DB%8C%D9%85-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%DB%8C%DA%A9-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C2018
+   6. https://www.tabnak.ir/fa/news/816748/%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D9%81%DB%8C%D9%86%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-2018-%D9%88-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%A7%D9%87%D8%AF%D8%A7%DB%8C-%D8%AC%D8%A7%D9%85
+   7. https://www.khabarvarzeshi.com/news/172097/%DB%B1%DB%B8-%D8%A2%D9%85%D8%A7%D8%B1-%D8%AC%D8%A7%D9%84%D8%A8-%D8%A7%D8%B2-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%DB%B2%DB%B0%DB%B1%DB%B8-%DA%A9%D9%87-%D8%B4%D8%A7%DB%8C%D8%AF-%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4%DB%8C%D8%AF
+   8. https://fa.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85_%D8%AC%D9%87%D8%A7%D9%86%DB%8C_%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84_%DB%B2%DB%B0%DB%B1%DB%B8
+   RERANKED ORDER:
+   1. https://www.footballbazz.com/question/4836/%D8%B2%D9%86%D9%86%D8%AF%D9%87-%DA%AF%D9%84-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D8%AF%D8%B1-%D9%81%DB%8C%D9%86%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-2018-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%A9%D8%AF4836
+   2. https://www.instagram.com/reel/DZqOZwCTJb2?hl=en
+   3. https://www.digikala.com/mag/%D8%AA%DB%8C%D9%85-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%DB%8C%DA%A9-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C2018
+   4. https://www.tabnak.ir/fa/news/816748/%D8%AE%D9%84%D8%A7%D8%B5%D9%87-%D9%81%DB%8C%D9%86%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-2018-%D9%88-%D9%85%D8%B1%D8%A7%D8%B3%D9%85-%D8%A7%D9%87%D8%AF%D8%A7%DB%8C-%D8%AC%D8%A7%D9%85
+   5. https://www.fotmob.com/fa/leagues/77/stats/world-cup/players?season=2018
+   6. https://www.bbc.com/persian/sport-44736402
+   7. https://www.khabarvarzeshi.com/news/172097/%DB%B1%DB%B8-%D8%A2%D9%85%D8%A7%D8%B1-%D8%AC%D8%A7%D9%84%D8%A8-%D8%A7%D8%B2-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-%DB%B2%DB%B0%DB%B1%DB%B8-%DA%A9%D9%87-%D8%B4%D8%A7%DB%8C%D8%AF-%D9%81%D8%B1%D8%A7%D9%85%D9%88%D8%B4-%DA%A9%D8%B1%D8%AF%D9%87-%D8%A8%D8%A7%D8%B4%DB%8C%D8%AF
+   8. https://fa.wikipedia.org/wiki/%D8%AC%D8%A7%D9%85_%D8%AC%D9%87%D8%A7%D9%86%DB%8C_%D9%81%D9%88%D8%AA%D8%A8%D8%A7%D9%84_%DB%B2%DB%B0%DB%B1%DB%B8
+   SELECTED TOP RESULTS:
+   1. https://www.footballbazz.com/question/4836/%D8%B2%D9%86%D9%86%D8%AF%D9%87-%DA%AF%D9%84-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D9%81%D8%B1%D8%A7%D9%86%D8%B3%D9%87-%D8%AF%D8%B1-%D9%81%DB%8C%D9%86%D8%A7%D9%84-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-2018-%D8%B1%D9%88%D8%B3%DB%8C%D9%87-%DA%A9%D8%AF4836
+   2. https://www.instagram.com/reel/DZqOZwCTJb2?hl=en
+   3. https://www.digikala.com/mag/%D8%AA%DB%8C%D9%85-%D9%85%D9%86%D8%AA%D8%AE%D8%A8-%D9%85%D8%B1%D8%AD%D9%84%D9%87-%DB%8C%DA%A9-%DA%86%D9%87%D8%A7%D8%B1%D9%85-%D8%AC%D8%A7%D9%85-%D8%AC%D9%87%D8%A7%D9%86%DB%8C2018
+2. QUERY: who scored fourth goal 2018 World Cup
+   INITIAL ORDER:
+   1. https://football.fandom.com/wiki/2018_FIFA_World_Cup_Final
+   2. https://bleacherreport.com/articles/2786155-world-cup-final-results-2018-top-highlights-stats-and-man-of-the-match
+   3. https://www.olympics.com/en/news/fifa-world-cup-messi-mbappe-goal-record-klose-football
+   4. https://www.espn.com/soccer/match/_/gameId/498139/croatia-france
+   5. https://www.espn.com/soccer/story/_/id/49154970/portugal-cristiano-ronaldo-goal-first-score-six-world-cups-uzbekistan
+   6. https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_top_goalscorers
+   7. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_final
+   8. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup
+   9. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_Group_B
+   10. https://www.foxsports.com/stories/soccer/world-cup-100-best-moments-messi-maradona-ronaldo-pele-mbappe-usa
+   RERANKED ORDER:
+   1. https://football.fandom.com/wiki/2018_FIFA_World_Cup_Final
+   2. https://bleacherreport.com/articles/2786155-world-cup-final-results-2018-top-highlights-stats-and-man-of-the-match
+   3. https://www.olympics.com/en/news/fifa-world-cup-messi-mbappe-goal-record-klose-football
+   4. https://en.wikipedia.org/wiki/List_of_FIFA_World_Cup_top_goalscorers
+   5. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_final
+   6. https://www.foxsports.com/stories/soccer/world-cup-100-best-moments-messi-maradona-ronaldo-pele-mbappe-usa
+   7. https://www.espn.com/soccer/story/_/id/49154970/portugal-cristiano-ronaldo-goal-first-score-six-world-cups-uzbekistan
+   8. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup_Group_B
+   9. https://en.wikipedia.org/wiki/2018_FIFA_World_Cup
+   10. https://www.espn.com/soccer/match/_/gameId/498139/croatia-france
+   SELECTED TOP RESULTS:
+   1. https://football.fandom.com/wiki/2018_FIFA_World_Cup_Final
+   2. https://bleacherreport.com/articles/2786155-world-cup-final-results-2018-top-highlights-stats-and-man-of-the-match
+   3. https://www.olympics.com/en/news/fifa-world-cup-messi-mbappe-goal-record-klose-football
+
+FINAL RESPONSE:
+چهارمین گل فرانسه در فینال جام جهانی 2018 روسیه، توسط کلیان امباپه به ثمر رسید [1] [4] [5]. این گل، که با شوتی از بیرون محوطه جریمه وارد دروازه شد، فرانسه را به چهارمین گل خود در مقابل کرواسی رساند [4] [5].
+
+با به ثمر رساندن این گل، امباپه به اولین بازیکن نوجوان تبدیل شد که از سال 1958 و پس از پله، در فینال جام جهانی گلزنی می‌کند [4]. فرانسه در این بازی کرواسی را با نتیجه 4-2 شکست داد و قهرمان جام جهانی شد [5].
+================================================================================
+
+================================================================================
+USER PROMPT:
+رتبه دانشگاه صنعتی شریف در آخرین رتبه‌بندی جهانی QS در سال ۲۰۲۶ چند است؟
+کدام شهر ایران در زمستان ۱۴۰۴ رکورد کمترین دمای ثبت شده را داشت؟
+سرمربی فعلی تیم ملی والیبال مردان ایران در سال ۲۰۲۶ چه کسی است؟
+ظرفیت دقیق استادیوم نقش جهان اصفهان پس از آخرین بازسازی‌ها چقدر است؟
+
+RANKER METHOD: mix
+
+SEARCH QUERIES:
+1. رتبه دانشگاه صنعتی شریف رتبه‌بندی QS 2026
+2. Sharif University of Technology QS ranking 2026
+3. کمترین دمای ایران زمستان 1404
+4. سردترین شهر ایران زمستان 1404
+5. Iran lowest temperature winter 2025-2026
+6. سرمربی تیم ملی والیبال مردان ایران 2026
+7. Iran men's national volleyball team head coach 2026
+8. ظرفیت استادیوم نقش جهان اصفهان
+9. استادیوم نقش جهان اصفهان ظرفیت جدید بازسازی
+10. Naghsh-e Jahan Stadium capacity latest renovation
+
+SEARCH ORDERS:
+1. QUERY: رتبه دانشگاه صنعتی شریف رتبه‌بندی QS 2026
+   INITIAL ORDER:
+   1. https://jahanesanat.ir/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%B2%D9%85%D8%B1%D9%87-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7
+   2. https://fa.shafaqna.com/news/2071617
+   3. https://isc.ac/fa/news/2537/%D8%AD%D8%B6%D9%88%D8%B1-%DB%B1%DB%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%D8%B2-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-qs-%DB%B2%DB%B0%DB%B2%DB%B6
+   4. https://x.com/IraninAustralia/status/1940280910131470378
+   5. https://kish.ut.ac.ir/fa/w/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%D8%8C-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%B1%D8%AA%D8%A8%D9%87%E2%80%8C%D8%A8%D9%86%D8%AF%DB%8C
+   6. https://www.instagram.com/p/DL7sulOCElo
+   7. https://go2tr.com/mag/ranking-the-worlds-universities
+   8. https://www.sharif.ir/en/web/international/w/%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B5%D9%86%D8%B9%D8%AA%DB%8C-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D9%85%D9%88%D8%B6
+   9. https://www.topuniversities.com/world-university-rankings
+   RERANKED ORDER:
+   1. https://jahanesanat.ir/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%B2%D9%85%D8%B1%D9%87-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7
+   2. https://www.sharif.ir/en/web/international/w/%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B5%D9%86%D8%B9%D8%AA%DB%8C-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D9%85%D9%88%D8%B6
+   3. https://go2tr.com/mag/ranking-the-worlds-universities
+   4. https://fa.shafaqna.com/news/2071617
+   5. https://kish.ut.ac.ir/fa/w/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%AA%D9%87%D8%B1%D8%A7%D9%86%D8%8C-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AF%D8%B1-%D8%B1%D8%AA%D8%A8%D9%87%E2%80%8C%D8%A8%D9%86%D8%AF%DB%8C
+   6. https://www.instagram.com/p/DL7sulOCElo
+   7. https://x.com/IraninAustralia/status/1940280910131470378
+   8. https://isc.ac/fa/news/2537/%D8%AD%D8%B6%D9%88%D8%B1-%DB%B1%DB%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%A7%D8%B2-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D8%AC%D9%87%D8%A7%D9%86%DB%8C-qs-%DB%B2%DB%B0%DB%B2%DB%B6
+   9. https://www.topuniversities.com/world-university-rankings
+   SELECTED TOP RESULTS:
+   1. https://jahanesanat.ir/%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%B2%D9%85%D8%B1%D9%87-%D8%A8%D8%B1%D8%AA%D8%B1%DB%8C%D9%86-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D9%87%D8%A7
+   2. https://www.sharif.ir/en/web/international/w/%D8%AD%D8%B6%D9%88%D8%B1-%D8%AF%D8%A7%D9%86%D8%B4%DA%AF%D8%A7%D9%87-%D8%B5%D9%86%D8%B9%D8%AA%DB%8C-%D8%B4%D8%B1%DB%8C%D9%81-%D8%AF%D8%B1-%D8%AC%D8%AF%DB%8C%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B1%D8%AA%D8%A8%D9%87-%D8%A8%D9%86%D8%AF%DB%8C-%D9%85%D9%88%D8%B6
+   3. https://go2tr.com/mag/ranking-the-worlds-universities
+2. QUERY: Sharif University of Technology QS ranking 2026
+   INITIAL ORDER:
+   1. https://edurank.org/uni/sharif-university-of-technology/rankings
+   2. https://www.tehrantimes.com/news/526907/10-Iranian-universities-in-QS-ranking-2026-by-subject
+   3. https://www.linkedin.com/posts/sharif-university-of-technology_sharif-university-of-technology-ranked-among-activity-7388184108218253312-zbYk
+   4. https://cwur.org/2026/sharif-university-of-technology.php
+   5. http://english.iut.ac.ir/node/1452
+   6. https://www.topuniversities.com/universities/sharif-university-technology
+   7. https://www.usnews.com/education/best-global-universities/sharif-university-of-technology-502898
+   8. https://www.timeshighereducation.com/world-university-rankings/sharif-university-technology
+   9. https://www.topuniversities.com/world-university-rankings?countries=ir
+   RERANKED ORDER:
+   1. https://www.linkedin.com/posts/sharif-university-of-technology_sharif-university-of-technology-ranked-among-activity-7388184108218253312-zbYk
+   2. https://edurank.org/uni/sharif-university-of-technology/rankings
+   3. http://english.iut.ac.ir/node/1452
+   4. https://www.tehrantimes.com/news/526907/10-Iranian-universities-in-QS-ranking-2026-by-subject
+   5. https://www.topuniversities.com/universities/sharif-university-technology
+   6. https://www.topuniversities.com/world-university-rankings?countries=ir
+   7. https://cwur.org/2026/sharif-university-of-technology.php
+   8. https://www.usnews.com/education/best-global-universities/sharif-university-of-technology-502898
+   9. https://www.timeshighereducation.com/world-university-rankings/sharif-university-technology
+   SELECTED TOP RESULTS:
+   1. https://www.linkedin.com/posts/sharif-university-of-technology_sharif-university-of-technology-ranked-among-activity-7388184108218253312-zbYk
+   2. https://edurank.org/uni/sharif-university-of-technology/rankings
+   3. http://english.iut.ac.ir/node/1452
+3. QUERY: کمترین دمای ایران زمستان 1404
+   INITIAL ORDER:
+   1. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+   2. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   3. https://www.instagram.com/p/DRJ3bJjl79m
+   4. https://newspaper.hamshahrionline.ir/id/269792/%D8%B3%D8%AA%D9%88%D9%86-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87-%D9%85%D9%86%D9%81%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.html
+   5. http://www.rimas.ac.ir/fa/news/1088/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D9%81%D8%B5%D9%84%DB%8C-%D8%A8%D8%A7%D8%B1%D8%B4-%D9%88-%D8%AF%D9%85%D8%A7%DB%8C-%D9%87%D9%88%D8%A7%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AA%D8%A7-%D8%AA%DB%8C%D8%B1-%D9%85%D8%A7%D9%87-%D8%B3%D8%A7%D9%84-%DB%B1%DB%B4%DB%B0%DB%B4-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF
+   6. https://www.tabnak.ir/fa/tags/40783/1/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1
+   7. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4157628-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B5%D9%81%D8%B1
+   8. https://www.asriran.com/fa/news/1084150/%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%A7%D9%84-%D9%86%DB%8C%D9%86%D9%88-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%DB%8C%D9%85%D9%87-%D8%AF%D9%88%D9%85-%D8%B3%D8%A7%D9%84-1404
+   9. https://www.eghtesadonline.com/fa/news/2098594/%D8%B3%D8%B1%D9%85%D8%A7-%D9%88-%DB%8C%D8%AE%D8%A8%D9%86%D8%AF%D8%A7%D9%86-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%B1%D8%A7%D9%87-%DB%B1%DB%B5-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AF%D9%82%DB%8C%D9%82-%D8%A8%D8%A7%D8%B1%D8%B4-%D8%A8%D8%B1%D9%81-%D9%88-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF
+   10. https://www.instagram.com/reel/DShUT7zCNKB
+   RERANKED ORDER:
+   1. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+   2. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   3. https://newspaper.hamshahrionline.ir/id/269792/%D8%B3%D8%AA%D9%88%D9%86-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87-%D9%85%D9%86%D9%81%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.html
+   4. https://www.tabnak.ir/fa/tags/40783/1/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1
+   5. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4157628-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B5%D9%81%D8%B1
+   6. http://www.rimas.ac.ir/fa/news/1088/%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D9%81%D8%B5%D9%84%DB%8C-%D8%A8%D8%A7%D8%B1%D8%B4-%D9%88-%D8%AF%D9%85%D8%A7%DB%8C-%D9%87%D9%88%D8%A7%DB%8C-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AA%D8%A7-%D8%AA%DB%8C%D8%B1-%D9%85%D8%A7%D9%87-%D8%B3%D8%A7%D9%84-%DB%B1%DB%B4%DB%B0%DB%B4-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF
+   7. https://www.eghtesadonline.com/fa/news/2098594/%D8%B3%D8%B1%D9%85%D8%A7-%D9%88-%DB%8C%D8%AE%D8%A8%D9%86%D8%AF%D8%A7%D9%86-%D9%BE%D8%A7%DB%8C%DB%8C%D8%B2%DB%8C-%D8%AF%D8%B1-%D8%B1%D8%A7%D9%87-%DB%B1%DB%B5-%D8%A7%D8%B3%D8%AA%D8%A7%D9%86-%DA%A9%D8%B4%D9%88%D8%B1-%D8%AA%D8%A7%D8%B1%DB%8C%D8%AE-%D8%AF%D9%82%DB%8C%D9%82-%D8%A8%D8%A7%D8%B1%D8%B4-%D8%A8%D8%B1%D9%81-%D9%88-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86-%D8%A7%D8%B9%D9%84%D8%A7%D9%85-%D8%B4%D8%AF
+   8. https://www.instagram.com/p/DRJ3bJjl79m
+   9. https://www.instagram.com/reel/DShUT7zCNKB
+   10. https://www.asriran.com/fa/news/1084150/%D9%BE%D8%AF%DB%8C%D8%AF%D9%87-%D8%A7%D9%84-%D9%86%DB%8C%D9%86%D9%88-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D8%B1%D8%A7%DB%8C-%D9%86%DB%8C%D9%85%D9%87-%D8%AF%D9%88%D9%85-%D8%B3%D8%A7%D9%84-1404
+   SELECTED TOP RESULTS:
+   1. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+   2. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   3. https://newspaper.hamshahrionline.ir/id/269792/%D8%B3%D8%AA%D9%88%D9%86-%D8%AA%D8%AC%D8%B1%D8%A8%D9%87-%D9%85%D9%86%D9%81%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86.html
+4. QUERY: سردترین شهر ایران زمستان 1404
+   INITIAL ORDER:
+   1. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   2. https://www.mehrnews.com/news/6728213/%D8%B3%D8%B1%D8%A7%D8%A8-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B4%D8%AF
+   3. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+   4. https://www.bartarinha.ir/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B1%D9%88%D8%B2-20/1577246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B9%D8%AA-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87
+   5. https://www.tabnak.ir/fa/tags/40783/1/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1
+   6. https://42667925.khabarban.com
+   7. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4157628-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B5%D9%81%D8%B1
+   8. https://safarmarket.com/blog/attractions/iran/coolest-cities-in-iran-in-summer
+   9. https://www.sharghdaily.com/%D8%A8%D8%AE%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-220/952895-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA
+   10. https://ghasedak24.com/mag/travel-guide/coldest-cities-in-the-world
+   RERANKED ORDER:
+   1. https://www.mehrnews.com/news/6728213/%D8%B3%D8%B1%D8%A7%D8%A8-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B4%D8%AF
+   2. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   3. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+   4. https://www.bartarinha.ir/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B1%D9%88%D8%B2-20/1577246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%AF%D8%B1-%D8%B3%D8%A7%D8%B9%D8%AA-%D8%A7%D8%AE%DB%8C%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87
+   5. https://42667925.khabarban.com
+   6. https://www.tabnak.ir/fa/tags/40783/1/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1
+   7. https://donya-e-eqtesad.com/%D8%A8%D8%AE%D8%B4-%D8%B3%D8%A7%DB%8C%D8%AA-%D8%AE%D9%88%D8%A7%D9%86-62/4157628-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B2%DB%8C%D8%B1-%D8%B5%D9%81%D8%B1
+   8. https://www.sharghdaily.com/%D8%A8%D8%AE%D8%B4-%D8%AC%D8%A7%D9%85%D8%B9%D9%87-220/952895-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%DA%A9%D8%B4%D9%88%D8%B1-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA
+   9. https://safarmarket.com/blog/attractions/iran/coolest-cities-in-iran-in-summer
+   10. https://ghasedak24.com/mag/travel-guide/coldest-cities-in-the-world
+   SELECTED TOP RESULTS:
+   1. https://www.mehrnews.com/news/6728213/%D8%B3%D8%B1%D8%A7%D8%A8-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B4%D8%AF
+   2. https://ana.ir/fa/news/1027454/%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%B1%D8%A7-%D8%A8%D8%A7-%D8%AF%D9%85%D8%A7%DB%8C-%D9%85%D9%86%D9%81%DB%8C-%DB%B2%DB%B8-%D8%AF%D8%B1%D8%AC%D9%87-%D8%A8%D8%B4%D9%86%D8%A7%D8%B3%DB%8C%D8%AF
+   3. https://www.eghtesadnews.com/%D8%A8%D8%AE%D8%B4-%D8%A7%D8%AE%D8%A8%D8%A7%D8%B1-%D8%B3%D8%A7%DB%8C%D8%B1-%D8%B1%D8%B3%D8%A7%D9%86%D9%87-%D9%87%D8%A7-61/768246-%D8%B3%D8%B1%D8%AF%D8%AA%D8%B1%DB%8C%D9%86-%D8%B4%D9%87%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%DA%A9%D8%AC%D8%A7%D8%B3%D8%AA-%D9%BE%DB%8C%D8%B4-%D8%A8%DB%8C%D9%86%DB%8C-%D8%A2%D8%A8-%D9%87%D9%88%D8%A7%DB%8C-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D8%A8%D9%87%D9%85%D9%86-%D8%AA%D9%87%D8%B1%D8%A7%D9%86-%D8%A8%D8%A7%D8%B1%D8%A7%D9%86%DB%8C-%D9%85%DB%8C-%D8%B4%D9%88%D8%AF
+5. QUERY: Iran lowest temperature winter 2025-2026
+   INITIAL ORDER:
+   1. https://www.facebook.com/WCAXTV/posts/meteorological-winter-of-2025-2026-is-officially-the-coldest-winter-in-11-years-/1353857140103368
+   2. https://www.cbsnews.com/newyork/news/2025-2026-nyc-winter-cold-snow
+   3. https://weatherspark.com/h/m/105125/2026/1/Historical-Weather-in-January-2026-in-Tehran-Iran
+   4. https://www.hra-iran.org/the-crimson-winter-a-50-day-record-of-irans-2025-2026-nationwide-protests
+   5. https://bluehill.org/winter-2025-2026-summary-colder-and-snowier-than-average
+   6. https://irangashttour.com/climate
+   7. https://www.worlddata.info/asia/iran/climate.php
+   8. https://www.youtube.com/watch?v=b2y5TSr2DH4
+   9. https://en.wikipedia.org/wiki/Iran_at_the_2026_Winter_Olympics
+   10. https://www.weather.gov/arx/winter2526outlook
+   RERANKED ORDER:
+   1. https://bluehill.org/winter-2025-2026-summary-colder-and-snowier-than-average
+   2. https://www.cbsnews.com/newyork/news/2025-2026-nyc-winter-cold-snow
+   3. https://www.hra-iran.org/the-crimson-winter-a-50-day-record-of-irans-2025-2026-nationwide-protests
+   4. https://weatherspark.com/h/m/105125/2026/1/Historical-Weather-in-January-2026-in-Tehran-Iran
+   5. https://www.worlddata.info/asia/iran/climate.php
+   6. https://en.wikipedia.org/wiki/Iran_at_the_2026_Winter_Olympics
+   7. https://www.youtube.com/watch?v=b2y5TSr2DH4
+   8. https://www.weather.gov/arx/winter2526outlook
+   9. https://www.facebook.com/WCAXTV/posts/meteorological-winter-of-2025-2026-is-officially-the-coldest-winter-in-11-years-/1353857140103368
+   10. https://irangashttour.com/climate
+   SELECTED TOP RESULTS:
+   1. https://bluehill.org/winter-2025-2026-summary-colder-and-snowier-than-average
+   2. https://www.cbsnews.com/newyork/news/2025-2026-nyc-winter-cold-snow
+   3. https://www.hra-iran.org/the-crimson-winter-a-50-day-record-of-irans-2025-2026-nationwide-protests
+6. QUERY: سرمربی تیم ملی والیبال مردان ایران 2026
+   INITIAL ORDER:
+   1. https://074124.khabarban.com
+   2. https://www.instagram.com/reel/DZZYKJ2I3ZS?hl=en
+   3. https://www.mehrnews.com/news/6214587/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF
+   4. https://074125.khabarban.com
+   5. https://fa.wikipedia.org/wiki/%D8%AA%DB%8C%D9%85_%D9%85%D9%84%DB%8C_%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84_%D9%85%D8%B1%D8%AF%D8%A7%D9%86_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   6. https://www.iribnews.ir/fa/news/5827351/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%DB%B1%DB%B5-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%AE%D8%B7-%DA%A9%D8%B1%D8%AF
+   7. https://www.aparat.com/v/htf88zf
+   8. https://fa.wikipedia.org/wiki/%D9%81%D9%87%D8%B1%D8%B3%D8%AA_%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C%D8%A7%D9%86_%D8%AA%DB%8C%D9%85_%D9%85%D9%84%DB%8C_%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   9. https://www.instagram.com/p/DPBiOoJEjrr?hl=en
+   10. https://www.aparat.com/v/thk0jm0
+   RERANKED ORDER:
+   1. https://074124.khabarban.com
+   2. https://www.mehrnews.com/news/6214587/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF
+   3. https://www.instagram.com/reel/DZZYKJ2I3ZS?hl=en
+   4. https://www.instagram.com/p/DPBiOoJEjrr?hl=en
+   5. https://074125.khabarban.com
+   6. https://fa.wikipedia.org/wiki/%D8%AA%DB%8C%D9%85_%D9%85%D9%84%DB%8C_%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84_%D9%85%D8%B1%D8%AF%D8%A7%D9%86_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   7. https://www.iribnews.ir/fa/news/5827351/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%DB%B1%DB%B5-%D8%A8%D8%A7%D8%B2%DB%8C%DA%A9%D9%86-%D8%B1%D8%A7-%D8%A8%D9%87-%D8%AE%D8%B7-%DA%A9%D8%B1%D8%AF
+   8. https://fa.wikipedia.org/wiki/%D9%81%D9%87%D8%B1%D8%B3%D8%AA_%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C%D8%A7%D9%86_%D8%AA%DB%8C%D9%85_%D9%85%D9%84%DB%8C_%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84_%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   9. https://www.aparat.com/v/thk0jm0
+   10. https://www.aparat.com/v/htf88zf
+   SELECTED TOP RESULTS:
+   1. https://074124.khabarban.com
+   2. https://www.mehrnews.com/news/6214587/%D8%B3%D8%B1%D9%85%D8%B1%D8%A8%DB%8C-%D8%AA%DB%8C%D9%85-%D9%85%D9%84%DB%8C-%D9%88%D8%A7%D9%84%DB%8C%D8%A8%D8%A7%D9%84-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86-%D9%85%D8%B4%D8%AE%D8%B5-%D8%B4%D8%AF
+   3. https://www.instagram.com/reel/DZZYKJ2I3ZS?hl=en
+7. QUERY: Iran men's national volleyball team head coach 2026
+   INITIAL ORDER:
+   1. https://www.facebook.com/volleytrails/posts/-iran-mens-national-team-names-42-player-training-camp-roster-for-2026-seasonhea/1440329741442909
+   2. https://en.isna.ir/news/1405030603413/Piazza-names-Iran-s-30-man-volleyball-squad-for-2026-Volleyball
+   3. https://x.com/Tasnimnews_EN/status/2055602282658746682
+   4. https://en.volleyballworld.com/volleyball/competitions/men-world-championship/news/piazza-aims-at-lifting-iran-back-to-world-s-top-eight
+   5. https://cardbiz.ca/roberto-piazza-arrives-in-iran-with-thoughts-of-volleyball-success-p767-224.htm
+   6. https://www.tehrantimes.com/news/527723/Piazza-Iran-s-players-have-improved-but-I-m-still-not-satisfied
+   7. https://www.facebook.com/VolleyballWorld/videos/the-best-of-iran-mens-volleyball-team/263461012101670
+   8. https://en.wikipedia.org/wiki/Iran_men%27s_national_volleyball_team
+   9. https://www.fivb.com/alekno-confirms-27-players-for-iran-national-team-training-camp
+   RERANKED ORDER:
+   1. https://www.facebook.com/volleytrails/posts/-iran-mens-national-team-names-42-player-training-camp-roster-for-2026-seasonhea/1440329741442909
+   2. https://cardbiz.ca/roberto-piazza-arrives-in-iran-with-thoughts-of-volleyball-success-p767-224.htm
+   3. https://x.com/Tasnimnews_EN/status/2055602282658746682
+   4. https://en.volleyballworld.com/volleyball/competitions/men-world-championship/news/piazza-aims-at-lifting-iran-back-to-world-s-top-eight
+   5. https://www.tehrantimes.com/news/527723/Piazza-Iran-s-players-have-improved-but-I-m-still-not-satisfied
+   6. https://www.facebook.com/VolleyballWorld/videos/the-best-of-iran-mens-volleyball-team/263461012101670
+   7. https://www.fivb.com/alekno-confirms-27-players-for-iran-national-team-training-camp
+   8. https://en.isna.ir/news/1405030603413/Piazza-names-Iran-s-30-man-volleyball-squad-for-2026-Volleyball
+   9. https://en.wikipedia.org/wiki/Iran_men%27s_national_volleyball_team
+   SELECTED TOP RESULTS:
+   1. https://www.facebook.com/volleytrails/posts/-iran-mens-national-team-names-42-player-training-camp-roster-for-2026-seasonhea/1440329741442909
+   2. https://cardbiz.ca/roberto-piazza-arrives-in-iran-with-thoughts-of-volleyball-success-p767-224.htm
+   3. https://x.com/Tasnimnews_EN/status/2055602282658746682
+8. QUERY: ظرفیت استادیوم نقش جهان اصفهان
+   INITIAL ORDER:
+   1. https://aftab-hotel.com/naghsh-e-jahan-stadium
+   2. https://safarmarket.com/blog/attractions/iran/isfahan/naghshe-jahan-stadium
+   3. https://toopball.com/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   4. https://fa.wikipedia.org/wiki/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87_%D9%86%D9%82%D8%B4_%D8%AC%D9%87%D8%A7%D9%86
+   5. https://www.instagram.com/popular/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86?hl=en
+   6. https://www.varzesh3.com/news/2002795/%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-80-%D9%87%D8%B2%D8%A7%D8%B1-%D9%86%D9%81%D8%B1%DB%8C-%D8%B4%D8%AF-%D8%B9%DA%A9%D8%B3
+   7. https://video.varzesh3.com/video/362110/%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   8. https://pounezar.ir/15034/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86%D8%8C-%D9%86%D9%82%D8%B4%DB%8C-%D9%86%DB%8C%D9%85%D9%87-%D8%AA%D9%85%D8%A7
+   9. https://atlassunco.com/football-stadium/naghshe-jahan-stadium-detail
+   10. https://029908.khabarban.com
+   RERANKED ORDER:
+   1. https://toopball.com/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   2. https://fa.wikipedia.org/wiki/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87_%D9%86%D9%82%D8%B4_%D8%AC%D9%87%D8%A7%D9%86
+   3. https://www.varzesh3.com/news/2002795/%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-80-%D9%87%D8%B2%D8%A7%D8%B1-%D9%86%D9%81%D8%B1%DB%8C-%D8%B4%D8%AF-%D8%B9%DA%A9%D8%B3
+   4. https://www.instagram.com/popular/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86?hl=en
+   5. https://pounezar.ir/15034/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86%D8%8C-%D9%86%D9%82%D8%B4%DB%8C-%D9%86%DB%8C%D9%85%D9%87-%D8%AA%D9%85%D8%A7
+   6. https://aftab-hotel.com/naghsh-e-jahan-stadium
+   7. https://video.varzesh3.com/video/362110/%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A8%DB%8C%D8%B4%D8%AA%D8%B1%DB%8C%D9%86-%D8%B8%D8%B1%D9%81%DB%8C%D8%AA-%D8%AA%D9%85%D8%A7%D8%B4%D8%A7%DA%AF%D8%B1-%D8%AF%D8%B1-%D8%A7%DB%8C%D8%B1%D8%A7%D9%86
+   8. https://safarmarket.com/blog/attractions/iran/isfahan/naghshe-jahan-stadium
+   9. https://atlassunco.com/football-stadium/naghshe-jahan-stadium-detail
+   10. https://029908.khabarban.com
+   SELECTED TOP RESULTS:
+   1. https://toopball.com/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   2. https://fa.wikipedia.org/wiki/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87_%D9%86%D9%82%D8%B4_%D8%AC%D9%87%D8%A7%D9%86
+   3. https://www.varzesh3.com/news/2002795/%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-80-%D9%87%D8%B2%D8%A7%D8%B1-%D9%86%D9%81%D8%B1%DB%8C-%D8%B4%D8%AF-%D8%B9%DA%A9%D8%B3
+9. QUERY: استادیوم نقش جهان اصفهان ظرفیت جدید بازسازی
+   INITIAL ORDER:
+   1. https://fararu.com/fa/news/809532/%D9%88%DB%8C%D8%AF%D8%A6%D9%88-%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86
+   2. https://www.asriran.com/fa/news/1021650/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%81%DB%8C%D9%84%D9%85
+   3. https://www.instagram.com/p/DUlYgzCDCJv
+   4. https://www.mehrnews.com/news/6152706/%D9%85%D8%AD%DB%8C%D8%B7-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D9%85%D9%88%D8%B1%D8%AF-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA
+   5. https://toopball.com/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   6. https://www.varzesh3.com/tag/927244/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   7. https://fa.wikipedia.org/wiki/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87_%D9%86%D9%82%D8%B4_%D8%AC%D9%87%D8%A7%D9%86
+   8. https://www.seratnews.com/fa/news/329312/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D9%88-%D8%AF%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88%D8%B9%D8%AF%D9%87-%D8%A8%DB%8C%E2%80%8C%D8%AD%D8%A7%D8%B5%D9%84
+   9. https://fbtv3.ir/news/12788
+   10. https://atlassunco.com/football-stadium/naghshe-jahan-stadium-detail
+   RERANKED ORDER:
+   1. https://fararu.com/fa/news/809532/%D9%88%DB%8C%D8%AF%D8%A6%D9%88-%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86
+   2. https://www.asriran.com/fa/news/1021650/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%81%DB%8C%D9%84%D9%85
+   3. https://www.mehrnews.com/news/6152706/%D9%85%D8%AD%DB%8C%D8%B7-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D9%85%D9%88%D8%B1%D8%AF-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA
+   4. https://toopball.com/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   5. https://www.varzesh3.com/tag/927244/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86
+   6. https://fa.wikipedia.org/wiki/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87_%D9%86%D9%82%D8%B4_%D8%AC%D9%87%D8%A7%D9%86
+   7. https://www.instagram.com/p/DUlYgzCDCJv
+   8. https://fbtv3.ir/news/12788
+   9. https://www.seratnews.com/fa/news/329312/%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D9%88-%D8%AF%D9%87%E2%80%8C%D9%87%D8%A7-%D9%88%D8%B9%D8%AF%D9%87-%D8%A8%DB%8C%E2%80%8C%D8%AD%D8%A7%D8%B5%D9%84
+   10. https://atlassunco.com/football-stadium/naghshe-jahan-stadium-detail
+   SELECTED TOP RESULTS:
+   1. https://fararu.com/fa/news/809532/%D9%88%DB%8C%D8%AF%D8%A6%D9%88-%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86
+   2. https://www.asriran.com/fa/news/1021650/%D8%A2%D8%AE%D8%B1%DB%8C%D9%86-%D9%88%D8%B6%D8%B9%DB%8C%D8%AA-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D8%A7%D8%B5%D9%81%D9%87%D8%A7%D9%86-%D9%81%DB%8C%D9%84%D9%85
+   3. https://www.mehrnews.com/news/6152706/%D9%85%D8%AD%DB%8C%D8%B7-%D8%A7%D8%B7%D8%B1%D8%A7%D9%81-%D9%88%D8%B1%D8%B2%D8%B4%DA%AF%D8%A7%D9%87-%D9%86%D9%82%D8%B4-%D8%AC%D9%87%D8%A7%D9%86-%D9%85%D9%88%D8%B1%D8%AF-%D8%A8%D8%A7%D8%B2%D8%B3%D8%A7%D8%B2%DB%8C-%D9%82%D8%B1%D8%A7%D8%B1-%DA%AF%D8%B1%D9%81%D8%AA
+10. QUERY: Naghsh-e Jahan Stadium capacity latest renovation
+   INITIAL ORDER:
+   1. https://www.facebook.com/StadiumGallery/posts/%EF%B8%8F-naghsh-e-jahan-stadium-capacity-75000%EF%B8%8F-home-base-foolad-mobarakeh-sepahan-sc-o/1168744396656868
+   2. https://stadiumdb.com/stadiums/irn/naghsh_e_jahan_stadium
+   3. https://aroundus.com/p/8051065-naghsh-e-jahan-stadium
+   4. https://irandoostan.com/naghsh-e-jahan-stadium
+   5. https://grokipedia.com/page/List_of_football_stadiums_in_Iran
+   6. https://bolandpayeh.co.ir/en/naghsh-e-jahan-football-stadium
+   7. https://www.transfermarkt.us/sepahan-fc/stadion/verein/4947
+   8. https://www.teammelli.com/naghsh-e-jahan-stadium-an-embarrassment-for-irans-football
+   9. https://www.youtube.com/watch?v=jr-7-BvKdv4&vl=en
+   RERANKED ORDER:
+   1. https://stadiumdb.com/stadiums/irn/naghsh_e_jahan_stadium
+   2. https://irandoostan.com/naghsh-e-jahan-stadium
+   3. https://www.facebook.com/StadiumGallery/posts/%EF%B8%8F-naghsh-e-jahan-stadium-capacity-75000%EF%B8%8F-home-base-foolad-mobarakeh-sepahan-sc-o/1168744396656868
+   4. https://grokipedia.com/page/List_of_football_stadiums_in_Iran
+   5. https://www.transfermarkt.us/sepahan-fc/stadion/verein/4947
+   6. https://www.teammelli.com/naghsh-e-jahan-stadium-an-embarrassment-for-irans-football
+   7. https://bolandpayeh.co.ir/en/naghsh-e-jahan-football-stadium
+   8. https://aroundus.com/p/8051065-naghsh-e-jahan-stadium
+   9. https://www.youtube.com/watch?v=jr-7-BvKdv4&vl=en
+   SELECTED TOP RESULTS:
+   1. https://stadiumdb.com/stadiums/irn/naghsh_e_jahan_stadium
+   2. https://irandoostan.com/naghsh-e-jahan-stadium
+   3. https://www.facebook.com/StadiumGallery/posts/%EF%B8%8F-naghsh-e-jahan-stadium-capacity-75000%EF%B8%8F-home-base-foolad-mobarakeh-sepahan-sc-o/1168744396656868
+
+FINAL RESPONSE:
+در پاسخ به سوالات شما:
+
+*   **رتبه دانشگاه صنعتی شریف در آخرین رتبه‌بندی جهانی QS در سال ۲۰۲۶ چند است؟**
+    در جدیدترین رتبه‌بندی جهانی QS ۲۰۲۶، دانشگاه صنعتی شریف رتبه دوم را در بین دانشگاه‌های ایران کسب کرد [1]. این دانشگاه در رتبه‌بندی موضوعی سال ۲۰۲۴ در حوزه فنی و مهندسی جایگاه ۲۴۴ و در علوم پایه جایگاه ۴۵۱-۵۰۰ را داشت [2]. همچنین، در رتبه‌بندی QS ۲۰۲۷، دانشگاه صنعتی شریف در میان ۵۰۰ دانشگاه برتر جهان قرار گرفت [3].
+
+*   **کدام شهر ایران در زمستان ۱۴۰۴ رکورد کمترین دمای ثبت شده را داشت؟**
+    در سحرگاه دوم بهمن‌ماه ۱۴۰۴، شهر سراب با ثبت دمای بی‌سابقه منفی ۲۸ درجه سانتی‌گراد، به سردترین نقطه کشور تبدیل شد [8] [10].
+
+*   **سرمربی فعلی تیم ملی والیبال مردان ایران در سال ۲۰۲۶ چه کسی است؟**
+    روبرتو پیاتزا سرمربی ایتالیایی تیم ملی والیبال مردان ایران در سال ۲۰۲۶ است [14] [16]. او اسامی ۳۰ بازیکن منتخب خود را برای حضور در رقابت‌های لیگ ملت‌های ۲۰۲۶ (VNL) اعلام کرده است [14] و همچنین لیست ۴۲ بازیکن را برای فصل ۲۰۲۶ مشخص کرده است [17].
+
+*   **ظرفیت دقیق استادیوم نقش جهان اصفهان پس از آخرین بازسازی‌ها چقدر است؟**
+    استادیوم نقش جهان اصفهان پس از بازسازی‌ها، گنجایش ۷۵,۰۰۰ تماشاگر را دارد [21] [26] [27]. این ورزشگاه در بازسازی دوم با ظرفیت ۷۵ هزار نفری افتتاح شد و در یک مصاف نزدیک به ۸۰ هزار نفر نیز در آن حاضر بوده‌اند [22]. ظرفیت آن پس از بازسازی‌های اخیر از ۱۰۰,۰۰۰ به ۷۵,۰۰۰ کاهش یافته است [28]. در حال حاضر، این ورزشگاه در مراحل نهایی بازسازی قرار دارد که شامل بهبود زیرساخت‌ها، افزایش ظرفیت و ارتقاء امکانات ورزشی و بازسازی محیط اطراف می‌شود [23] [24] [25].
 ================================================================================
 
